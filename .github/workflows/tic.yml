@@ -117,3 +117,27 @@ jobs:
 
       - name: "[Stage] After Deploy"
         run: Rscript -e "tic::after_deploy()"
+  job1:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Modify value # Tried to modify the files based on existing testfile.txt
+        run: |
+          echo 'Add value2' >> testfile.txt
+      - name: move to dir # Move the generated files into output folder
+        run: |
+          mkdir -p output
+          yes| cp -rf testfile.txt ./output/
+      - name: Commit files # commit the output folder
+        run: |
+          git config --local user.email "test@github.com"
+          git config --local user.name "GitHub Action test"
+          git add ./output
+          git commit -m "Add changes"
+      - name: Push changes # push the output folder to your repo
+        uses: ad-m/github-push-action@master
+        with:
+          branch: B77 #ignore if your branch is master
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
