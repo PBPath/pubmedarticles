@@ -79,7 +79,7 @@ jobs:
           Rscript -e "if (!requireNamespace('remotes')) install.packages('remotes', type = 'source')"
           Rscript -e "if (getRversion() < '3.2' && !requireNamespace('curl')) install.packages('curl', type = 'source')"
           Rscript -e "if (!requireNamespace('rentrez')) install.packages('rentrez', type = 'source')"
-          Rscript -e "if (!requireNamespace('RISmed')) install.packages('rentrez', type = 'RISmed')"
+          Rscript -e "if (!requireNamespace('RISmed')) install.packages('RISmed', type = 'source')"
 
       - name: "[Stage] [Linux] Install curl"
         if: runner.os == 'Linux'
@@ -100,7 +100,7 @@ jobs:
         run: |
           Rscript -e 'tic::script()'
           Rscript -e "if (!requireNamespace('rentrez')) install.packages('rentrez', type = 'source')"
-          Rscript -e "if (!requireNamespace('RISmed')) install.packages('rentrez', type = 'RISmed')"
+          Rscript -e "if (!requireNamespace('RISmed')) install.packages('RISmed', type = 'source')"
 
 
 
