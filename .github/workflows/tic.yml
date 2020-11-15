@@ -1,4 +1,4 @@
-## tic GitHub Actions template: macos-deploy
+## tic GitHub Actions template: linux-deploy
 ## revision date: 2020-08-06
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
   # for now, CRON jobs only run on the default branch of the repo (i.e. usually on master)
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron: "30 * * * *"
+    - cron: "0 4 * * *"
 
 name: tic
 
@@ -22,8 +22,7 @@ jobs:
       matrix:
         config:
           # use a different tic template type if you do not want to build on all listed platforms
-          - { os: macOS-latest, r: "release", pkgdown: "true", latex: "true" }
-          - { os: ubuntu-latest, r: "devel" }
+          - { os: ubuntu-latest, r: "release", pkgdown: "true" }
 
     env:
       # otherwise remotes::fun() errors cause the build to fail. Example: Unavailability of binaries
