@@ -26,34 +26,47 @@ print(timelist)
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-## GitHub Documents
-
-This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
-
-## Including Code
-
-You can include R code in the document as follows:
-
-```{r cars}
-summary(cars)
+```{r}
+suppressPackageStartupMessages({
+  if (!requireNamespace('rentrez')) install.packages('rentrez')
+  if (!requireNamespace('RISmed')) install.packages('RISmed')
+}
+)
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
+```{r}
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+today <- format(as.Date(Sys.Date(), "%B %d %Y"), "%Y/%d/%m")
+
+begin <- format(as.Date(Sys.Date() - 30, "%B %d %Y"), "%Y/%d/%m")
+
+query <- 'pancreas'
+
+my_articles <- RISmed::EUtilsSummary(query = query,
+                                     type = 'esearch',
+                                     db = 'pubmed',
+                                     reldate = 10
+                                   )
+
+my_fetched_articles <- RISmed::EUtilsGet(my_articles)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+PMIDs <- my_fetched_articles@PMID
+```
+
+```{r}
+write(x = x,
+      file = "data/pancreas_PMIDs.txt",
+      append = TRUE)
+```
+
+
+```{r}
+PMID_file <- read.csv(file = "data/pancreas_PMIDs.txt")
+print(PMID_file)
+```
+
+

@@ -95,7 +95,12 @@ jobs:
           Rscript -e "remotes::install_github('ropensci/tic')" -e "print(tic::dsl_load())" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
 
       - name: "[Stage] Script"
-        run: Rscript -e 'tic::script()'
+        run: |
+          Rscript -e 'tic::script()'
+          Rscript -e "if (!requireNamespace('rentrez')) install.packages('rentrez', type = 'source')"
+          Rscript -e "if (!requireNamespace('RISmed')) install.packages('rentrez', type = 'RISmed')"
+
+
 
       - name: "[Stage] After Success"
         if: matrix.config.os == 'macOS-latest' && matrix.config.r == 'release'
@@ -126,10 +131,6 @@ jobs:
           # branch: B77 #ignore if your branch is master
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
-
-
-
-
 
       - name: "[Stage] After Deploy"
         run: Rscript -e "tic::after_deploy()"

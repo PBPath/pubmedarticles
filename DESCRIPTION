@@ -1,2 +1,5 @@
 Package: tic.website
-Imports: tibble
+Imports: 
+    - tibble
+    - rentrez
+    - RISmed
