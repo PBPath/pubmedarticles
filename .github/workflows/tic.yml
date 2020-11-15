@@ -7,7 +7,7 @@ on:
   # for now, CRON jobs only run on the default branch of the repo (i.e. usually on master)
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron: "0 4 * * *"
+    - cron: "0 3 * * SUN"
 
 name: tic
 
@@ -114,5 +114,22 @@ jobs:
       - name: "[Stage] Deploy"
         run: Rscript -e "tic::deploy()"
 
+      - name: Commit files
+        run: |
+          git config --local user.email "drserdarbalci@gmail.com"
+          git config --local user.name "sbalci"
+          git add .
+          git commit -m "Add changes"
+      - name: Push changes # push the output folder to your repo
+        uses: ad-m/github-push-action@master
+        with:
+          # branch: B77 #ignore if your branch is master
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
+
+
+
+
       - name: "[Stage] After Deploy"
         run: Rscript -e "tic::after_deploy()"
+
