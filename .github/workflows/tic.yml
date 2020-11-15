@@ -131,8 +131,8 @@ jobs:
           yes| cp -rf testfile.txt ./output/
       - name: Commit files # commit the output folder
         run: |
-          git config --local user.email "test@github.com"
-          git config --local user.name "GitHub Action test"
+          git config --local user.email "drserdarbalci@gmail.com"
+          git config --local user.name "sbalci"
           git add ./output
           git commit -m "Add changes"
       - name: Push changes # push the output folder to your repo
