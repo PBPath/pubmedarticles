@@ -58,7 +58,7 @@ PMIDs <- my_fetched_articles@PMID
 ```
 
 ```{r}
-write(x = x,
+write(x = PMIDs,
       file = "data/pancreas_PMIDs.txt",
       append = TRUE)
 ```
