@@ -14,7 +14,7 @@ gallbladder_articles <- RISmed::EUtilsSummary(query = searchFormula_gallbladder,
 
 Sys.sleep(10)
 
-bileduct_articles <- RISmed::EUtilsSummary(query = searchFormula_bileducts,
+bileduct_articles <- RISmed::EUtilsSummary(query = searchFormula_bileduct,
                                            type = 'esearch',
                                            db = 'pubmed',
                                            reldate = 10

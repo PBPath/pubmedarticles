@@ -10,10 +10,10 @@ searchFormula_gallbladder <-
     searchQuery_gallbladder
   )
 
-searchFormula_bileducts <-
+searchFormula_bileduct <-
   paste0(
 
-    searchQuery_bileducts
+    searchQuery_bileduct
   )
 
 searchFormula_ampulla <-

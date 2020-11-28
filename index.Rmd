@@ -49,82 +49,9 @@ h4.date{
 </style>
 
 
-<!-- --- -->
+---
 
-<!-- # PBPath Journal Watch Articles {.tabset .tabset-fade .tabset-pills #pbpath_jw} -->
-
-
-<!-- ```{r strings , include=FALSE} -->
-<!-- PubMedString <- "PubMed: https://www.ncbi.nlm.nih.gov/pubmed/?term=" -->
-
-<!-- doiString <- "doi: https://doi.org/" -->
-
-<!-- ``` -->
-
-
-
-<!-- ```{r read PMID csv, include=FALSE, cache=FALSE} -->
-<!-- pancreas_recent_PMID <- -->
-<!--     readr::read_csv(file      = "~/AutoJournalWatch/data/PMIDList_pancreas.csv", -->
-<!--                     col_names = c("PMID"), -->
-<!--                     readr::cols(PMID = readr::col_character())) -->
-
-<!-- gallbladder_recent_PMID <- -->
-<!--     readr::read_csv(file      = "~/AutoJournalWatch/data/PMIDList_gallbladder.csv", -->
-<!--                     col_names = c("PMID"), -->
-<!--                     readr::cols(PMID = readr::col_character())) -->
-
-<!-- bileducts_recent_PMID <- -->
-<!--     readr::read_csv(file      = "~/AutoJournalWatch/data/PMIDList_bileducts.csv", -->
-<!--                     col_names = c("PMID"), -->
-<!--                     readr::cols(PMID = readr::col_character())) -->
-
-<!-- ampulla_recent_PMID <- -->
-<!--     readr::read_csv(file      = "~/AutoJournalWatch/data/PMIDList_ampulla.csv", -->
-<!--                     col_names = c("PMID"), -->
-<!--                     readr::cols(PMID = readr::col_character())) -->
-<!-- ``` -->
-
-
-
-
-
-<!-- ```{r read PMID from previous JW, include=FALSE, cache=FALSE} -->
-<!-- previousJW <- list.files(path = here::here("archive-of-published"), -->
-<!--                           pattern = ".Rmd", -->
-<!--                           full.names = TRUE) -->
-
-
-<!-- text_previousJW <- unname(sapply(previousJW, readLines)) -->
-<!-- text_previousJW <- unlist(text_previousJW, use.names=FALSE) -->
-
-<!-- # text_previousJW <- purrr::map( -->
-<!-- #     .x = previousJW, -->
-<!-- #     .f = readLines -->
-<!-- # ) -->
-
-
-
-<!-- PMID_List_previousJW <- -->
-<!--     stringr::str_extract( -->
-<!--         string = text_previousJW, -->
-<!--         pattern = -->
-<!--             "PubMed_(\\d{8})" -->
-<!--     ) -->
-
-
-<!-- PMID_List_previousJW <- PMID_List_previousJW[!is.na(PMID_List_previousJW)] -->
-
-
-<!-- PMID_List_previousJW <- PMID_List_previousJW %>% -->
-<!--   unique() %>% -->
-<!--   gsub(pattern = "PubMed_", replacement = "", x = .) -->
-
-<!-- previousJW_PMID <- NULL -->
-<!-- previousJW_PMID$PMID <- PMID_List_previousJW -->
-<!-- previousJW_PMID <- as.data.frame(previousJW_PMID) -->
-
-<!-- ``` -->
+# PBPath Journal Watch Articles {.tabset .tabset-fade .tabset-pills #pbpath_jw}
 
 
 
@@ -145,7 +72,7 @@ We encourage members to actively participate by recommending new articles and pr
 <!-- ```{r PubMed Link, include=FALSE, cache=FALSE} -->
 <!-- PMID_all <- dplyr::bind_rows(pancreas_recent_PMID, -->
 <!--                              gallbladder_recent_PMID, -->
-<!--                              bileducts_recent_PMID, -->
+<!--                              bileduct_recent_PMID, -->
 <!--                              ampulla_recent_PMID, -->
 <!--                              previousJW_PMID -->
 <!-- ) %>%  -->
@@ -224,95 +151,74 @@ We encourage members to actively participate by recommending new articles and pr
 <!-- ``` -->
 
 
-<!-- \pagebreak -->
+\pagebreak
 
 
 
 
-<!-- ## Pancreas {#pancreas} -->
+## Pancreas {#pancreas}
+
+
+`r paste(knitr::knit(text = out_pancreas), collapse = '\n\n\n')`
+
+
+---
+
+<a href="#top" target="_self">Back to top</a>
+
+---
+
+\pagebreak
+
+
+
+## Gallbladder {#gallbladder}
+
+
+
+`r paste(knitr::knit(text = out_gallbladder), collapse = '\n\n\n')`
 
 
 
 
-<!-- ```{r pancreasRecent,  child='~/JournalWatchPBPath/_pancreasRecent.Rmd'} -->
-<!-- ``` -->
+---
 
-<!-- --- -->
+<a href="#top" target="_self">Back to top</a>
 
-<!-- <a href="#top" target="_self">Back to top</a> -->
+---
 
-<!-- --- -->
-
-<!-- \pagebreak -->
+\pagebreak
 
 
-
-<!-- ## Gallbladder {#gallbladder} -->
+## Bile Duct {#bileduct}
 
 
 
-
-<!-- ```{r gallbladderRecent,  child='~/JournalWatchPBPath/_gallbladderRecent.Rmd'} -->
-<!-- ``` -->
+`r paste(knitr::knit(text = out_bileduct), collapse = '\n\n\n')`
 
 
-<!-- --- -->
 
-<!-- <a href="#top" target="_self">Back to top</a> -->
+---
 
-<!-- --- -->
+<a href="#top" target="_self">Back to top</a>
 
-<!-- \pagebreak -->
+---
 
+\pagebreak
 
-<!-- ## Bile Ducts {#bileducts} -->
+## Ampulla {#ampulla}
 
 
 
 
-<!-- ```{r bileductsRecent,  child='~/JournalWatchPBPath/_bileductsRecent.Rmd'} -->
-<!-- ``` -->
+`r paste(knitr::knit(text = out_ampulla), collapse = '\n\n\n')`
 
 
+---
 
-<!-- --- -->
+<a href="#top" target="_self">Back to top</a>
 
-<!-- <a href="#top" target="_self">Back to top</a> -->
+---
 
-<!-- --- -->
-
-<!-- \pagebreak -->
-
-<!-- ## Ampulla {#ampulla} -->
-
-
-
-
-<!-- ```{r ampullaRecent,  child='~/JournalWatchPBPath/_ampullaRecent.Rmd'} -->
-<!-- ``` -->
-
-
-
-<!-- --- -->
-
-<!-- <a href="#top" target="_self">Back to top</a> -->
-
-<!-- --- -->
-
-<!-- \pagebreak -->
-
-
-
-<!-- --- -->
-
-<!-- <a href="#top" target="_self">Back to top</a> -->
-
-<!-- --- -->
-
-<!-- \pagebreak -->
-
-
-
-
-
+\pagebreak
 

@@ -85,11 +85,11 @@ print(ampulla_PMIDs)
 
 ----
 
-**bileducts_PMIDs**
+**bileduct_PMIDs**
 
-```{r bileducts_PMIDs}
-bileducts_PMIDs <- read.csv(file = "data/bileducts_PMIDs.txt")
-print(bileducts_PMIDs)
+```{r bileduct_PMIDs}
+bileduct_PMIDs <- read.csv(file = "data/bileduct_PMIDs.txt")
+print(bileduct_PMIDs)
 ```
 
 ----

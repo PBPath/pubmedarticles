@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Ampulla</title>
+
+<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">PBPath Journal Watch</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="pancreas.html">Pancreas</a>
+</li>
+<li>
+  <a href="ampulla.html">Ampulla</a>
+</li>
+<li>
+  <a href="bileduct.html">Bile Ducts</a>
+</li>
+<li>
+  <a href="gallbladder.html">Gallbladder</a>
+</li>
+<li>
+  <a href="today.html">Today</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:info@pbpath.org">
+    <span class="fa fa-envelope"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://pbpath.org/contact-us/">
+    <span class="fa fa-commenting-o"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/PBPath/">
+    <span class="fa fa-twitter"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/PBPath/">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Ampulla</h1>
+
+</div>
+
+
+<pre class="r"><code>knitr::opts_chunk$set(echo = TRUE,
+                      eval = TRUE,
+                      include = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      cache = FALSE
+                      )</code></pre>
+<p><strong>Read ampulla_PMIDs</strong></p>
+<pre class="r"><code>ampulla_PMIDs &lt;- read.csv(file = &quot;data/ampulla_PMIDs.txt&quot;,
+                           header = FALSE
+                           )
+
+exclude_ampulla_PMIDs &lt;- read.csv(file = &quot;data/exclude_ampulla_PMIDs.txt&quot;,
+                           header = FALSE
+                           )
+
+ampulla_PMIDs &lt;-
+  ampulla_PMIDs$V1 %&gt;% 
+  unique()
+
+ampulla_PMIDs &lt;- 
+unique(ampulla_PMIDs[! ampulla_PMIDs %in% exclude_ampulla_PMIDs$V1])</code></pre>
+<pre class="r"><code>out_ampulla = NULL
+# for (i in 1:length(ampulla_PMIDs)) {
+for (i in 1:3) {
+  value.ampulla_PMID &lt;- ampulla_PMIDs[i]
+  out_ampulla = c(out_ampulla,
+          knitr::knit_expand(&#39;_ampulla_child.Rmd&#39;)
+  )
+  }</code></pre>
+<div id="article-1" class="section level3">
+<h3>Article 1</h3>
+<div id="article-33225446." class="section level4">
+<h4>Article 33225446.</h4>
+<pre class="r"><code>PMID &lt;- &#39;33225446&#39;
+
+PMID</code></pre>
+<pre><code>## [1] &quot;33225446&quot;</code></pre>
+<pre class="r"><code>PubMedString &lt;- &quot;PubMed: https://www.ncbi.nlm.nih.gov/pubmed/?term=&quot;
+doiString &lt;- &quot;doi: https://doi.org/&quot;</code></pre>
+<pre class="r"><code>PMID &lt;- RefManageR::ReadPubMed(query = PMID,
+                               database = &#39;PubMed&#39;
+                               )
+
+citation &lt;- paste0(PMID$journal,
+                   &#39; &#39;,
+                   PMID$year,
+                   &#39; &#39;,
+                   PMID$month,
+                   &#39;;&#39;,
+                   PMID$volume,
+                   &#39;(&#39;,
+                   PMID$number,
+                   &#39;):&#39;,
+                   PMID$pages
+                   )
+
+PubMed_link &lt;- paste0(PubMedString, PMID$eprint)
+
+doi_link &lt;- paste0(doiString, PMID$doi)
+
+Sys.sleep(2)</code></pre>
+<details open>
+<summary>
+<ul>
+<li><strong>Classification of intestinal T cell receptor repertoires using machine learning methods can identify patients with coeliac disease regardless of dietary gluten status</strong></li>
+</ul>
+</summary>
+<p><em>The Journal of pathology 2020 Nov;():</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33225446" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33225446</a></p>
+<p>In coeliac disease (CeD), immune-mediated small intestinal damage is precipitated by gluten, leading to variable symptoms and complications, occasionally including aggressive T-cell lymphoma. Diagnosis, based primarily on histopathological examination of duodenal biopsies, is confounded by poor concordance between pathologists and minimal histological abnormality if insufficient gluten is consumed. CeD pathogenesis involves both CD4+ T-cell-mediated gluten recognition and CD8+ and γδ T-cell mediated inflammation, with a previous study demonstrating a permanent change in γδ T-cell populations in CeD. We leveraged this understanding and explored the diagnostic utility of bulk T-cell receptor (TCR) sequencing in assessing duodenal biopsies in CeD. Genomic DNA extracted from duodenal biopsies underwent sequencing for TCR-δ (TRD) (CeD, n =11; non-CeD, n=11) and TCR-γ (TRG)) (CeD, n =33; non-CeD, n=21). We developed a novel machine learning-based analysis of the TCR repertoire, clustering samples by diagnosis. Leave-one-out cross-validation (LOOCV) was performed to validate the classification algorithm. Using TRD repertoire,100% (22/22) duodenal biopsies were correctly classified, with a LOOCV accuracy of 91%. Using TCR-γ (TRG) repertoire, 94.4% (51/54) duodenal biopsies were correctly classified, with LOOCV of 87%. Duodenal biopsy TRG repertoire analysis permitted accurate classification of biopsies from patients with CeD following a strict gluten-free diet for at least 6 months, who would be misclassified by current tests. This result reflects permanent changes to the duodenal γδ TCR repertoire in CeD, even in the absence of gluten consumption. Our method could complement or replace histopathological diagnosis in CeD and might have particular clinical utility in the diagnostic testing of patients unable to tolerate dietary gluten, and for assessing duodenal biopsies with equivocal features. This approach is generalisable to any TCR/ BCR locus and any sequencing platform, with potential to predict diagnosis or prognosis in conditions mediated or modulated by the adaptive immune response. This article is protected by copyright. All rights reserved.</p>
+<p>doi: <a href="https://doi.org/10.1002/path.5592" class="uri">https://doi.org/10.1002/path.5592</a></p>
+</details>
+<hr />
+</div>
+</div>
+<div id="article-2" class="section level3">
+<h3>Article 2</h3>
+<div id="article-33198671." class="section level4">
+<h4>Article 33198671.</h4>
+<pre class="r"><code>PMID &lt;- &#39;33198671&#39;
+
+PMID</code></pre>
+<pre><code>## [1] &quot;33198671&quot;</code></pre>
+<pre class="r"><code>PubMedString &lt;- &quot;PubMed: https://www.ncbi.nlm.nih.gov/pubmed/?term=&quot;
+doiString &lt;- &quot;doi: https://doi.org/&quot;</code></pre>
+<pre class="r"><code>PMID &lt;- RefManageR::ReadPubMed(query = PMID,
+                               database = &#39;PubMed&#39;
+                               )
+
+citation &lt;- paste0(PMID$journal,
+                   &#39; &#39;,
+                   PMID$year,
+                   &#39; &#39;,
+                   PMID$month,
+                   &#39;;&#39;,
+                   PMID$volume,
+                   &#39;(&#39;,
+                   PMID$number,
+                   &#39;):&#39;,
+                   PMID$pages
+                   )
+
+PubMed_link &lt;- paste0(PubMedString, PMID$eprint)
+
+doi_link &lt;- paste0(doiString, PMID$doi)
+
+Sys.sleep(2)</code></pre>
+<details open>
+<summary>
+<ul>
+<li><strong>Phase 2 study of lenvatinib monotherapy as second-line treatment in unresectable biliary tract cancer: primary analysis results</strong></li>
+</ul>
+</summary>
+<p><em>BMC cancer 2020 Nov;20(1):1105</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33198671" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33198671</a></p>
+<p>BACKGROUND: Biliary tract cancer (BTC) has a poor prognosis and lacks a standardized second-line therapy. Vascular endothelial growth factor (VEGF), fibroblast growth factor receptor (FGFR) 4, and platelet-derived growth factor receptor (PDGFR) are highly expressed in BTC. Therefore, lenvatinib (a known inhibitor of VEGF receptors 1-3, FGFRs 1-4, and PDGFR-α) was evaluated for second-line treatment of BTC. METHODS: In this single-arm, multicenter, open-label, phase 2 study, patients with BTC received lenvatinib 24 mg orally once daily in 28-day cycles. The primary endpoint was objective response rate (ORR). Secondary endpoints included overall survival (OS), progression-free survival (PFS), PFS rate at 12 weeks, disease control rate, clinical benefit rate, safety and pharmacokinetic profiles. RESULTS: Twenty-six Japanese patients were enrolled and treated; 3 had a confirmed partial response per investigator assessment and per independent imaging review (IIR); ORR was 11.5% (90% confidence interval [CI]: 3.2-27.2). Median PFS was 3.19 months (95% CI: 2.79-7.23) per investigator assessment and 1.64 months (95% CI: 1.41-3.19) per IIR. Median OS was 7.35 months (95% CI: 4.50-11.27). Grade ≥ 3 treatment-emergent adverse events (TEAEs) occurred in 21 patients (80.8%) and included hypertension (n = 10 [38.5%]), proteinuria (n = 3 [11.5%]), palmar-plantar erythrodysesthesia (n = 3 [11.5%]), decreased appetite (n = 3 [11.5%]), and anemia (n = 3 [11.5%]). Two deaths occurred due to TEAEs between treatment initiation and 30 days after last dose, but neither were considered treatment related. CONCLUSIONS: Lenvatinib demonstrated antitumor activity in BTC, with a tolerable safety profile, and should be further evaluated as potential second-line therapy for this difficult to treat population. TRIAL REGISTRATION: ClinicalTrials.gov NCT02579616 . Date of registration: October 19, 2015.</p>
+<p>doi: <a href="https://doi.org/10.1186/s12885-020-07365-4" class="uri">https://doi.org/10.1186/s12885-020-07365-4</a></p>
+</details>
+<hr />
+</div>
+</div>
+<div id="article-3" class="section level3">
+<h3>Article 3</h3>
+<div id="article-na." class="section level4">
+<h4>Article NA.</h4>
+<pre class="r"><code>PMID &lt;- &#39;NA&#39;
+
+PMID</code></pre>
+<pre><code>## [1] &quot;NA&quot;</code></pre>
+<pre class="r"><code>PubMedString &lt;- &quot;PubMed: https://www.ncbi.nlm.nih.gov/pubmed/?term=&quot;
+doiString &lt;- &quot;doi: https://doi.org/&quot;</code></pre>
+<pre class="r"><code>PMID &lt;- RefManageR::ReadPubMed(query = PMID,
+                               database = &#39;PubMed&#39;
+                               )
+
+citation &lt;- paste0(PMID$journal,
+                   &#39; &#39;,
+                   PMID$year,
+                   &#39; &#39;,
+                   PMID$month,
+                   &#39;;&#39;,
+                   PMID$volume,
+                   &#39;(&#39;,
+                   PMID$number,
+                   &#39;):&#39;,
+                   PMID$pages
+                   )
+
+PubMed_link &lt;- paste0(PubMedString, PMID$eprint)
+
+doi_link &lt;- paste0(doiString, PMID$doi)
+
+Sys.sleep(2)</code></pre>
+<details open>
+<summary>
+<ul>
+<li><strong>Geochemical evolution and tracing of groundwater salinization using different ionic ratios, multivariate statistical and geochemical modeling approaches in a typical semi-arid basin, Increased axon initial segment length results in increased Na+ currents in spinal motoneurones at symptom onset in the G127X SOD1 mouse model of Amyotrophic Lateral Sclerosis, Novel self-floating tablet for enhanced oral bioavailability of metformin based on cellulose, Relationship between eyelid margin irregularity and meibomian gland dropout, Double trouble: Bacillus depends on a functional Tat machinery to avoid severe oxidative stress and starvation upon entry into a NaCl-depleted environment, The Incidence of Transient Infantile Pseudohypoaldosteronism in Ireland: a prospective study, Experimental Evidence of the Coexistence of Proper Magnetic and Structural Incommensurability on the [CH3NH3][Ni(COOH)3] Compound, Food-grade expression and characterisation of a dextranase from Chaetomium gracile suitable for sugarcane juice clarification, Specific ion effects control the thermoelastic behavior of nanolayered materials: the case of crystalline alkali-silica reaction products, Annual cycle of mat-forming filamentous alga Tribonema cf. minus (Stramenopiles, Xanthophyceae) in hydro-terrestrial habitats in the high Arctic revealed by multiparameter fluorescent staining1, Metal concentration and health risk assessment of eight Russula mushrooms collected from Kizilcahamam-Ankara, Turkey, Antibacterial activity of Zn-loaded Cuban zeolite against Helicobacter pylori in comparison to its Na-loaded and unmodified counterparts, Empowering alcohols as carbonyl surrogates for Grignard-type reactions, Root silicon deposition and its resultant reduction of sodium bypass flow is modulated by OsLsi1 and OsLsi2 in rice, Atmospheric iodine, selenium and caesium depositions in France: I. Spatial and seasonal variations, Functionalization of [60]Fullerene through photochemical reaction for fulleropyrrolidine nanovectors synthesis: Experimental and theoretical approaches, Occurrence and antibacterial resistance of culturable antibiotic-resistant bacteria in the Fildes Peninsula, Antarctica, Clinical trials and drug cost savings for Italian health service, Abnormal rich club organization in end-stage renal disease patients before dialysis initiation and undergoing maintenance hemodialysis, Host defense peptide IDR-1002 associated with ciprofloxacin as a new antimicrobial and immunomodulatory strategy for dental pulp revascularization therapy</strong></li>
+</ul>
+</summary>
+<p><em>Journal of contaminant hydrology 2020 Nov;236(NULL):103742, Neuroscience 2020 Nov;NULL(NULL):NULL, International journal of pharmaceutics 2020 Nov;NULL(NULL):120113, The ocular surface 2020 Nov;NULL(NULL):NULL, Biochimica et biophysica acta. Molecular cell research 2020 Nov;NULL(NULL):118914, Acta paediatrica (Oslo, Norway : 1992) 2020 Nov;NULL(NULL):NULL, Inorganic chemistry 2020 Nov;NULL(NULL):NULL, Chemistry &amp; biodiversity 2020 Nov;NULL(NULL):NULL, Physical chemistry chemical physics : PCCP 2020 Nov;NULL(NULL):NULL, Journal of phycology 2020 Nov;NULL(NULL):NULL, Environmental science and pollution research international 2020 Nov;NULL(NULL):NULL, Environmental geochemistry and health 2020 Nov;NULL(NULL):NULL, Nature communications 2020 Nov;11(1):6022, Plant physiology and biochemistry : PPB 2020 Nov;NULL(NULL):NULL, Chemosphere 2020 Nov;NULL(NULL):128971, Colloids and surfaces. B, Biointerfaces 2020 Nov;NULL(NULL):111457, Marine pollution bulletin 2020 Nov;NULL(NULL):111829, BMC health services research 2020 Nov;20(1):1089, BMC nephrology 2020 Nov;21(1):515, Microbial pathogenesis 2020 Nov;NULL(NULL):104634</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33246311" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33246311</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33246068" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33246068</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33246050" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33246050</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33246034" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33246034</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33245978" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33245978</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33245792" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33245792</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33245662" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33245662</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33245200" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33245200</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33245083" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33245083</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33244748" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33244748</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33244695" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33244695</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33244649" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33244649</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33244009" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33244009</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33243712" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33243712</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33243570" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33243570</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33243548" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33243548</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33243441" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33243441</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33243262" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33243262</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33243163" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33243163</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33242643" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33242643</a></p>
+<p>The vulnerability of semi-arid basin aquifers to long-term salinization due to the dissolution of groundwater chemical constituents is a major global problem. Despite this, resilient techniques of tracing the sources of groundwater salinization in semi-arid basin aquifers are still evolving due to the aquifer complexities. This study proves the effectiveness of the use of different ionic ratios, multivariate statistical, and geochemical modeling approaches to understand groundwater evolution and trace salinization in the semi-arid Pru Basin of Ghana. The basin is homogeneously composed of argillaceous sediments of the Oti/Pendjari Group of the Voltaian Supergroup. A total of 81 samples from hand-dug wells and boreholes within the Pru Formation of the Oti/Pendjari Group in the basin were collected for this study. Quantitative analysis of the data shows that the abundance of major ions follows the order: Na+ &gt; Ca2+ &gt; Mg2+ &gt; K+ and Cl- &gt; HCO3- &gt; SO42-. The groundwater evolved from Na-HCO3, Na-HCO3-Cl, Na-Ca-HCO3 to Na-Mg-HCO3 water types in a decreasing order of abundance. Calculated meteoric genesis index (r2) indicates the dominance of deep meteoric water percolation effects on groundwater chemistry. Groundwater chemistry is principally controlled by water-rock interaction, ion exchange reactions, weathering (carbonate and silicate), salinization, and anthropogenic activities. Different ionic ratio plots and spatial distribution maps reveal the prevalence of salinization in the aquifer system, especially around the southwestern part of the basin. Revelle index assessment of the groundwater salinization level indicates that about 19.8% of the groundwater samples with RI values &gt;0.5 is influenced by salinization. The groundwater salinization results from saline water intrusion from adjacent aquifers, mixing effects, ion exchange reactions, water-rock interaction, and anthropogenic activities. The geochemical modeling involving thermodynamic calculation of mineral saturation indices in PHREEQC indicates that groundwater is largely saturated with respect to majority of the carbonate and silicate mineral phases., Amyotrophic lateral sclerosis is a neurodegenerative disease preferentially affecting motoneurones. Transgenic mouse models have been used to investigate the role of abnormal motoneurone excitability in this disease. Whilst an increased excitability has repeatedly been demonstrated in vitro in neonatal and embryonic preparations from SOD1 mouse models, the results from the only studies to record in vivo from spinal motoneurones in adult SOD1 models have produced conflicting findings. Deficits in repetitive firing have been reported in G93A SOD1 (high copy number) mice but not in presymptomatic G127X SOD1 mice despite shorter motoneurone axon initial segments (AISs) in these mice. These discrepancies may be due to the earlier disease onset and prolonged disease progression in G93A SOD1 mice with recordings potentially performed at a later sub-clinical stage of the disease in this mouse. To test this, and to explore how the evolution of excitability changes with symptom onset we performed in vivo intracellular recording and AIS labelling in G127X SOD1 mice immediately after symptom onset. No reductions in repetitive firing were observed showing that this is not a common feature across all ALS models. Immunohistochemistry for the Na+ channel Nav1.6 showed that motoneurone AISs increase in length in G127X SOD1 mice at symptom onset. Consistent with this, the rate of rise of AIS components of antidromic action potentials were significantly faster confirming that this increase in length represents an increase in AIS Na+ channels occurring at symptom onset in this model., Metformin has several problems such as low bioavailability, short half-life, and narrow absorption window, sustained and site-specific drug delivery system is required. Floating drug delivery systems are very useful to achieve these purposes. However, conventional floating systems have several limitations; lag time, a high proportion of excipient in the tablet, using non-biocompatible excipient, and requirement of a complicated procedure. To overcome these obstacles, we developed a hollow-core floating tablet (HCFT). The HCFT immediately floated in pH 1.2, 4.0, 6.8 medium, and even distilled water. The floating duration time of HCFT was more than 24 h. From the in vitro release study, it was confirmed that HCFT showed the sustain release profile of metformin for 12 h. Water uptake and matrix erosion were evaluated for predicting the buoyancy and drug release kinetics of HCFT in the body. Factor analysis was applied to optimize the formulation. There were significant (p &lt; 0.05) differences in metformin plasma concentration of 4 h and 6 h between two groups. Compared with Glucophage® XR, the relative bioavailability of metformin HCFT was 123.81 ± 3.52%. The X-ray imaging of optimized formulation revealed that HCFT was constantly floating in the stomach region of the rabbit, thereby indicating improved gastric retention for more than 6 h. Consequently, all the findings indicate that HCFT could be an effective gastric retention system and applied extensively to other drugs with narrow absorption windows., PURPOSE: To examine the relationship between lid margin abnormalities and meibomian gland loss in infrared meibography. METHODS: This study was a retrospective chart review of 170 patients with dry eye disease. A correlation analysis between eyelid margin abnormalities and meibomian gland dropout in infrared meibography was performed using data from 141 eyes. We graded the following eyelid margin abnormalities: irregular lid margin, vascular engorgement, plugging, anterior placement of the mucocutaneous junction, exposed terminal duct, and presence of tattoos. Multiple regression analyses were performed with meiboscore (meibomian gland dropout grade) as the dependent variable and age, sex, lid margin abnormality grades, and total grading score of lid margin abnormalities as the covariates. In addition, Meibomian glands structure were examined in those with eyelid margin dimpling using meibography in 25 eyes. RESULTS: In the multiple regression analysis, an irregular lid margin in the upper eyelid was associated with a higher meiboscore after controlling for age and sex (coefficients B = 1.379, p = 0.025). Other lid margin abnormalities did not significantly affect the meiboscore. In the lower eyelids, irregular lid margin (coefficients B = 0.602, p = 0.009) and total grading score of lid margin abnormality were associated with higher meiboscores (coefficients B = 0.100, p = 0.022). Of the 25 eyes with dimples, 21 (84%) showed focal or complete meibomian gland loss at the site. CONCLUSIONS: Lid margin abnormalities were found to be associated with meibomian gland dropout., The widely conserved twin-arginine translocases (Tat) allow the transport of fully folded cofactor-containing proteins across biological membranes. In doing so, these translocases serve different biological functions ranging from energy conversion to cell division. In the Gram-positive soil bacterium Bacillus subtilis, the Tat machinery is essential for effective growth in media lacking iron or NaCl. It was previously shown that this phenomenon relates to the Tat-dependent export of the heme-containing peroxidase EfeB, which converts Fe2+ to Fe3+ at the expense of hydrogen peroxide. However, the reasons why the majority of tat mutant bacteria perish upon dilution in NaCl-deprived medium and how, after several hours, a sub-population adapts to this condition was unknown. Here we show that, upon growth in the absence of NaCl, the bacteria face two major problems, namely severe oxidative stress at the membrane and starvation leading to death. The tat mutant cells can overcome these challenges if they are fed with arginine, which implies that severe arginine depletion is a major cause of death and resumed arginine synthesis permits their survival. Altogether, our findings show that the Tat system of B. subtilis is needed to preclude severe oxidative stress and starvation upon sudden drops in the environmental Na+ concentration as caused by flooding or rain., AIM: To review the clinical course, outcome and incidence of infantile salt-wasting associated with urinary tract infection (UTI) and/or urinary tract malformation (UTM) over a two-year surveillance period on the island of Ireland. METHODS: A two-year (2013-14) prospective surveillance undertaken via the Irish and Ulster Paediatric Surveillance Units. Monthly-prepaid postcards were circulated to consultant paediatricians (n = 260) at all paediatric units on the island of Ireland. Infants under one year of age presenting for the first time with hyponatraemia (Na &lt; 130mmol/L) and/or hyperkalaemia (K &gt; 5.0mmol/L) associated with urosepsis/UTM were reported. RESULTS: All 7 reported patients (6 male) had culture-proven UTI and 5 (71%) also had an underlying UTM (one diagnosed antenatally). Four (57%) patients had a documented elevated serum aldosterone supporting secondary pseudohypoaldosteronism (PHA) as the underlying diagnosis. Data on aldosterone was not reported in the other 3 patients but clinical features were suggestive of secondary PHA. The estimated incidence for the Irish population of transient PHA is 1 per 13,200 total live births per year. CONCLUSIONS: Salt-wasting is a rare complication of UTI, especially if associated with underlying UTM. Boys appear to be at particular risk., The present work is dedicated to characterization of the structural phase transition and incommensurate magnetic structure of the [CH3NH3][Ni(COOH)3] (1) perovskite-like metal-organic compound. The structural and magnetic characterization has been performed through variable-temperature single-crystal and powder neutron diffraction. Compound 1 crystallizes in the orthorhombic Pnma space group at room temperature. Below 84 K, a new phase has been observed. The occurrence of new reflections, which can be indexed with a wavevector along the c axis [q = 0.1426(2)c*], suggests the occurrence of an incommensurately modulated crystal structure. The structure was determined using the superspace group formalism on the Pnma(00γ)0s0 space group. This incommensurate phase remains unchanged with a decrease of the temperature up to the base temperature (ca. 2 K). Moreover, the magnetic susceptibility data, collected under zero-field-cooled and field-cooled conditions at different applied magnetic fields, show that compound 1 exhibits antiferromagnetic behavior below 34 K. In the current paper, we have confirmed that compound 1 presents the coexistence of nuclear and proper magnetic incommensurability below TN., The microbial production of dextranase using cheap carbon sources is beneficial to solve the economic loss caused by the accumulation of dextran in syrup. A food-grade microbial cell factory was constructed by introducing the dextranase encoding gene DEX from Chaetomium gracile to the chromosome of Bacillus subtilis , and the antibiotic resistance marker gene was subsequently deleted via the Cre/loxP strategy.  resulted in an 85% increase in DEX expression. Under the optimal fermentation conditions of 10 g/L maltose, 15 g/L casein, 1 g/L Na 2 HPO 4 , 1 g/L FeSO 4 and 8 g/L NaCl, DEX activity was increased from 2.625 to 64.34 U/mL. Recombinant DEX was purified 5.98-fold with a recovery ratio of 26.67% and specific activity of 3935.02 U/mg. Enzyme activity was optimal at a temperature of 55°C and pH 5.0, and remained 80.34% and 71.36% of the initial activity at 55°C and pH 4.0 after 60 min, respectively. The enzyme possessed high activity in the presence of Co 2+ , while Ag + showed the strongest inhibition ability. The optimal substrate was 20 g/L dextran T-2000. The findings could facilitate the low-cost, large-scale production of food-grade DEX for use in the sugar industry., We perform molecular simulations to characterize the structure and the thermo-mechanical behavior of crystalline alkali-silica reaction (ASR) products, which are layered silicate analogous to shlykovite. As charge-balancing cations, we study Na and K (the most relevant alkali involved in ASR) as well as Li (relevant for ASR therapy) and Cs (relevant for nuclear applications). For the first time, the thermal and elastic properties of these crystalline products are computed using molecular simulations. The simulations reveal that the charge-balancing cations control thermo-elastic properties of shlykovite, following the example of other phyllosilicates. Change balance ion affects the number of H-bonds in the order Cs &gt; K &gt; Na &gt; Li, and that observation can be associated with the variations in the computed thermo-mechanical properties. Using as input the elastic properties obtained from the molecular scale and assuming long-range disorder at the mesoscale (through a simplified representation of the gel scale), we provide mean-field homogenization estimates of the elastic constants at the gel scale that are consistent with indentation data. This result suggests a nanogranular texture of ASR gels., The filamentous microalga Tribonema sp. (Stramenopiles, Xanthophyceae) plays an important role in shallow water polar (streams and seepages) and seasonally cold habitats in temperate regions (ponds). In these habitats, freezing and desiccation, and thus freeze-thawing and drying-rewetting cycles, are frequent. These regions produce visible biomass and are important components of low temperature-adapted communities. We characterized the annual cycles of a Tribonema cf. minus population in two habitats (seepage and stream) in the High Arctic, Svalbard. Seasonality, locality and their combination (particularly changing environmental conditions) together with cultivation conditions of strains significantly affected their morphological characteristics. Morphological changes following hardening processes related to preparation for the winter period (transition from vegetative cells to akinete and/or pre-akinete) were recorded. Over the year, positive water temperatures (warmest 13.3°C) occurred for 5 months while negative (lowest temperature was - 17.4°C) lasted for 7 months. In winter, there were two melt periods. Vitality staining protocol showed a high number of viable (77.4 and 53.8%) and dormant cells (1.7 and 4.1%; capable of growth and reproduction once suitable conditions return) in the winter seepage and stream, respectively. NPQ and OJIP chlorophyll fluorescence parameters revealed several hours recovery of photosynthesis (both field and control samples). During recovery, only minor or mild stress on photosynthesis was detected. FV /FM values (the photosynthetic efficiency of photosystem II in a dark-adapted state) in all field and control samples varied around 0.4. Tribonema cf. minus is capable of surviving winter Arctic conditions (perennial strategy)., The aim of this study was to determine the essential element (Zn, Ca, K, Fe, Na, and Mg), essential trace element (Co, Mn, Cr, and Cu), and non-essential element (Pb, Ni, and Cd) contents of eight different Russula species (R. risigallina (Batsch) Sacc., R. cyanoxantha (Schaeff.) Fr., R. delica Fr., R. vinosa Lindblad, R. olivacea (Schaeff.) Fr., R. velenovskyi Melzer &amp; Zvára, R. turci Bres., and R. parazurea Jul. Schäff.) collected from Soguksu National Park (Turkey), which is a region away from the city center (Kizilcahamam, Ankara). In addition to the metal contents of these species, daily intake and health risk index values of the metals in question were also calculated and discussed. As a result of elemental analysis, the major elements were K (28980-58,380 mg/kg), Mg (704-1404 mg/kg), and Ca (190-1662 mg/kg). Except for R. risigallina, R. olivacea, and R. velenovskyi, elemental concentrations were within the limits that can be safely consumed as nutrients in terms of their metal content. The daily intakes of metal (DIM) values of R. risigallina and R. olivacea for Cr exceed the reference dose limits (3.80 and 3.87 μg/kg body weight/serving, respectively). According to the health risk index (HRI) measurements, the HRI values of R. risigallina and R. olivacea for Cr and of R. velenovskyi for Cd were found to be above 1.0 and could pose a health risk. In order to analyze the mineral composition variability of the studied mushroom species, principal component analysis (PCA) and the hierarchical cluster analysis (HCA) techniques were also performed. Regarding the significant correlations between all descriptors (r &gt; 0.7), there was a positive relationship between Mg-K, Ni-Co, Ni-Na, Cr-Ni, Cr-Co, Zn-Mg, Zn-K, Cd-Mg couples., Helicobacter pylori can be found in the stomach of about half of the humans, and a large population can be associated with serious diseases. To survive in the stomach H. pylori increases the pH locally by producing ammonia which binds to H+ becoming ammonium. This work investigated the effects on the in-vitro growth of H. pylori of a natural cation-exchanger mainly composed (≈70%) of clinoptilolite and mordenite. The zeolitized material from Cuba was evaluated in its original form (M), as well as in its Na- (M-Na) and Zn-exchanged (M-Zn) counterparts. In the preliminary agar cup diffusion test, H. pylori revealed susceptibility only to M-Zn, with a direct relationship between concentration and width of inhibition halo. Further experiments evidenced that bacterium replication increases when ammonium is supplied to the growth medium and decreases when zeolites subtract NH4+ via ion exchange. Due to the multi-cationic population of its zeolites M was not effective enough in removing ammonium and, in the Minimum Inhibitory Concentration (MIC) test, allowed bacterial growth even at a concentration of 50 mg/mL. Inhibition was achieved with M-Na because it contained sodium zeolites capable of maximizing NH4+ subtraction, although the MIC was high (30 mg/mL). M-Zn evidenced a more effective inhibitory capacity, with a MIC of 4 mg/mL. Zinc has antimicrobial properties and H. pylori growth was affected by Zn2+ released from clinoptilolite and mordenite. These zeolites, being more selective towards NH4+ than Zn2+, can also subtract ammonium to the bacterium, thus enhancing the efficacy of M-Zn., The Grignard reaction is a fundamental tool for constructing C-C bonds. Although it is widely used in synthetic chemistry, it is normally applied in early stage functionalizations owing to poor functional group tolerance and less availability of carbonyls at late stages of molecular modifications. Herein, we report a Grignard-type reaction with alcohols as carbonyl surrogates by using a ruthenium(II) PNP-pincer complex as catalyst. This transformation proceeds via a carbonyl intermediate generated in situ from the dehydrogenation of alcohols, which is followed by a Grignard-type reaction with a hydrazone carbanion to form a C-C bond. The reaction conditions are mild and can tolerate a broad range of substrates. Moreover, no oxidant is involved during the entire transformation, with only H2 and N2 being generated as byproducts. This reaction opens up a new avenue for Grignard-type reactions by enabling the use of naturally abundant alcohols as starting materials without the need for pre-synthesizing carbonyls., Silicon (Si) can alleviate salt stress by decreasing Na+ bypass flow in rice (Oryza sativa L.), however, the mechanisms underpinning remain veiled. In this study, we investigated the roles of OsLsi1 and OsLsi2 in Si-induced reduction of bypass flow and its resultant alleviation of salt stress by using lsi1 and lsi2 mutants (defective in OsLsi1 and OsLsi2, respectively) and their wild types (WTs). Under salt stress, Si promoted plant growth and decreased root-to-shoot Na+ translocation in WTs, but not in mutants. Simultaneously, quantitative estimation and fluorescent visualization of trisodium-8-hydroxy-1,3,6-pyrenetrisulphonic (PTS, an apoplastic tracer) showed Si reduced bypass flow in WTs, but not in mutants. Energy-dispersive X-ray microanalysis (EDX) showed Si was deposited at root endodermis in WTs, but not in mutants. Moreover, results obtained from root split experiment using lsi1 WT showed down-regulated expression of Si transport genes (OsLsi1 and OsLsi2) in root accelerated Si deposition at root endodermis. In summary, our results reveal that Si deposition at root endodermis and its resultant reduction of Na+ bypass flow is modulated by OsLsi1 and OsLsi2 and regulated by the expression of OsLsi1 and OsLsi2, implying that root Si deposition could be an active and physiologically-regulated process in rice., The spatial distribution and seasonal variations of atmospheric iodine (I), selenium (Se) and caesium (Cs) depositions remain unclear and this precludes adequate inputs for biogeochemical models. We quantified total concentrations and fluxes of these elements in rainfalls from 27 monitoring sites in France with contrasted climatic conditions; monthly measurements were taken over one year (starting in 2016/09). Since speciation of I and Se can impact their behaviour in the environment, analysis of their inorganic compounds was also conducted. Our results showed that annual I concentrations in rainfall were much higher than those of Se and Cs (annual means = 1.56, 0.044 and 0.005 μg L-1, respectively). The annual iodine concentrations were highly positively correlated with those of marine elements (i.e. Na, Cl and Mg), involving higher I concentrations under oceanic climate than for transition, continental and mountainous ones. Furthermore, common patterns were found between Se concentrations and both marine and terrestrial components consistent with the various sources of Se in atmosphere. The association of Cs with two anthropogenic components (i.e. NH4+ and NO3-) used in agriculture supports the hypothesis of its terrestrial origin (i.e. from atmospheric dusts) in rainfall. We found higher rainfall concentrations of I during the warmest months for all climates. However, no specific seasonal trend occurred for Se and Cs. On annual average, rainfall contained mostly unidentified selenium compounds (inorganic Se proportions = 25-54%) and equal proportions of inorganic and unidentified I compounds. Concentrations of iodate were higher under oceanic climate consistent with an iodine marine-origin., To develop novel carbon-based nanocarriers, we proposed grafting on the [60]Fullerene (C60) biologically active molecules. In this process, the formed derivatives described another approach to use photo-cycloaddition reactions for developing the third nanovector generation. As a result, the photoexcitation of C60 and azomethine ylide (AZMYtrp), with visible light, was considered as the most promising pathway to synthesize fulleropyrrolidine (FPL). After complexation with sodium cation (Na+), the error masses of FPL mono-, bis- and tris-adducts were remarkably decreased to -85.93 %, -53.99 % and -99.42 %, respectively. The formed FPL-Na+ complexes presented a significant capacity for trapping OH and OOH free radicals. In fact, their antiradical properties increased when Na+ was bonded with FPL-Na+ mono-adduct carbonyl oxygens. Comparing FPL bis-adducts regioisomers, under three different AZMYtrp forms, the neutral and anionic-neutral forms of FPL cis1 isomer were considered as the most reactive bis-nanocarriers with mole fractions of about 61 % and 46 %, respectively, in contrast to FPL-Na+, when the mixture was dominated by the anionic-neutral form of cis2 isomer with 50.34 %., Quantifying the occurrence of Antarctic antibiotic-resistant bacteria (ARB) is essential for assessing the level of pollution and assessing the “baseline” or background level of ARB in human uninhabited environments. Animal feces, soil, and sediments were sampled from Fildes Peninsula. The abundance of sulfamethazine- and ciprofloxacin-resistance bacteria and antibotic resistance genes (ARGs) within ARB were investigated. The results showed Ciprofloxacin- and Sulfamethazine-resistant bacteria isolated from samples accounted for the highest abundances of 30 CFU/g and 79.8 CFU/g, respectively. The dominant genus of Sulfamethazine-and quinolone-resistance bacteria was Pseudomonas and Arthrobacter, respectively. 106 ARGs were detected from ARB. Strong positive correlations between mobile genetic elements (MGEs) and ARGs were found, what is relatively novel observation that the mechanism is confirmed to also occur in the Antarctic. This study reveals the compositional characteristics of ARGs of strains in Antarctic, providing support for the source of Antarctic antibiotic resistance and drug resistance mechanisms., BACKGROUND: The cost of anticancer drugs is constantly growing. The aim of this study was determine the impact in terms of cost reduction for anticancer drug in the Italian Health Service due to patient participation in clinical trials. METHODS: We evaluated the cost of drugs administered to patients treated in clinical trials at the National Cancer Institute of Naples in a four-week time period. Patients with a diagnosis of different cancers were considered, including adjuvant therapy and treatment for advanced disease, pharma sponsored and investigator initiated phase I, II and III clinical studies. We defined the expected standard treatment for each patient and we calculated the cost of the standard antineoplastic drugs that should be administered in clinical practice outside clinical trials. We used the market price of drugs to determine the cost savings value. Costs other than drugs were not included in the cost saving calculation. RESULTS: From 23.10.2017 to 17.11.2017, 126 patients were treated in 34 pharma sponsored and investigator initiated clinical trials, using experimental drugs provided free of charge by the sponsors, for an overall number of 152 cycles of therapy. If these patients were treated with conventional therapies in clinical practice the cost of antineoplastic drugs would account for 517,658 Euros, with an average of 5487 Euros saved per patients for a period of 4 weeks. CONCLUSIONS: Clinical trials with investigational antineoplastic drugs provided free of charge by Sponsors render considerable cost savings, with a tangible benefit in clinical and administrative strategies to reduce drug expenditures., BACKGROUND: End-stage renal disease (ESRD) patients are at a substantially higher risk for developing cognitive impairment compared with the healthy population. Dialysis is an essential way to maintain the life of ESRD patients. Based on previous research, there isn’t an uncontested result whether cognition was improved or worsened during dialysis. METHODS: To explore the impact of dialysis treatment on cognitive performance, we recruited healthy controls (HCs), predialysis ESRD patients (predialysis group), and maintenance hemodialysis ESRD patients (HD group). All ESRD patients performed six blood biochemistry tests (hemoglobin, urea, cystatin C, Na+, K+, and parathyroid hormone). Neuropsychological tests were used to measure cognitive function. By using diffusion tensor imaging and graph-theory approaches, the topological organization of the whole-brain structural network was investigated. Generalized linear models (GLMs) were performed to investigate blood biochemistry predictors of the neuropsychological tests and the results of graph analyses in the HD group and predialysis group. RESULTS: Neuropsychological analysis showed the HD group exhibited better cognitive function than the predialysis group, but both were worse than HCs. Whole-brain graph analyses revealed that increased global efficiency and normalized shortest path length remained in the predialysis group and HD group than the HCs. Besides, a lower normalized clustering coefficient was found in the predialysis group relative to the HCs and HD group. For the GLM analysis, only the Cystatin C level was significantly associated with the average fiber length of rich club connections in the predialysis group. CONCLUSIONS: Our study revealed that dialysis had a limited effect on cognitive improvement., Regenerative therapies such as dental pulpal revascularization appear as an option for traumatized immature permanent teeth. However, the triple antibiotic paste - TAP (metronidazole, minocycline, and ciprofloxacin), used for these therapies, can generate cytotoxicity and dentin discoloration. In contrast, host defense peptides (HDPs) are promising antimicrobial and immunomodulatory biomolecules for dentistry. This study aimed to evaluate in vitro the antimicrobial activity (against Staphylococcus aureus and Enterococcus faecalis) and the immunomodulatory potential (by the evaluation of IL-1α, IL-6, IL-12, IL-10, TNF-α and NO, in RAW 264.7 macrophages and IL-6, TGF-β and NO, in L929 fibroblast) of synthetic peptides (DJK-6, IDR-1018, and IDR-1002), compared to TAP in an in vitro infection model containing heat-killed antigens from E. faecalis and S. aureus. Furthermore, the synergistic potential of ciprofloxacin and IDR-1002 was evaluated by checkerboard. Ciprofloxacin was the best antimicrobial of TAP, besides acting in synergism with IDR-1002. TAP was pro-inflammatory (p &lt; 0.05), while the association of ciprofloxacin and IDR-1002 presented an anti-inflammatory profile mainly in the presence of both heat-killed antigens (p &lt; 0.05). Based on these results, ciprofloxacin associated with IDR-1002 may demonstrate an efficient antimicrobial and immunomodulatory action in this in vitro model. Further in vivo studies may determine the real potential of this combination.</p>
+<p>doi: <a href="https://doi.org/10.1016/j.jconhyd.2020.103742" class="uri">https://doi.org/10.1016/j.jconhyd.2020.103742</a>, doi: <a href="https://doi.org/10.1016/j.neuroscience.2020.11.016" class="uri">https://doi.org/10.1016/j.neuroscience.2020.11.016</a>, doi: <a href="https://doi.org/10.1016/j.ijpharm.2020.120113" class="uri">https://doi.org/10.1016/j.ijpharm.2020.120113</a>, doi: <a href="https://doi.org/10.1016/j.jtos.2020.11.007" class="uri">https://doi.org/10.1016/j.jtos.2020.11.007</a>, doi: <a href="https://doi.org/10.1016/j.bbamcr.2020.118914" class="uri">https://doi.org/10.1016/j.bbamcr.2020.118914</a>, doi: <a href="https://doi.org/10.1111/apa.15688" class="uri">https://doi.org/10.1111/apa.15688</a>, doi: <a href="https://doi.org/10.1021/acs.inorgchem.0c01722" class="uri">https://doi.org/10.1021/acs.inorgchem.0c01722</a>, doi: <a href="https://doi.org/10.1002/cbdv.202000797" class="uri">https://doi.org/10.1002/cbdv.202000797</a>, doi: <a href="https://doi.org/10.1039/d0cp04955g" class="uri">https://doi.org/10.1039/d0cp04955g</a>, doi: <a href="https://doi.org/10.1111/jpy.13109" class="uri">https://doi.org/10.1111/jpy.13109</a>, doi: <a href="https://doi.org/10.1007/s11356-020-11833-6" class="uri">https://doi.org/10.1007/s11356-020-11833-6</a>, doi: <a href="https://doi.org/10.1007/s10653-020-00781-2" class="uri">https://doi.org/10.1007/s10653-020-00781-2</a>, doi: <a href="https://doi.org/10.1038/s41467-020-19857-9" class="uri">https://doi.org/10.1038/s41467-020-19857-9</a>, doi: <a href="https://doi.org/10.1016/j.plaphy.2020.11.015" class="uri">https://doi.org/10.1016/j.plaphy.2020.11.015</a>, doi: <a href="https://doi.org/10.1016/j.chemosphere.2020.128971" class="uri">https://doi.org/10.1016/j.chemosphere.2020.128971</a>, doi: <a href="https://doi.org/10.1016/j.colsurfb.2020.111457" class="uri">https://doi.org/10.1016/j.colsurfb.2020.111457</a>, doi: <a href="https://doi.org/10.1016/j.marpolbul.2020.111829" class="uri">https://doi.org/10.1016/j.marpolbul.2020.111829</a>, doi: <a href="https://doi.org/10.1186/s12913-020-05928-6" class="uri">https://doi.org/10.1186/s12913-020-05928-6</a>, doi: <a href="https://doi.org/10.1186/s12882-020-02176-y" class="uri">https://doi.org/10.1186/s12882-020-02176-y</a>, doi: <a href="https://doi.org/10.1016/j.micpath.2020.104634" class="uri">https://doi.org/10.1016/j.micpath.2020.104634</a></p>
+</details>
+<hr />
+</div>
+</div>
+
+
+<center>
+  These articles are automatically collected from PubMed <a href="https://github.com/PBPath/"> via these codes</a>. Among these articles the education committee will select the relevant ones to be included in the journal watch.
+  <br>
+  Please provide feedback <a href="https://pbpath.org/contact-us/"><b>here</b></a>
+  <br>
+  <a href="https://twitter.com/PBPath" class="twitter-follow-button" data-show-count="false">Follow @PBPath</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

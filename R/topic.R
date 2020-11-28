@@ -9,7 +9,7 @@ topic_pancreas    <- paste0(
 topic_gallbladder <- paste0("gallbladder[MeSH Terms] OR ",
                             "gallbladder[Title/Abstract]]")
 
-topic_bileducts   <- paste0(
+topic_bileduct   <- paste0(
     "bile ducts[MeSH Terms] OR ",
     "bile ducts[Title/Abstract]] OR ",
     "bile duct[Title/Abstract]] OR ",

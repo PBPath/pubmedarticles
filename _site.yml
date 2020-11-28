@@ -10,7 +10,7 @@ navbar:
     - text: "Ampulla"
       href: ampulla.html
     - text: "Bile Ducts"
-      href: bileducts.html
+      href: bileduct.html
     - text: "Gallbladder"
       href: gallbladder.html
     - text: "Today"

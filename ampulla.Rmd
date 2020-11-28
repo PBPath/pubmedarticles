@@ -1,0 +1,55 @@
+---
+title: "Ampulla"
+output: html_document
+---
+
+```{r global_options}
+knitr::opts_chunk$set(echo = TRUE,
+                      eval = TRUE,
+                      include = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      cache = FALSE
+                      )
+```
+
+
+**Read ampulla_PMIDs**
+
+```{r read ampulla_PMIDs}
+ampulla_PMIDs <- read.csv(file = "data/ampulla_PMIDs.txt",
+                           header = FALSE
+                           )
+
+exclude_ampulla_PMIDs <- read.csv(file = "data/exclude_ampulla_PMIDs.txt",
+                           header = FALSE
+                           )
+
+ampulla_PMIDs <-
+  ampulla_PMIDs$V1 %>% 
+  unique()
+
+ampulla_PMIDs <- 
+unique(ampulla_PMIDs[! ampulla_PMIDs %in% exclude_ampulla_PMIDs$V1])
+
+```
+
+
+```{r}
+out_ampulla = NULL
+# for (i in 1:length(ampulla_PMIDs)) {
+for (i in 1:3) {
+  value.ampulla_PMID <- ampulla_PMIDs[i]
+  out_ampulla = c(out_ampulla,
+          knitr::knit_expand('_ampulla_child.Rmd')
+  )
+  }
+
+```
+
+
+
+`r paste(knitr::knit(text = out_ampulla), collapse = '\n\n\n')`
+
+
+

@@ -16,9 +16,9 @@ searchQuery_gallbladder <-
            " AND hasabstract",
            collapse = "")
 
-searchQuery_bileducts   <-
+searchQuery_bileduct   <-
     paste0("(",
-           topic_bileducts,
+           topic_bileduct,
            ") AND (" ,
            journals,
            ")",

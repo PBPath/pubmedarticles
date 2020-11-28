@@ -1,0 +1,55 @@
+---
+title: "Gallbladder"
+output: html_document
+---
+
+```{r global_options}
+knitr::opts_chunk$set(echo = TRUE,
+                      eval = TRUE,
+                      include = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      cache = FALSE
+                      )
+```
+
+
+**Read gallbladder_PMIDs**
+
+```{r read gallbladder_PMIDs}
+gallbladder_PMIDs <- read.csv(file = "data/gallbladder_PMIDs.txt",
+                           header = FALSE
+                           )
+
+exclude_gallbladder_PMIDs <- read.csv(file = "data/exclude_gallbladder_PMIDs.txt",
+                           header = FALSE
+                           )
+
+gallbladder_PMIDs <-
+  gallbladder_PMIDs$V1 %>% 
+  unique()
+
+gallbladder_PMIDs <- 
+unique(gallbladder_PMIDs[! gallbladder_PMIDs %in% exclude_gallbladder_PMIDs$V1])
+
+```
+
+
+```{r}
+out_gallbladder = NULL
+# for (i in 1:length(gallbladder_PMIDs)) {
+for (i in 1:3) {
+  value.gallbladder_PMID <- gallbladder_PMIDs[i]
+  out_gallbladder = c(out_gallbladder,
+          knitr::knit_expand('_gallbladder_child.Rmd')
+  )
+  }
+
+```
+
+
+
+`r paste(knitr::knit(text = out_gallbladder), collapse = '\n\n\n')`
+
+
+

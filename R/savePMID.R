@@ -7,7 +7,7 @@ write(x = PMIDs_ampulla_articles,
       append = TRUE)
 
 write(x = PMIDs_bileduct_articles,
-      file = "data/bileducts_PMIDs.txt",
+      file = "data/bileduct_PMIDs.txt",
       append = TRUE)
 
 write(x = PMIDs_gallbladder_articles,
