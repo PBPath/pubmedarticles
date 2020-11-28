@@ -24,7 +24,7 @@ Sys.time()
 
 
 ```{r search PubMed, cache=FALSE}
-source("searchPubMed.R")
+# source("searchPubMed.R")
 ```
 
 

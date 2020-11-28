@@ -103,7 +103,6 @@ jobs:
           Rscript -e "if (!requireNamespace('RISmed')) install.packages('RISmed', type = 'source')"
 
 
-
       - name: "[Stage] After Success"
         if: matrix.config.os == 'macOS-latest' && matrix.config.r == 'release'
         run: Rscript -e "tic::after_success()"
