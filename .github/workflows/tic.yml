@@ -98,10 +98,10 @@ jobs:
 
       - name: "[Stage] Script"
         run: |
-          Rscript -e 'tic::script()'
+          Rscript -e "if (!requireNamespace('readr')) install.packages('readr', type = 'source')"
           Rscript -e "if (!requireNamespace('rentrez')) install.packages('rentrez', type = 'source')"
           Rscript -e "if (!requireNamespace('RISmed')) install.packages('RISmed', type = 'source')"
-
+          Rscript -e 'tic::script()'
 
       - name: "[Stage] After Success"
         if: matrix.config.os == 'macOS-latest' && matrix.config.r == 'release'
