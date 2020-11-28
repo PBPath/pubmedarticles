@@ -159,9 +159,6 @@ We encourage members to actively participate by recommending new articles and pr
 ## Pancreas {#pancreas}
 
 
-`r paste(knitr::knit(text = out_pancreas), collapse = '\n\n\n')`
-
-
 ---
 
 <a href="#top" target="_self">Back to top</a>
@@ -174,9 +171,6 @@ We encourage members to actively participate by recommending new articles and pr
 
 ## Gallbladder {#gallbladder}
 
-
-
-`r paste(knitr::knit(text = out_gallbladder), collapse = '\n\n\n')`
 
 
 
@@ -194,10 +188,6 @@ We encourage members to actively participate by recommending new articles and pr
 
 
 
-`r paste(knitr::knit(text = out_bileduct), collapse = '\n\n\n')`
-
-
-
 ---
 
 <a href="#top" target="_self">Back to top</a>
@@ -208,10 +198,6 @@ We encourage members to actively participate by recommending new articles and pr
 
 ## Ampulla {#ampulla}
 
-
-
-
-`r paste(knitr::knit(text = out_ampulla), collapse = '\n\n\n')`
 
 
 ---
