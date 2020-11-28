@@ -78,6 +78,8 @@ jobs:
         run: |
           Rscript -e "if (!requireNamespace('remotes')) install.packages('remotes', type = 'source')"
           Rscript -e "if (getRversion() < '3.2' && !requireNamespace('curl')) install.packages('curl', type = 'source')"
+          Rscript -e "if (!requireNamespace('dplyr')) install.packages('dplyr', type = 'source')"
+          Rscript -e "if (!requireNamespace('magrittr')) install.packages('magrittr', type = 'source')"
           Rscript -e "if (!requireNamespace('rentrez')) install.packages('rentrez', type = 'source')"
           Rscript -e "if (!requireNamespace('RISmed')) install.packages('RISmed', type = 'source')"
           Rscript -e "if (!requireNamespace('readr')) install.packages('readr', type = 'source')"
@@ -113,6 +115,7 @@ jobs:
         with:
           name: ${{ runner.os }}-r${{ matrix.config.r }}-results
           path: check
+
       - name: "[Stage] Before Deploy"
         run: |
           Rscript -e "tic::before_deploy()"
