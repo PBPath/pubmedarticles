@@ -81,6 +81,8 @@ jobs:
           Rscript -e "if (!requireNamespace('rentrez')) install.packages('rentrez', type = 'source')"
           Rscript -e "if (!requireNamespace('RISmed')) install.packages('RISmed', type = 'source')"
           Rscript -e "if (!requireNamespace('readr')) install.packages('readr', type = 'source')"
+          Rscript -e "if (!requireNamespace('RefManageR')) install.packages('RefManageR', type = 'source')"
+
 
       - name: "[Stage] [Linux] Install curl"
         if: runner.os == 'Linux'
