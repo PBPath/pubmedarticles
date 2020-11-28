@@ -1,0 +1,12 @@
+# Load Library
+suppressPackageStartupMessages(library("rmarkdown"))
+suppressPackageStartupMessages(library("tidyverse"))
+suppressPackageStartupMessages(library("readr"))
+suppressPackageStartupMessages(library("purrr"))
+suppressPackageStartupMessages(library("feedeR"))
+suppressPackageStartupMessages(library("dplyr"))
+suppressPackageStartupMessages(library("kableExtra"))
+suppressPackageStartupMessages(library("RefManageR"))
+suppressPackageStartupMessages(library("tidyverse"))
+suppressPackageStartupMessages(library("readxl"))
+suppressPackageStartupMessages(library("RefManageR"))

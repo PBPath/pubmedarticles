@@ -1,10 +1,39 @@
-name: "my-website"
+name: "Pancreatobiliary Pathology Society Journal Watch"
 navbar:
-  title: "My Website"
+  logo:
+    image: images/PBPath-Logo.jpg
+    href: https://pbpath.org/
+  title: "PBPath Journal Watch"
   left:
-    - text: "Home"
-      href: index.html
-    - text: "About"
-      href: about.html
+    - text: "Pancreas"
+      href: pancreas.html
+    - text: "Ampulla"
+      href: ampulla.html
+    - text: "Bile Ducts"
+      href: bileducts.html
+    - text: "Gallbladder"
+      href: gallbladder.html
     - text: "Today"
       href: today.html
+
+  right:
+    - icon: fa-envelope
+      href: mailto:info@pbpath.org
+    - icon: fa-commenting-o
+      href: https://pbpath.org/contact-us/
+    - icon: fa-twitter
+      href: https://twitter.com/PBPath/
+    - icon: fa-github
+      href: https://github.com/PBPath/
+output:
+  html_document:
+    include:
+      after_body: _footer.html
+theme: theme.css
+creative_commons: CC BY
+twitter:
+    site: "@PBPath"
+    creator: "@PBPath"
+repository_url: https://github.com/PBPath/
+base_url: https://pbpath.org/journal-watch-upcoming-issue-2/
+output_dir: "_site"

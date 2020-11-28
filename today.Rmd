@@ -1,5 +1,5 @@
 ---
-title: "Articles of Today"
+title: "Latest Search Workflow"
 date: '`r Sys.time()`'
 output: html_document
 ---
@@ -26,7 +26,7 @@ print(timelist)
 ```
 
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 suppressPackageStartupMessages({
   if (!requireNamespace('rentrez')) install.packages('rentrez')
   if (!requireNamespace('RISmed')) install.packages('RISmed')
@@ -35,7 +35,7 @@ suppressPackageStartupMessages({
 ```
 
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 
 today <- format(as.Date(Sys.Date(), "%B %d %Y"), "%Y/%d/%m")
 
@@ -53,20 +53,53 @@ my_fetched_articles <- RISmed::EUtilsGet(my_articles)
 ```
 
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 PMIDs <- my_fetched_articles@PMID
 ```
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 write(x = PMIDs,
       file = "data/pancreas_PMIDs.txt",
       append = TRUE)
 ```
 
+---
 
-```{r}
-PMID_file <- read.csv(file = "data/pancreas_PMIDs.txt")
-print(PMID_file)
+**pancreas_PMIDs**
+
+```{r pancreas_PMIDs}
+pancreas_PMIDs <- read.csv(file = "data/pancreas_PMIDs.txt")
+print(pancreas_PMIDs)
 ```
+
+
+----
+
+**ampulla_PMIDs**
+
+```{r ampulla_PMIDs}
+ampulla_PMIDs <- read.csv(file = "data/ampulla_PMIDs.txt")
+print(ampulla_PMIDs)
+```
+
+
+----
+
+**bileducts_PMIDs**
+
+```{r bileducts_PMIDs}
+bileducts_PMIDs <- read.csv(file = "data/bileducts_PMIDs.txt")
+print(bileducts_PMIDs)
+```
+
+----
+
+**gallbladder_PMIDs**
+
+```{r gallbladder_PMIDs}
+gallbladder_PMIDs <- read.csv(file = "data/gallbladder_PMIDs.txt")
+print(gallbladder_PMIDs)
+```
+
 
 
