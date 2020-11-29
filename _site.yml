@@ -38,3 +38,4 @@ repository_url: https://github.com/PBPath/
 output_dir: "_site"
 site: distill::distill_website
 output: distill::distill_article
+exclude: ["willadd"]

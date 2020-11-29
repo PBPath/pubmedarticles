@@ -3,3 +3,7 @@ Imports:
     - tibble
     - rentrez
     - RISmed
+    - rmarkdown
+    - readr
+    - RefManageR
+    - magrittr
