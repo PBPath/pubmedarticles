@@ -1,0 +1,56 @@
+---
+title: "Bileduct"
+output: html_document
+---
+
+```{r global_options}
+knitr::opts_chunk$set(echo = TRUE,
+                      eval = TRUE,
+                      include = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      cache = FALSE
+                      )
+```
+
+
+
+```{r read bileduct_PMIDs, include=FALSE}
+
+bileduct_PMIDs <- read.csv(file = "data/bileduct_PMIDs.txt",
+                           header = FALSE
+)
+
+exclude_bileduct_PMIDs <- read.csv(file = "data/exclude_bileduct_PMIDs.txt",
+                                   header = FALSE
+)
+
+bileduct_PMIDs$V1 <- unique(bileduct_PMIDs$V1)
+
+bileduct_PMIDs$V1 <- bileduct_PMIDs$V1[! bileduct_PMIDs$V1 %in% exclude_bileduct_PMIDs$V1]
+
+readr::write_csv(x = bileduct_PMIDs,
+      file = "data/bileduct_PMIDs.txt",
+      col_names = FALSE
+      )
+
+```
+
+
+```{r include=FALSE}
+out_bileduct = NULL
+for (i in 1:length(bileduct_PMIDs)) {
+  value.bileduct_PMID <- bileduct_PMIDs[i]
+  out_bileduct = c(out_bileduct,
+          knitr::knit_expand('_bileduct_child.Rmd')
+  )
+  }
+
+```
+
+
+
+`r paste(knitr::knit(text = out_bileduct), collapse = '\n\n\n')`
+
+
+

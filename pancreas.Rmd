@@ -1,0 +1,55 @@
+---
+title: "Pancreas"
+output: html_document
+---
+
+```{r global_options}
+knitr::opts_chunk$set(echo = TRUE,
+                      eval = TRUE,
+                      include = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      cache = FALSE
+                      )
+```
+
+
+```{r read pancreas_PMIDs, include=FALSE}
+
+pancreas_PMIDs <- read.csv(file = "data/pancreas_PMIDs.txt",
+                           header = FALSE
+)
+
+exclude_pancreas_PMIDs <- read.csv(file = "data/exclude_pancreas_PMIDs.txt",
+                                   header = FALSE
+)
+
+pancreas_PMIDs$V1 <- unique(pancreas_PMIDs$V1)
+
+pancreas_PMIDs$V1 <- pancreas_PMIDs$V1[! pancreas_PMIDs$V1 %in% exclude_pancreas_PMIDs$V1]
+
+readr::write_csv(x = pancreas_PMIDs,
+                 file = "data/pancreas_PMIDs.txt",
+                 col_names = FALSE
+)
+
+```
+
+
+```{r include=FALSE}
+out_pancreas = NULL
+for (i in 1:length(pancreas_PMIDs)) {
+  value.pancreas_PMID <- pancreas_PMIDs[i]
+  out_pancreas = c(out_pancreas,
+          knitr::knit_expand('_pancreas_child.Rmd')
+  )
+  }
+
+```
+
+
+
+`r paste(knitr::knit(text = out_pancreas), collapse = '\n\n\n')`
+
+
+
