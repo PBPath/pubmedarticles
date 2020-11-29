@@ -68,7 +68,8 @@ write(x = PMIDs,
 **pancreas_PMIDs**
 
 ```{r pancreas_PMIDs}
-pancreas_PMIDs <- read.csv(file = "data/pancreas_PMIDs.txt")
+pancreas_PMIDs <- read.csv(file = "data/pancreas_PMIDs.txt",
+                           header = FALSE)
 print(pancreas_PMIDs)
 ```
 
@@ -78,7 +79,8 @@ print(pancreas_PMIDs)
 **ampulla_PMIDs**
 
 ```{r ampulla_PMIDs}
-ampulla_PMIDs <- read.csv(file = "data/ampulla_PMIDs.txt")
+ampulla_PMIDs <- read.csv(file = "data/ampulla_PMIDs.txt",
+                           header = FALSE)
 print(ampulla_PMIDs)
 ```
 
@@ -88,7 +90,8 @@ print(ampulla_PMIDs)
 **bileduct_PMIDs**
 
 ```{r bileduct_PMIDs}
-bileduct_PMIDs <- read.csv(file = "data/bileduct_PMIDs.txt")
+bileduct_PMIDs <- read.csv(file = "data/bileduct_PMIDs.txt",
+                           header = FALSE)
 print(bileduct_PMIDs)
 ```
 
@@ -97,7 +100,8 @@ print(bileduct_PMIDs)
 **gallbladder_PMIDs**
 
 ```{r gallbladder_PMIDs}
-gallbladder_PMIDs <- read.csv(file = "data/gallbladder_PMIDs.txt")
+gallbladder_PMIDs <- read.csv(file = "data/gallbladder_PMIDs.txt",
+                           header = FALSE)
 print(gallbladder_PMIDs)
 ```
 

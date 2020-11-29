@@ -1,7 +1,7 @@
 name: "Pancreatobiliary Pathology Society Journal Watch"
 navbar:
   logo:
-    image: images/PBPath-Logo.jpg
+    image: images/PBPath-Logo.png
     href: https://pbpath.org/
   title: "PBPath Journal Watch"
   left:
@@ -35,5 +35,4 @@ twitter:
     site: "@PBPath"
     creator: "@PBPath"
 repository_url: https://github.com/PBPath/
-base_url: https://pbpath.org/journal-watch-upcoming-issue-2/
 output_dir: "_site"

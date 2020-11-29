@@ -37,8 +37,7 @@ unique(ampulla_PMIDs[! ampulla_PMIDs %in% exclude_ampulla_PMIDs$V1])
 
 ```{r}
 out_ampulla = NULL
-# for (i in 1:length(ampulla_PMIDs)) {
-for (i in 1:3) {
+for (i in 1:length(ampulla_PMIDs)) {
   value.ampulla_PMID <- ampulla_PMIDs[i]
   out_ampulla = c(out_ampulla,
           knitr::knit_expand('_ampulla_child.Rmd')

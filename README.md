@@ -1,4 +1,8 @@
-# tic.website
+# PBPath Journal Watch
+
+
+
+# CI
 
 [![Travis-CI Build Status](https://travis-ci.org/ropenscilabs/tic.website.svg?branch=master)](https://travis-ci.org/ropenscilabs/tic.website)
 [![Build status](https://ci.appveyor.com/api/projects/status/stsc7vkogh1v6w64?svg=true)](https://ci.appveyor.com/project/ropenscilabs/tic-website)
