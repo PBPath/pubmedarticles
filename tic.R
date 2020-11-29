@@ -1,10 +1,21 @@
 get_stage("install") %>%
   add_step(step_install_deps())
 
+print("stage install end")
+
 source(file = "searchPubMed.R")
+
+print("search pubmed end")
+
+source(file = "R/removeDuplicates.R")
+
+print("remove duplicates end")
 
 get_stage("deploy") %>%
   add_code_step(rmarkdown::render_site())
+
+print("render site end")
+
 
 if (ci_on_ghactions()) {
   get_stage("before_deploy") %>%
@@ -13,3 +24,5 @@ if (ci_on_ghactions()) {
   get_stage("deploy") %>%
     add_step(step_push_deploy(path = "_site", branch = "gh-pages"))
 }
+
+print("push end")
