@@ -24,7 +24,8 @@ Sys.time()
 
 
 ```{r search PubMed, cache=FALSE}
-# source("searchPubMed.R")
+source(file = "searchPubMed.R")
+source(file = "R/removeDuplicates.R")
 ```
 
 

@@ -37,8 +37,7 @@ unique(gallbladder_PMIDs[! gallbladder_PMIDs %in% exclude_gallbladder_PMIDs$V1])
 
 ```{r}
 out_gallbladder = NULL
-# for (i in 1:length(gallbladder_PMIDs)) {
-for (i in 1:3) {
+for (i in 1:length(gallbladder_PMIDs)) {
   value.gallbladder_PMID <- gallbladder_PMIDs[i]
   out_gallbladder = c(out_gallbladder,
           knitr::knit_expand('_gallbladder_child.Rmd')
