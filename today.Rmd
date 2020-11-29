@@ -1,0 +1,106 @@
+---
+title: "Latest Search Workflow"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+Sys.time()
+```
+
+
+
+```{r}
+x <- paste0("Time: ", as.character(Sys.time()))
+
+write(x = x,
+      file = "data/time.txt",
+      append = TRUE)
+```
+
+
+```{r}
+timelist <- read.csv(file = "data/time.txt",
+                     header = FALSE)
+
+timelist
+
+```
+
+
+```{r eval=FALSE, include=FALSE}
+
+# today <- format(as.Date(Sys.Date(), "%B %d %Y"), "%Y/%d/%m")
+
+# begin <- format(as.Date(Sys.Date() - 30, "%B %d %Y"), "%Y/%d/%m")
+
+# query <- 'pancreas'
+
+# my_articles <- RISmed::EUtilsSummary(query = query,
+#                                      type = 'esearch',
+#                                      db = 'pubmed',
+#                                      reldate = 10
+#                                    )
+
+# my_fetched_articles <- RISmed::EUtilsGet(my_articles)
+```
+
+
+```{r eval=FALSE, include=FALSE}
+# PMIDs <- my_fetched_articles@PMID
+```
+
+```{r eval=FALSE, include=FALSE}
+# write(x = PMIDs,
+#       file = "data/pancreas_PMIDs.txt",
+#       append = TRUE)
+```
+
+---
+
+**pancreas_PMIDs**
+
+```{r pancreas_PMIDs}
+pancreas_PMIDs <- read.csv(file = "data/pancreas_PMIDs.txt",
+                           header = FALSE)
+print(pancreas_PMIDs)
+```
+
+
+----
+
+**ampulla_PMIDs**
+
+```{r ampulla_PMIDs}
+ampulla_PMIDs <- read.csv(file = "data/ampulla_PMIDs.txt",
+                           header = FALSE)
+print(ampulla_PMIDs)
+```
+
+
+----
+
+**bileduct_PMIDs**
+
+```{r bileduct_PMIDs}
+bileduct_PMIDs <- read.csv(file = "data/bileduct_PMIDs.txt",
+                           header = FALSE)
+print(bileduct_PMIDs)
+```
+
+----
+
+**gallbladder_PMIDs**
+
+```{r gallbladder_PMIDs}
+gallbladder_PMIDs <- read.csv(file = "data/gallbladder_PMIDs.txt",
+                           header = FALSE)
+print(gallbladder_PMIDs)
+```
+
+
+
