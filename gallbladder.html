@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Gallbladder</title>
+
+<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">PBPath Journal Watch</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="pancreas.html">Pancreas</a>
+</li>
+<li>
+  <a href="ampulla.html">Ampulla</a>
+</li>
+<li>
+  <a href="bileduct.html">Bile Ducts</a>
+</li>
+<li>
+  <a href="gallbladder.html">Gallbladder</a>
+</li>
+<li>
+  <a href="today.html">Today</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:info@pbpath.org">
+    <span class="fa fa-envelope"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://pbpath.org/contact-us/">
+    <span class="fa fa-commenting-o"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/PBPath/">
+    <span class="fa fa-twitter"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/PBPath/">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Gallbladder</h1>
+
+</div>
+
+
+<pre class="r"><code>knitr::opts_chunk$set(echo = TRUE,
+                      eval = TRUE,
+                      include = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      cache = FALSE
+                      )</code></pre>
+<p><strong>Read gallbladder_PMIDs</strong></p>
+<pre class="r"><code>gallbladder_PMIDs &lt;- read.csv(file = &quot;data/gallbladder_PMIDs.txt&quot;,
+                           header = FALSE
+                           )
+
+exclude_gallbladder_PMIDs &lt;- read.csv(file = &quot;data/exclude_gallbladder_PMIDs.txt&quot;,
+                           header = FALSE
+                           )
+
+gallbladder_PMIDs &lt;-
+  gallbladder_PMIDs$V1 %&gt;% 
+  unique()
+
+gallbladder_PMIDs &lt;- 
+unique(gallbladder_PMIDs[! gallbladder_PMIDs %in% exclude_gallbladder_PMIDs$V1])</code></pre>
+<pre class="r"><code>out_gallbladder = NULL
+for (i in 1:length(gallbladder_PMIDs)) {
+  value.gallbladder_PMID &lt;- gallbladder_PMIDs[i]
+  out_gallbladder = c(out_gallbladder,
+          knitr::knit_expand(&#39;_gallbladder_child.Rmd&#39;)
+  )
+  }</code></pre>
+<div id="article-1" class="section level3">
+<h3>Article 1</h3>
+<div id="article-33225924." class="section level4">
+<h4>Article 33225924.</h4>
+<pre class="r"><code>PMID &lt;- &#39;33225924&#39;
+
+PMID</code></pre>
+<pre><code>## [1] &quot;33225924&quot;</code></pre>
+<pre class="r"><code>PubMedString &lt;- &quot;PubMed: https://www.ncbi.nlm.nih.gov/pubmed/?term=&quot;
+doiString &lt;- &quot;doi: https://doi.org/&quot;</code></pre>
+<pre class="r"><code>PMID &lt;- RefManageR::ReadPubMed(query = PMID,
+                               database = &#39;PubMed&#39;
+                               )
+
+citation &lt;- paste0(PMID$journal,
+                   &#39; &#39;,
+                   PMID$year,
+                   &#39; &#39;,
+                   PMID$month,
+                   &#39;;&#39;,
+                   PMID$volume,
+                   &#39;(&#39;,
+                   PMID$number,
+                   &#39;):&#39;,
+                   PMID$pages
+                   )
+
+PubMed_link &lt;- paste0(PubMedString, PMID$eprint)
+
+doi_link &lt;- paste0(doiString, PMID$doi)
+
+Sys.sleep(2)</code></pre>
+<details open>
+<summary>
+<ul>
+<li><strong>Modification of the 8th American Joint Committee on Cancer staging system for gallbladder carcinoma to improve prognostic precision</strong></li>
+</ul>
+</summary>
+<p><em>BMC cancer 2020 Nov;20(1):1129</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33225924" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33225924</a></p>
+<p>BACKGROUND: The 8th edition of the American Joint Committee on Cancer (AJCC) staging system for gallbladder carcinoma (GBC) came into force since 2018. However, the prognostic precision of this staging system has not been properly assessed. This study aimed to evaluate the latest staging system and suggest modifications to improve its prognostic precision. METHODS: Data of patients with GBC was included from the Surveillance, Epidemiology and End Results (SEER) database (2004-2015) and multicenter database (2010-2017). Baseline clinicopathologic characteristics were recorded including age, sex, race, grade, T category, N category, M category and stage. The Kaplan-Meier method was used to plot survival functions. The prediction power of the AJCC 8th edition and its modified version were evaluated using the concordance index (C-index). RESULTS: A total of 2779 GBC patients were included in the SEER database and 591 were collected from multicenter database. While no significant difference in survival of patients was observed between stages IVA and IVB using the 8th AJCC staging system (p &gt; 0.05), the prognosis of stage IIIA showed a slightly better outcome than stage IIIB (p = 0.046) in the SEER database. In the multicenter database, there was no significant difference between stage IIIA and stage IIIB (p &gt; 0.05). Similarly, no significant difference in the survival of patients between stages IIIA and IIIB was observed when M0 patients with at least 6 lymph nodes (LNs) were analyzed (p &gt; 0.05) for both SEER and multicenter database. On the other hand, a modified staging system was able to stratify patients from stage IIIA, stage IIIB and stage IV (p &lt; 0.001). For the SEER database, the C-indexes of 8th AJCC staging system and that of its modified version were 0.709 and 0.742, respectively. For the multicenter database, the C-index of 8th AJCC staging system and that of our modified version were 0.635 and 0.679, respectively. CONCLUSIONS: The modified 8th staging system proposed in this study can improve the prognostic precision of the 8th AJCC staging system for GBC. We therefore suggest including these modifications in the next update of AJCC staging system for GBC.</p>
+<p>doi: <a href="https://doi.org/10.1186/s12885-020-07578-7" class="uri">https://doi.org/10.1186/s12885-020-07578-7</a></p>
+</details>
+<hr />
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

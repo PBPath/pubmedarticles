@@ -85,6 +85,7 @@ jobs:
           Rscript -e "if (!requireNamespace('readr')) install.packages('readr', type = 'source')"
           Rscript -e "if (!requireNamespace('RefManageR')) install.packages('RefManageR', type = 'source')"
           Rscript -e "if (!requireNamespace('rmarkdown')) install.packages('rmarkdown', type = 'source')"
+          Rscript -e "if (!requireNamespace('distill')) install.packages('distill', type = 'source')"
 
 
       - name: "[Stage] [Linux] Install curl"
@@ -129,7 +130,7 @@ jobs:
           git config --local user.email "drserdarbalci@gmail.com"
           git config --local user.name "sbalci"
           git add .
-          git commit -m "Add changes"
+          git commit -m "CI added changes"
       - name: Push changes # push the output folder to your repo
         uses: ad-m/github-push-action@master
         with:

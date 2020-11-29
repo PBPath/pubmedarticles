@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Ampulla</title>
+
+<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">PBPath Journal Watch</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="pancreas.html">Pancreas</a>
+</li>
+<li>
+  <a href="ampulla.html">Ampulla</a>
+</li>
+<li>
+  <a href="bileduct.html">Bile Ducts</a>
+</li>
+<li>
+  <a href="gallbladder.html">Gallbladder</a>
+</li>
+<li>
+  <a href="today.html">Today</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:info@pbpath.org">
+    <span class="fa fa-envelope"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://pbpath.org/contact-us/">
+    <span class="fa fa-commenting-o"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/PBPath/">
+    <span class="fa fa-twitter"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/PBPath/">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Ampulla</h1>
+
+</div>
+
+
+<pre class="r"><code>knitr::opts_chunk$set(echo = TRUE,
+                      eval = TRUE,
+                      include = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      cache = FALSE
+                      )</code></pre>
+<p><strong>Read ampulla_PMIDs</strong></p>
+<pre class="r"><code>ampulla_PMIDs &lt;- read.csv(file = &quot;data/ampulla_PMIDs.txt&quot;,
+                           header = FALSE
+                           )
+
+exclude_ampulla_PMIDs &lt;- read.csv(file = &quot;data/exclude_ampulla_PMIDs.txt&quot;,
+                           header = FALSE
+                           )
+
+ampulla_PMIDs &lt;-
+  ampulla_PMIDs$V1 %&gt;% 
+  unique()
+
+ampulla_PMIDs &lt;- 
+unique(ampulla_PMIDs[! ampulla_PMIDs %in% exclude_ampulla_PMIDs$V1])</code></pre>
+<pre class="r"><code>out_ampulla = NULL
+for (i in 1:length(ampulla_PMIDs)) {
+  value.ampulla_PMID &lt;- ampulla_PMIDs[i]
+  out_ampulla = c(out_ampulla,
+          knitr::knit_expand(&#39;_ampulla_child.Rmd&#39;)
+  )
+  }</code></pre>
+<div id="article-1" class="section level3">
+<h3>Article 1</h3>
+<div id="article-33225446." class="section level4">
+<h4>Article 33225446.</h4>
+<pre class="r"><code>PMID &lt;- &#39;33225446&#39;
+
+PMID</code></pre>
+<pre><code>## [1] &quot;33225446&quot;</code></pre>
+<pre class="r"><code>PubMedString &lt;- &quot;PubMed: https://www.ncbi.nlm.nih.gov/pubmed/?term=&quot;
+doiString &lt;- &quot;doi: https://doi.org/&quot;</code></pre>
+<pre class="r"><code>PMID &lt;- RefManageR::ReadPubMed(query = PMID,
+                               database = &#39;PubMed&#39;
+                               )
+
+citation &lt;- paste0(PMID$journal,
+                   &#39; &#39;,
+                   PMID$year,
+                   &#39; &#39;,
+                   PMID$month,
+                   &#39;;&#39;,
+                   PMID$volume,
+                   &#39;(&#39;,
+                   PMID$number,
+                   &#39;):&#39;,
+                   PMID$pages
+                   )
+
+PubMed_link &lt;- paste0(PubMedString, PMID$eprint)
+
+doi_link &lt;- paste0(doiString, PMID$doi)
+
+Sys.sleep(2)</code></pre>
+<details open>
+<summary>
+<ul>
+<li><strong>Classification of intestinal T cell receptor repertoires using machine learning methods can identify patients with coeliac disease regardless of dietary gluten status</strong></li>
+</ul>
+</summary>
+<p><em>The Journal of pathology 2020 Nov;():</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33225446" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33225446</a></p>
+<p>In coeliac disease (CeD), immune-mediated small intestinal damage is precipitated by gluten, leading to variable symptoms and complications, occasionally including aggressive T-cell lymphoma. Diagnosis, based primarily on histopathological examination of duodenal biopsies, is confounded by poor concordance between pathologists and minimal histological abnormality if insufficient gluten is consumed. CeD pathogenesis involves both CD4+ T-cell-mediated gluten recognition and CD8+ and γδ T-cell mediated inflammation, with a previous study demonstrating a permanent change in γδ T-cell populations in CeD. We leveraged this understanding and explored the diagnostic utility of bulk T-cell receptor (TCR) sequencing in assessing duodenal biopsies in CeD. Genomic DNA extracted from duodenal biopsies underwent sequencing for TCR-δ (TRD) (CeD, n =11; non-CeD, n=11) and TCR-γ (TRG)) (CeD, n =33; non-CeD, n=21). We developed a novel machine learning-based analysis of the TCR repertoire, clustering samples by diagnosis. Leave-one-out cross-validation (LOOCV) was performed to validate the classification algorithm. Using TRD repertoire,100% (22/22) duodenal biopsies were correctly classified, with a LOOCV accuracy of 91%. Using TCR-γ (TRG) repertoire, 94.4% (51/54) duodenal biopsies were correctly classified, with LOOCV of 87%. Duodenal biopsy TRG repertoire analysis permitted accurate classification of biopsies from patients with CeD following a strict gluten-free diet for at least 6 months, who would be misclassified by current tests. This result reflects permanent changes to the duodenal γδ TCR repertoire in CeD, even in the absence of gluten consumption. Our method could complement or replace histopathological diagnosis in CeD and might have particular clinical utility in the diagnostic testing of patients unable to tolerate dietary gluten, and for assessing duodenal biopsies with equivocal features. This approach is generalisable to any TCR/ BCR locus and any sequencing platform, with potential to predict diagnosis or prognosis in conditions mediated or modulated by the adaptive immune response. This article is protected by copyright. All rights reserved.</p>
+<p>doi: <a href="https://doi.org/10.1002/path.5592" class="uri">https://doi.org/10.1002/path.5592</a></p>
+</details>
+<hr />
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

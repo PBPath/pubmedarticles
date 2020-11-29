@@ -25,10 +25,10 @@ navbar:
       href: https://twitter.com/PBPath/
     - icon: fa-github
       href: https://github.com/PBPath/
-output:
-  html_document:
-    include:
-      after_body: _footer.html
+# output:
+#   html_document:
+#     include:
+#       after_body: _footer.html
 theme: theme.css
 creative_commons: CC BY
 twitter:
@@ -36,3 +36,5 @@ twitter:
     creator: "@PBPath"
 repository_url: https://github.com/PBPath/
 output_dir: "_site"
+site: distill::distill_website
+output: distill::distill_article
