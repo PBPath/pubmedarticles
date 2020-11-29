@@ -21,18 +21,7 @@ gallbladder_PMIDs <- read.csv(file = "data/gallbladder_PMIDs.txt",
                               header = FALSE
 )
 
-exclude_gallbladder_PMIDs <- read.csv(file = "data/exclude_gallbladder_PMIDs.txt",
-                                      header = FALSE
-)
-
-gallbladder_PMIDs$V1 <- unique(gallbladder_PMIDs$V1)
-
-gallbladder_PMIDs$V1 <- gallbladder_PMIDs$V1[! gallbladder_PMIDs$V1 %in% exclude_gallbladder_PMIDs$V1]
-
-readr::write_csv(x = gallbladder_PMIDs,
-                 file = "data/gallbladder_PMIDs.txt",
-                 col_names = FALSE
-)
+gallbladder_PMIDs <- gallbladder_PMIDs$V1
 
 ```
 

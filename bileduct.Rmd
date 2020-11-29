@@ -21,18 +21,7 @@ bileduct_PMIDs <- read.csv(file = "data/bileduct_PMIDs.txt",
                            header = FALSE
 )
 
-exclude_bileduct_PMIDs <- read.csv(file = "data/exclude_bileduct_PMIDs.txt",
-                                   header = FALSE
-)
-
-bileduct_PMIDs$V1 <- unique(bileduct_PMIDs$V1)
-
-bileduct_PMIDs$V1 <- bileduct_PMIDs$V1[! bileduct_PMIDs$V1 %in% exclude_bileduct_PMIDs$V1]
-
-readr::write_csv(x = bileduct_PMIDs,
-      file = "data/bileduct_PMIDs.txt",
-      col_names = FALSE
-      )
+bileduct_PMIDs <- bileduct_PMIDs$V1
 
 ```
 

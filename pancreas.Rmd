@@ -20,18 +20,7 @@ pancreas_PMIDs <- read.csv(file = "data/pancreas_PMIDs.txt",
                            header = FALSE
 )
 
-exclude_pancreas_PMIDs <- read.csv(file = "data/exclude_pancreas_PMIDs.txt",
-                                   header = FALSE
-)
-
-pancreas_PMIDs$V1 <- unique(pancreas_PMIDs$V1)
-
-pancreas_PMIDs$V1 <- pancreas_PMIDs$V1[! pancreas_PMIDs$V1 %in% exclude_pancreas_PMIDs$V1]
-
-readr::write_csv(x = pancreas_PMIDs,
-                 file = "data/pancreas_PMIDs.txt",
-                 col_names = FALSE
-)
+pancreas_PMIDs <- pancreas_PMIDs$V1
 
 ```
 

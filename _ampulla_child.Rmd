@@ -2,7 +2,7 @@
 
 #### Article `r '{{value.ampulla_PMID}}'`.
 
-```{r {{value.ampulla_PMID}}, echo=TRUE}
+```{r {{value.ampulla_PMID}}, include=FALSE}
 
 PMID <- '{{value.ampulla_PMID}}'
 
@@ -11,13 +11,13 @@ PMID
 ```
 
 
-```{r}
+```{r include=FALSE}
 PubMedString <- "PubMed: https://www.ncbi.nlm.nih.gov/pubmed/?term="
 doiString <- "doi: https://doi.org/"
 ```
 
 
-```{r}
+```{r include=FALSE}
 PMID <- RefManageR::ReadPubMed(query = PMID,
                                database = 'PubMed'
                                )

@@ -7,10 +7,6 @@ source(file = "searchPubMed.R")
 
 print("search pubmed end")
 
-source(file = "R/removeDuplicates.R")
-
-print("remove duplicates end")
-
 get_stage("deploy") %>%
   add_code_step(rmarkdown::render_site())
 

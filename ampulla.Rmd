@@ -20,19 +20,7 @@ ampulla_PMIDs <- read.csv(file = "data/ampulla_PMIDs.txt",
                           header = FALSE
 )
 
-exclude_ampulla_PMIDs <- read.csv(file = "data/exclude_ampulla_PMIDs.txt",
-                                  header = FALSE
-)
-
-ampulla_PMIDs$V1 <- unique(ampulla_PMIDs$V1)
-
-ampulla_PMIDs$V1 <- ampulla_PMIDs$V1[! ampulla_PMIDs$V1 %in% exclude_ampulla_PMIDs$V1]
-
-
-readr::write_csv(x = ampulla_PMIDs,
-                 file = "data/ampulla_PMIDs.txt",
-                 col_names = FALSE
-)
+ampulla_PMIDs <- ampulla_PMIDs$V1
 
 ```
 
