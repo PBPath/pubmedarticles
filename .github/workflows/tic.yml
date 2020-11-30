@@ -88,6 +88,25 @@ jobs:
           Rscript -e "if (!requireNamespace('distill')) install.packages('distill', type = 'source')"
 
 
+      - name: search PubMed
+        run: |
+          Rscript -e "source(file = 'searchPubMed.R')"
+
+
+      - name: Commit files
+        run: |
+          git config --local user.email "drserdarbalci@gmail.com"
+          git config --local user.name "sbalci"
+          git add .
+          git commit -m "CI added changes `date +'%Y-%m-%d %H:%M:%S'`"
+      - name: Push changes # push the output folder to your repo
+        uses: ad-m/github-push-action@master
+        with:
+          # branch: B77 #ignore if your branch is master
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
+
+
       - name: "[Stage] [Linux] Install curl"
         if: runner.os == 'Linux'
         run: sudo apt install libcurl4-openssl-dev

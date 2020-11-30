@@ -3,9 +3,9 @@ get_stage("install") %>%
 
 print("stage install end")
 
-source(file = "searchPubMed.R")
+# source(file = "searchPubMed.R")
 
-print("search pubmed end")
+# print("search pubmed end")
 
 get_stage("deploy") %>%
   add_code_step(rmarkdown::render_site())
