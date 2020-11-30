@@ -16,7 +16,7 @@ navbar:
     - text: "Today"
       href: today.html
     - text: "Combined"
-      href: combined.html
+      href: PBPathJournalWatch.html
 
   right:
     - icon: fa-envelope
