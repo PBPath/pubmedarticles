@@ -18,7 +18,11 @@ exclude_pancreas_PMIDs <- read.csv(file = "data/exclude_pancreas_PMIDs.txt",
 )
 
 
-pancreas_PMIDs$V1 <- pancreas_PMIDs$V1[! pancreas_PMIDs$V1 %in% exclude_pancreas_PMIDs$V1]
+pancreas_PMIDs2 <- pancreas_PMIDs$V1[! pancreas_PMIDs$V1 %in% exclude_pancreas_PMIDs$V1]
+
+pancreas_PMIDs <- NULL
+pancreas_PMIDs$V1 <- pancreas_PMIDs2
+pancreas_PMIDs <- as.data.frame(pancreas_PMIDs)
 
 readr::write_csv(x = pancreas_PMIDs,
                  file = "data/pancreas_PMIDs.txt",
@@ -45,7 +49,11 @@ exclude_ampulla_PMIDs <- read.csv(file = "data/exclude_ampulla_PMIDs.txt",
 )
 
 
-ampulla_PMIDs$V1 <- ampulla_PMIDs$V1[! ampulla_PMIDs$V1 %in% exclude_ampulla_PMIDs$V1]
+ampulla_PMIDs2 <- ampulla_PMIDs$V1[! ampulla_PMIDs$V1 %in% exclude_ampulla_PMIDs$V1]
+
+ampulla_PMIDs <- NULL
+ampulla_PMIDs$V1 <- ampulla_PMIDs2
+ampulla_PMIDs <- as.data.frame(ampulla_PMIDs)
 
 readr::write_csv(x = ampulla_PMIDs,
                  file = "data/ampulla_PMIDs.txt",
@@ -72,7 +80,12 @@ exclude_gallbladder_PMIDs <- read.csv(file = "data/exclude_gallbladder_PMIDs.txt
 )
 
 
-gallbladder_PMIDs$V1 <- gallbladder_PMIDs$V1[! gallbladder_PMIDs$V1 %in% exclude_gallbladder_PMIDs$V1]
+gallbladder_PMIDs2 <- gallbladder_PMIDs$V1[! gallbladder_PMIDs$V1 %in% exclude_gallbladder_PMIDs$V1]
+
+gallbladder_PMIDs <- NULL
+gallbladder_PMIDs$V1 <- gallbladder_PMIDs2
+gallbladder_PMIDs <- as.data.frame(gallbladder_PMIDs)
+
 
 readr::write_csv(x = gallbladder_PMIDs,
                  file = "data/gallbladder_PMIDs.txt",
@@ -100,7 +113,12 @@ exclude_bileduct_PMIDs <- read.csv(file = "data/exclude_bileduct_PMIDs.txt",
 )
 
 
-bileduct_PMIDs$V1 <- bileduct_PMIDs$V1[! bileduct_PMIDs$V1 %in% exclude_bileduct_PMIDs$V1]
+bileduct_PMIDs2 <- bileduct_PMIDs$V1[! bileduct_PMIDs$V1 %in% exclude_bileduct_PMIDs$V1]
+
+bileduct_PMIDs <- NULL
+bileduct_PMIDs$V1 <- bileduct_PMIDs2
+bileduct_PMIDs <- as.data.frame(bileduct_PMIDs)
+
 
 readr::write_csv(x = bileduct_PMIDs,
                  file = "data/bileduct_PMIDs.txt",
