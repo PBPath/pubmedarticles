@@ -1,0 +1,73 @@
+---
+title: "Combined"
+output: html_document
+---
+
+
+---
+
+# PBPath Journal Watch Articles {.tabset .tabset-fade .tabset-pills #pbpath_jw}
+
+---
+
+
+
+\pagebreak
+
+
+
+
+## Pancreas {#pancreas}
+
+
+---
+
+<a href="#top" target="_self">Back to top</a>
+
+---
+
+\pagebreak
+
+
+
+## Gallbladder {#gallbladder}
+
+
+
+
+
+---
+
+<a href="#top" target="_self">Back to top</a>
+
+---
+
+\pagebreak
+
+
+## Bile Duct {#bileduct}
+
+
+
+---
+
+<a href="#top" target="_self">Back to top</a>
+
+---
+
+\pagebreak
+
+## Ampulla {#ampulla}
+
+---
+
+`r paste(knitr::knit(text = out_ampulla), collapse = '\n\n\n')`
+
+
+
+<a href="#top" target="_self">Back to top</a>
+
+---
+
+\pagebreak
+

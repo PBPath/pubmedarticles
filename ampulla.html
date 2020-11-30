@@ -89,6 +89,7 @@ code span.wa { color: #545454; font-weight: bold; font-style: italic; } /* Warni
 
 
   <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
+  <link rel="icon" type="image/png" href="images/PBPath-Logo.png"/>
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -107,7 +108,7 @@ code span.wa { color: #545454; font-weight: bold; font-style: italic; } /* Warni
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["Ampulla"]},{"type":"character","attributes":{},"value":["html_document"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Ampulla"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2306,6 +2307,7 @@ code span.wa { color: #545454; font-weight: bold; font-style: italic; } /* Warni
 <a href="bileduct.html">Bile Ducts</a>
 <a href="gallbladder.html">Gallbladder</a>
 <a href="today.html">Today</a>
+<a href="combined.html">Combined</a>
 </div>
 <div class="nav-right">
 <a href="mailto:info@pbpath.org">
@@ -2340,66 +2342,190 @@ code span.wa { color: #545454; font-weight: bold; font-style: italic; } /* Warni
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<h3 id="article-1">Article 1</h3>
-<h4 id="article-c33225446-33198671-33189127-33156108-33135146-33124049-33123857-33069083-33060017-33036568-33028218-33020209-33010250.">Article c(33225446, 33198671, 33189127, 33156108, 33135146, 33124049, 33123857, 33069083, 33060017, 33036568, 33028218, 33020209, 33010250).</h4>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='va'>PMID</span> <span class='op'>&lt;-</span> <span class='st'>'c(33225446, 33198671, 33189127, 33156108, 33135146, 33124049, 33123857, 33069083, 33060017, 33036568, 33028218, 33020209, 33010250)'</span>
-
-<span class='va'>PMID</span>
-</code></pre>
-</div>
-<pre><code>[1] &quot;c(33225446, 33198671, 33189127, 33156108, 33135146, 33124049, 33123857, 33069083, 33060017, 33036568, 33028218, 33020209, 33010250)&quot;</code></pre>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='va'>PubMedString</span> <span class='op'>&lt;-</span> <span class='st'>"PubMed: https://www.ncbi.nlm.nih.gov/pubmed/?term="</span>
-<span class='va'>doiString</span> <span class='op'>&lt;-</span> <span class='st'>"doi: https://doi.org/"</span>
-</code></pre>
-</div>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='va'>PMID</span> <span class='op'>&lt;-</span> <span class='fu'>RefManageR</span><span class='fu'>::</span><span class='fu'><a href='https://docs.ropensci.org/RefManageR/reference/ReadPubMed.html'>ReadPubMed</a></span><span class='op'>(</span>query <span class='op'>=</span> <span class='va'>PMID</span>,
-                               database <span class='op'>=</span> <span class='st'>'PubMed'</span>
-                               <span class='op'>)</span>
-
-<span class='va'>citation</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='va'>PMID</span><span class='op'>$</span><span class='va'>journal</span>,
-                   <span class='st'>' '</span>,
-                   <span class='va'>PMID</span><span class='op'>$</span><span class='va'>year</span>,
-                   <span class='st'>' '</span>,
-                   <span class='va'>PMID</span><span class='op'>$</span><span class='va'>month</span>,
-                   <span class='st'>';'</span>,
-                   <span class='va'>PMID</span><span class='op'>$</span><span class='va'>volume</span>,
-                   <span class='st'>'('</span>,
-                   <span class='va'>PMID</span><span class='op'>$</span><span class='va'>number</span>,
-                   <span class='st'>'):'</span>,
-                   <span class='va'>PMID</span><span class='op'>$</span><span class='va'>pages</span>
-                   <span class='op'>)</span>
-
-<span class='va'>PubMed_link</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='va'>PubMedString</span>, <span class='va'>PMID</span><span class='op'>$</span><span class='va'>eprint</span><span class='op'>)</span>
-
-<span class='va'>doi_link</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='va'>doiString</span>, <span class='va'>PMID</span><span class='op'>$</span><span class='va'>doi</span><span class='op'>)</span>
-
-<span class='fu'><a href='https://rdrr.io/r/base/Sys.sleep.html'>Sys.sleep</a></span><span class='op'>(</span><span class='fl'>2</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
+<!-- ### Article 1 -->
+<!-- #### Article 33225446. -->
 <details open>
 <summary>
 <ul>
-<li><hr /></li>
+<li><strong>Classification of intestinal T cell receptor repertoires using machine learning methods can identify patients with coeliac disease regardless of dietary gluten status</strong></li>
 </ul>
 </summary>
-<ul>
-<li>;():*</li>
-</ul>
-<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=</a></p>
-<p>doi: <a href="https://doi.org/" class="uri">https://doi.org/</a></p>
+<p><em>The Journal of pathology 2020 Nov;():</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33225446" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33225446</a></p>
+<p>In coeliac disease (CeD), immune-mediated small intestinal damage is precipitated by gluten, leading to variable symptoms and complications, occasionally including aggressive T-cell lymphoma. Diagnosis, based primarily on histopathological examination of duodenal biopsies, is confounded by poor concordance between pathologists and minimal histological abnormality if insufficient gluten is consumed. CeD pathogenesis involves both CD4+ T-cell-mediated gluten recognition and CD8+ and γδ T-cell mediated inflammation, with a previous study demonstrating a permanent change in γδ T-cell populations in CeD. We leveraged this understanding and explored the diagnostic utility of bulk T-cell receptor (TCR) sequencing in assessing duodenal biopsies in CeD. Genomic DNA extracted from duodenal biopsies underwent sequencing for TCR-δ (TRD) (CeD, n =11; non-CeD, n=11) and TCR-γ (TRG)) (CeD, n =33; non-CeD, n=21). We developed a novel machine learning-based analysis of the TCR repertoire, clustering samples by diagnosis. Leave-one-out cross-validation (LOOCV) was performed to validate the classification algorithm. Using TRD repertoire,100% (22/22) duodenal biopsies were correctly classified, with a LOOCV accuracy of 91%. Using TCR-γ (TRG) repertoire, 94.4% (51/54) duodenal biopsies were correctly classified, with LOOCV of 87%. Duodenal biopsy TRG repertoire analysis permitted accurate classification of biopsies from patients with CeD following a strict gluten-free diet for at least 6 months, who would be misclassified by current tests. This result reflects permanent changes to the duodenal γδ TCR repertoire in CeD, even in the absence of gluten consumption. Our method could complement or replace histopathological diagnosis in CeD and might have particular clinical utility in the diagnostic testing of patients unable to tolerate dietary gluten, and for assessing duodenal biopsies with equivocal features. This approach is generalisable to any TCR/ BCR locus and any sequencing platform, with potential to predict diagnosis or prognosis in conditions mediated or modulated by the adaptive immune response. This article is protected by copyright. All rights reserved.</p>
+<p>doi: <a href="https://doi.org/10.1002/path.5592" class="uri">https://doi.org/10.1002/path.5592</a></p>
 </details>
 <hr />
+<!-- ### Article 2 -->
+<!-- #### Article 33198671. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Phase 2 study of lenvatinib monotherapy as second-line treatment in unresectable biliary tract cancer: primary analysis results</strong></li>
+</ul>
+</summary>
+<p><em>BMC cancer 2020 Nov;20(1):1105</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33198671" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33198671</a></p>
+<p>BACKGROUND: Biliary tract cancer (BTC) has a poor prognosis and lacks a standardized second-line therapy. Vascular endothelial growth factor (VEGF), fibroblast growth factor receptor (FGFR) 4, and platelet-derived growth factor receptor (PDGFR) are highly expressed in BTC. Therefore, lenvatinib (a known inhibitor of VEGF receptors 1-3, FGFRs 1-4, and PDGFR-α) was evaluated for second-line treatment of BTC. METHODS: In this single-arm, multicenter, open-label, phase 2 study, patients with BTC received lenvatinib 24 mg orally once daily in 28-day cycles. The primary endpoint was objective response rate (ORR). Secondary endpoints included overall survival (OS), progression-free survival (PFS), PFS rate at 12 weeks, disease control rate, clinical benefit rate, safety and pharmacokinetic profiles. RESULTS: Twenty-six Japanese patients were enrolled and treated; 3 had a confirmed partial response per investigator assessment and per independent imaging review (IIR); ORR was 11.5% (90% confidence interval [CI]: 3.2-27.2). Median PFS was 3.19 months (95% CI: 2.79-7.23) per investigator assessment and 1.64 months (95% CI: 1.41-3.19) per IIR. Median OS was 7.35 months (95% CI: 4.50-11.27). Grade ≥ 3 treatment-emergent adverse events (TEAEs) occurred in 21 patients (80.8%) and included hypertension (n = 10 [38.5%]), proteinuria (n = 3 [11.5%]), palmar-plantar erythrodysesthesia (n = 3 [11.5%]), decreased appetite (n = 3 [11.5%]), and anemia (n = 3 [11.5%]). Two deaths occurred due to TEAEs between treatment initiation and 30 days after last dose, but neither were considered treatment related. CONCLUSIONS: Lenvatinib demonstrated antitumor activity in BTC, with a tolerable safety profile, and should be further evaluated as potential second-line therapy for this difficult to treat population. TRIAL REGISTRATION: ClinicalTrials.gov NCT02579616 . Date of registration: October 19, 2015.</p>
+<p>doi: <a href="https://doi.org/10.1186/s12885-020-07365-4" class="uri">https://doi.org/10.1186/s12885-020-07365-4</a></p>
+</details>
+<hr />
+<!-- ### Article 3 -->
+<!-- #### Article 33189127. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Recent epidemiology of patients with gastro-entero-pancreatic neuroendocrine neoplasms (GEP-NEN) in Japan: a population-based study</strong></li>
+</ul>
+</summary>
+<p><em>BMC cancer 2020 Nov;20(1):1104</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33189127" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33189127</a></p>
+<p>BACKGROUND: The worldwide prevalence and incidence of neuroendocrine neoplasms (NEN) have been increasing recently, although few studies have analyzed data on the current situation of NENs in Japan. Here, the Japan Neuroendocrine Tumor Society (JNETS) planned to investigate the recent incidence and distribution of these tumors using data from the national cancer registry started in 2016. This study examined the incidence and distribution of primary sites as well as rate of advanced disease from this population-based registry. METHODS: A retrospective, population-based study using data from the national cancer registry in Japan (NCR) was conducted to evaluate patients with gastro-entero-pancreatic NEN (GEP-NEN) in 2016. Associated population data were used to determine annual age-adjusted incidences. RESULTS: A total of 6735 individuals were diagnosed with GEP-NEN in Japan in 2016. Annual onset incidence was 0.70/100,000 for pancreatic NEN and 2.84/100,000 for gastrointestinal NEN. NEN in the ileum accounted for only 1% of total GEP-NENs in Japan. Most NENs in the esophagus or lungs were neuroendocrine carcinomas (NECs), while the majority of those in the duodenum, ileum, appendix and rectum were grade 1 neuroendocrine tumors (NETs). Median age at initial diagnosis was in between 60 to 65. Tumors in the duodenum, appendix and rectum were mostly limited to local, while those in the esophagus, stomach and colon tended to show distant metastasis. In Japan, initial treatment for GEP-NENs was resection even if the tumor was NEC. CONCLUSIONS: This is the first report of a national registry-based incidence and distribution of GEP-NEN in Japan. These data will serve as an important first step to determining the exact etiology and trends for this pathology in Japan.</p>
+<p>doi: <a href="https://doi.org/10.1186/s12885-020-07581-y" class="uri">https://doi.org/10.1186/s12885-020-07581-y</a></p>
+</details>
+<hr />
+<!-- ### Article 4 -->
+<!-- #### Article 33156108. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Evidence of Duodenal Epithelial Barrier Impairment and Increased Pyroptosis in Patients With Functional Dyspepsia on Confocal Laser Endomicroscopy and “Ex Vivo” Mucosa Analysis</strong></li>
+</ul>
+</summary>
+<p><em>The American journal of gastroenterology 2020 11;115(11):1891-1901</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33156108" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33156108</a></p>
+<p>INTRODUCTION: Duodenal epithelial barrier impairment and immune activation may play a role in the pathogenesis of functional dyspepsia (FD). This study was aimed to evaluate the duodenal epithelium of patients with FD and healthy individuals for detectable microscopic structural abnormalities. METHODS: This is a prospective study using esophagogastroduodenoscopy enhanced with duodenal confocal laser endomicroscopy (CLE) and mucosal biopsies in patients with FD (n = 16) and healthy controls (n = 18). Blinded CLE images analysis evaluated the density of epithelial gaps (cell extrusion zones), a validated endoscopic measure of the intestinal barrier status. Analyses of the biopsied duodenal mucosa included standard histology, quantification of mucosal immune cells/cytokines, and immunohistochemistry for inflammatory epithelial cell death called pyroptosis. Transepithelial electrical resistance (TEER) was measured using Ussing chambers. Epithelial cell-to-cell adhesion proteins expression was assessed by real-time polymerase chain reaction. RESULTS: Patients with FD had significantly higher epithelial gap density on CLE in the distal duodenum than that of controls (P = 0.002). These mucosal abnormalities corresponded to significant changes in the duodenal biopsy samples of patients with FD, compared with controls, including impaired mucosal integrity by TEER (P = 0.009) and increased number of epithelial cells undergoing pyroptosis (P = 0.04). Reduced TEER inversely correlated with the severity of certain dyspeptic symptoms. Furthermore, patients with FD demonstrated altered duodenal expression of claudin-1 and interleukin-6. No differences in standard histology were found between the groups. DISCUSSION: This is the first report of duodenal CLE abnormalities in patients with FD, corroborated by biopsy findings of epithelial barrier impairment and increased cell death, implicating that duodenal barrier disruption is a pathogenesis factor in FD and introducing CLE a potential diagnostic biomarker in FD.</p>
+<p>doi: <a href="https://doi.org/10.14309/ajg.0000000000000827" class="uri">https://doi.org/10.14309/ajg.0000000000000827</a></p>
+</details>
+<hr />
+<!-- ### Article 5 -->
+<!-- #### Article 33135146. -->
+<details open>
+<summary>
+<ul>
+<li><strong>A New Medial-to-Lateral Approach for Laparoscopic D3 Lymphadenectomy plus Complete Mesocolic Excision (D3 + CME) for Right-Sided Colon Cancer</strong></li>
+</ul>
+</summary>
+<p><em>Annals of surgical oncology 2020 Nov;():</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33135146" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33135146</a></p>
+<p>BACKGROUND: D3 lymphadenectomy is important for accurate staging and provides long-term benefits, especially for T3-4/N + tumors.1,2 Both D3 lymphadenectomy as well as complete mesocolic excision (CME) require central ligation of vessels at their origins to ensure radical resection.3 Currently, superior mesentery vein (SMV) is navigated by ileocolic vessels while its sheath is dissected stepwise from caudal to cranial.4-6 This report describes a new medial-to-lateral approach for laparoscopic right hemicolectomy with D3 + CME. METHODS: The patient was a 47-year-old man with diagnosis of hepatic flexure cancer (cT4N1M0). First, the pedicle of the middle colic vessels and ileocolic vessels were both grasped, then the sheath of SMV was dissected at its left side as there are fewer blood vessels entering here compared with its right side. Second, after identification of middle colic artery (MCA), SMV was skeletonized from medial to lateral and no. 213 and no. 203 lymph nodes were dissected. Third, MCA and ileocolic vein and artery (ICV and ICA) were ligated at their roots. After separating the transverse mesocolon from the duodenum, the branches of the Henle trunk were exposed and no. 223 lymph nodes were dissected. Accessory right colic vein, right colic vein, and middle colic vein were ligated respectively. Fourth, the ascending mesocolon was separated from the retroperitoneal tissues through the front side of Toldt’s fascia, the mesocolon was mobilized completely, and the tumor was removed en bloc. RESULTS: The operation time was 175 min, with estimated blood loss of 50 ml. The patient recovered well without bleeding complications and was discharged on postoperative day 7. Histology revealed moderately differentiated adenocarcinoma with 5 of 24 lymph nodes involved (pT3N2M0). CONCLUSIONS: The medial-to-lateral approach presented in the video might be helpful for standardization of laparoscopic D3 + CME for right-sided colon cancer.</p>
+<p>doi: <a href="https://doi.org/10.1245/s10434-020-09264-1" class="uri">https://doi.org/10.1245/s10434-020-09264-1</a></p>
+</details>
+<hr />
+<!-- ### Article 6 -->
+<!-- #### Article 33124049. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Non-Conventional Dysplasia of The Tubular Gut: A Review and Illustration of Their Histomorphologic Spectrum</strong></li>
+</ul>
+</summary>
+<p><em>Histopathology 2020 Oct;():</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33124049" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33124049</a></p>
+<p>The increasing use of gastrointestinal endoscopic procedures has led to the recognition by histopathologists of non-conventional (or special-type) dysplasias of the gastrointestinal tract. These lesions can be recognized in association with prevalent gastrointestinal underlying conditions, such as Barrett oesophagus, chronic atrophic gastritis, and inflammatory bowel disease. The diagnosis of these special types can be challenging, and their biologic behaviours are not fully characterized. The aim of this review is to provide a global view of non-conventional dysplastic lesions observed in the various segments of the tubular gastrointestinal tract and describe their salient features. Furthermore, as the clinical implications of these various subtypes have not been broadly tested in practice and are not represented in most management guidelines, we offer guidance on the best management practices for these lesions.</p>
+<p>doi: <a href="https://doi.org/10.1111/his.14294" class="uri">https://doi.org/10.1111/his.14294</a></p>
+</details>
+<hr />
+<!-- ### Article 7 -->
+<!-- #### Article 33123857. -->
+<details open>
+<summary>
+<ul>
+<li><strong>How to Perform Total Laparoscopic Duodenum-Preserving Pancreatic Head Resection Safely and Efficiently with Innovative Techniques</strong></li>
+</ul>
+</summary>
+<p><em>Annals of surgical oncology 2020 Oct;():</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33123857" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33123857</a></p>
+<p>BACKGROUND: Although rapid progress has been achieved in laparoscopic pancreaticoduodenectomy (PD) over the last decade, laparoscopic duodenum-preserving pancreatic head resection (LDPPHR) remains a challenging surgery that has been rarely reported due to not only requiring complicated pancreaticojejunostomy (PJ) but also ensuring sufficient blood supplies to duodenum and common bile duct (CBD). We completed LDPPHR for 22 patients safely and efficiently with innovative techniques. PATIENTS AND METHODS: Clinical outcomes, including rate of conversion to laparotomy, time of residual pancreatic duct reconstruction, incidence of postoperative complications, and time of hospital stay, were collected for 22 consecutive patients who underwent LDPPHR with innovative techniques as follows: application of indocyanine green (ICG) to visualize and preserve CBD and the vessels supplying the duodenum and CBD, Hong’s PJ, and pancreatic duct end-to-end anastomosis (ETEA) for the residual pancreas. RESULTS: All surgeries were performed successfully under laparoscopy except for one case. The duration of ETEA was significantly shorter than PJ (18.2 ± 5.1 min versus 27.5 ± 8.3 min, p &lt; 0.05). There was no significant difference in incidence of postoperative complications between the Hong’s PJ and ETEA group. The overall incidence of postoperative pancreatic fistula (POPF) in the Hong’s PJ and ETEA group was 23.5% and 20%, respectively, without grade C fistula. All complications were resolved after conservative treatment. CONCLUSIONS: By utilizing intraoperative ICG navigation, LDPPHR is a minimally invasive, safe, and efficient approach for chronic pancreatitis with pancreatic head stones by using pancreatic duct ETEA and benign or low-grade malignant tumors of the pancreatic head by using Hong’s PJ.</p>
+<p>doi: <a href="https://doi.org/10.1245/s10434-020-09233-8" class="uri">https://doi.org/10.1245/s10434-020-09233-8</a></p>
+</details>
+<hr />
+<!-- ### Article 8 -->
+<!-- #### Article 33069083. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Patterns of Mycobacterium avium-intracellulare complex infection in duodenal endoscopic biopsies in HIV/AIDS patients</strong></li>
+</ul>
+</summary>
+<p><em>Annals of diagnostic pathology 2020 Oct;49():151638</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33069083" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33069083</a></p>
+<p>Mycobacterium avium-intracellulare complex (MAIC) is a nontuberculous opportunistic infection in immunocompromised patients. Involvement of the gastrointestinal tract (GIT) is usually part of a disseminated disease in AIDS patients with a low CD4 count, however with standard antiretroviral therapy (ART), a localized presentation is more likely. It can affect any part of the GIT, mostly the duodenum and typically as patches. Incomplete or refractory ART for HIV-strains, therapy-related side effects, noncompliant or incomplete treatment to previous MAIC infections, superimposed complications and comorbid opportunistic infections may result in atypical clinical, endoscopic and histopathologic manifestations. We performed a retrospective review study retrieving cases of MAIC in duodenal endoscopic biopsy. We found five cases of MAIC in HIV/AIDS patients. They were males with an average age of 40-years. They showed different histopathologic features, variable patterns of MAIC-histiocytic infiltrates, and varying intensity of intracellular acid-fast positive bacilli. Enterocytes vacuolization and transepithelial elimination were also observed. Three cases were associated with cytomegalovirus and cryptococcal infections. A case was complicated by lymphangiectasia-associated protein-losing enteropathy. Initially, three cases were morphologically missed. Ziehl-Neelsen stain helped reach the correct diagnosis. Pathologists have an important role in patients’ management by guiding clinicians to the correct diagnosis. Pathologists should be aware of these different histopathologic manifestations, their potential pitfalls, look for certain helpful clues complemented with multiple levels and special stains. In particular, AFB stains are mandatory in all mucosal biopsy specimens from HIV/AIDS patients regardless of their appearances.</p>
+<p>doi: <a href="https://doi.org/10.1016/j.anndiagpath.2020.151638" class="uri">https://doi.org/10.1016/j.anndiagpath.2020.151638</a></p>
+</details>
+<hr />
+<!-- ### Article 9 -->
+<!-- #### Article 33060017. -->
+<details open>
+<summary>
+<ul>
+<li><strong>The use of immunohistochemistry for IgG4 in the diagnosis of autoimmune pancreatitis: A systematic review and meta-analysis</strong></li>
+</ul>
+</summary>
+<p><em>Pancreatology : official journal of the International Association of Pancreatology (IAP) … [et al.] 2020 Dec;20(8):1611-1619</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33060017" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33060017</a></p>
+<p>BACKGROUND: The diagnosis of autoimmune pancreatitis (AIP) remains challenging, especially when serum IgG4 is normal or imaging features are indeterminate. We performed a systematic review and meta-analysis to evaluate the performance of IgG4 immunostaining of pancreatic, biliary, and ampullary tissues as a diagnostic aid for AIP. METHODS: A comprehensive literature search of the PubMed, EMBASE, and Ovid MEDLINE databases was conducted until February 2020. The methodological quality of each study was assessed according to the Quality Assessment of Diagnostic Accuracy Studies checklist. A random-effects model was used to summarize the diagnostic odds ratio and other measures of accuracy. RESULTS: The meta-analysis included 20 studies comprising 346 patients with AIP and 590 patients with other pancreatobiliary diseases, including 371 pancreatobiliary malignancies. The summary estimates for tissue IgG4 in discriminating AIP and controls were as follows: diagnostic odds ratio 38.86 (95% confidence interval (CI), 18.70-80.75); sensitivity 0.64 (95% CI, 0.59-0.69); specificity 0.93 (95% CI, 0.91-0.95). The area under the curve was 0.939 for tissue IgG4 in discriminating AIP and controls. Subgroup analysis revealed no significant difference in diagnostic accuracy according to control groups (pancreatobiliary cancer versus other chronic pancreatitis) and sampling site (pancreas versus bile duct/ampulla). CONCLUSIONS: Current data demonstrate that IgG4 immunostaining of pancreatic, biliary, and ampullary tissue has a high specificity but moderate sensitivity for diagnosing AIP. IgG4 immunostaining may be useful in supporting a diagnosis of AIP when AIP is clinically suspected, but a combination of imaging and serology does not provide a conclusive diagnosis.</p>
+<p>doi: <a href="https://doi.org/10.1016/j.pan.2020.10.028" class="uri">https://doi.org/10.1016/j.pan.2020.10.028</a></p>
+</details>
+<hr />
+<!-- ### Article 10 -->
+<!-- #### Article 33036568. -->
+<details open>
+<summary>
+<ul>
+<li><strong>A retrospective study on the association of gastrointestinal symptoms in children with low lactase activity and low activity of other disaccharidases</strong></li>
+</ul>
+</summary>
+<p><em>BMC gastroenterology 2020 Oct;20(1):331</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33036568" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33036568</a></p>
+<p>BACKGROUND: Disaccharides such as lactose and sucrose are sugars commonly found in human diet. They are broken down by mucosal disaccharidases in the duodenum. Previous small studies found no associations between gastrointestinal (GI) symptoms and combined low disaccharidase activity. We aim to explore the associations of low activity of disaccharidase and combinations of low activity of different disaccharidases with general GI symptom presentations in a large cohort of pediatric patients. METHODS: We examined a cohort (0-21 yrs.) who have undergone esophagogastroduodenoscopy and received disaccharidase activity assay from duodenal biopsy in the time period 2010 to 2012. Disaccharidase assays tested for activity of lactase, sucrase, maltase, and palatinase. GI symptoms were grouped into four categories, abdominal pain, diarrhea, weight loss, and gastroesophageal reflux. RESULTS: Of the 347 subjects, we found an association between low lactase activity and abdominal pain (OR = 1.78; 95% CI = 1.07-2.97; p &lt; 0.05). Subjects with a lactase/sucrase ratio &lt; 0.2 were found to be associated with abdominal pain (OR = 2.25; 95% CI = 1.25-4.04; p &lt; 0.05), Subjects with low pandisaccharidase may be correlated with abdominal pain and have a unique frequency of GI symptoms due to low frequency of diarrhea and weight loss, but they were not statistically significant. CONCLUSIONS: Low activities of certain disaccharidase combinations may be associated with GI symptoms in subjects; a prospective study may be needed to investigate further.</p>
+<p>doi: <a href="https://doi.org/10.1186/s12876-020-01443-4" class="uri">https://doi.org/10.1186/s12876-020-01443-4</a></p>
+</details>
+<hr />
+<!-- ### Article 11 -->
+<!-- #### Article 33028218. -->
+<details open>
+<summary>
+<ul>
+<li><strong>A unique type of fully covered metal stent for the management of post liver transplant biliary anastomotic strictures</strong></li>
+</ul>
+</summary>
+<p><em>BMC gastroenterology 2020 Oct;20(1):329</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33028218" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33028218</a></p>
+<p>BACKGROUND: We report our experience of treating anastomotic strictures using a novel type of fully covered metal stent (FCSEMS). This stent, known as the Kaffes Stent, is short-length with an antimigration waist and is easily removable due to long retrieval wires deployed within the duodenum. METHODS: Sixty-two patients underwent ERCP and Kaffes stent insertion for post-transplant anastomotic strictures following confirmation of a stricture on MRCP. These patients were retrospectively analysed for immediate and long-term stricture resolution, improvement in symptoms and liver function tests (LFTs), stricture recurrence and complication rates. RESULTS: Of the 56 patients who had their stent removed at the time of analysis, 54 (96%) had immediate stricture resolution and 42 continued to have long-term resolution (mean follow-up period was 548 days). Of the 16 patients with symptoms of biliary obstruction, 13 had resolution of their symptoms. Overall, there was a significant improvement in LFTs after stent removal compared to before stent insertion. Complication rates were 15% with only one patient requiring biliary reconstruction. CONCLUSIONS: The Kaffes stent is effective and safe at resolving post liver transplant biliary anastomotic strictures.</p>
+<p>doi: <a href="https://doi.org/10.1186/s12876-020-01479-6" class="uri">https://doi.org/10.1186/s12876-020-01479-6</a></p>
+</details>
+<hr />
+<!-- ### Article 12 -->
+<!-- #### Article 33020209. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Identification of new enterosynes using prebiotics: roles of bioactive lipids and mu-opioid receptor signalling in humans and mice</strong></li>
+</ul>
+</summary>
+<p><em>Gut 2020 Oct;():</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33020209" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33020209</a></p>
+<p>OBJECTIVE: The enteric nervous system (ENS) plays a key role in controlling the gut-brain axis under normal and pathological conditions, such as type 2 diabetes. The discovery of intestinal actors, such as enterosynes, able to modulate the ENS-induced duodenal contraction is considered an innovative approach. Among all the intestinal factors, the understanding of the role of gut microbes in controlling glycaemia is still developed. We studied whether the modulation of gut microbiota by prebiotics could permit the identification of novel enterosynes. DESIGN: We measured the effects of prebiotics on the production of bioactive lipids in the intestine and tested the identified lipid on ENS-induced contraction and glucose metabolism. Then, we studied the signalling pathways involved and compared the results obtained in mice to human. RESULTS: We found that modulating the gut microbiota with prebiotics modifies the actions of enteric neurons, thereby controlling duodenal contraction and subsequently attenuating hyperglycaemia in diabetic mice. We discovered that the signalling pathway involved in these effects depends on the synthesis of a bioactive lipid 12-hydroxyeicosatetraenoic acid (12-HETE) and the presence of mu-opioid receptors (MOR) on enteric neurons. Using pharmacological approaches, we demonstrated the key role of the MOR receptors and proliferator-activated receptor γ for the effects of 12-HETE. These findings are supported by human data showing a decreased expression of the proenkephalin and MOR messanger RNAs in the duodenum of patients with diabetic. CONCLUSIONS: Using a prebiotic approach, we identified enkephalin and 12-HETE as new enterosynes with potential real beneficial and safety impact in diabetic human.</p>
+<p>doi: <a href="https://doi.org/10.1136/gutjnl-2019-320230" class="uri">https://doi.org/10.1136/gutjnl-2019-320230</a></p>
+</details>
+<hr />
+<!-- ### Article 13 -->
+<!-- #### Article 33010250. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Combinatorial Transcriptional Profiling of Mouse and Human Enteric Neurons Identifies Shared and Disparate Subtypes In Situ</strong></li>
+</ul>
+</summary>
+<p><em>Gastroenterology 2020 Sep;():</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33010250" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33010250</a></p>
+<p>BACKGROUND &amp; AIMS: The enteric nervous system (ENS) coordinates essential intestinal functions through the concerted action of diverse enteric neurons (ENs). However, integrated molecular knowledge of EN subtypes is lacking. To compare human and mouse ENs, we transcriptionally profiled healthy ENS from adult humans and mice. We aimed to identify transcripts marking discrete neuron subtypes and visualize conserved EN subtypes for humans and mice in multiple bowel regions. METHODS: Human myenteric ganglia and adjacent smooth muscle were isolated by laser-capture microdissection for RNA sequencing. Ganglia-specific transcriptional profiles were identified by computationally subtracting muscle gene signatures. Nuclei from mouse myenteric neurons were isolated and subjected to single-nucleus RNA sequencing, totaling more than 4 billion reads and 25,208 neurons. Neuronal subtypes were defined using mouse single-nucleus RNA sequencing data. Comparative informatics between human and mouse data sets identified shared EN subtype markers, which were visualized in situ using hybridization chain reaction. RESULTS: Several EN subtypes in the duodenum, ileum, and colon are conserved between humans and mice based on orthologous gene expression. However, some EN subtype-specific genes from mice are expressed in completely distinct morphologically defined subtypes in humans. In mice, we identified several neuronal subtypes that stably express gene modules across all intestinal segments, with graded, regional expression of 1 or more marker genes. CONCLUSIONS: Our combined transcriptional profiling of human myenteric ganglia and mouse EN provides a rich foundation for developing novel intestinal therapeutics. There is congruency among some EN subtypes, but we note multiple species differences that should be carefully considered when relating findings from mouse ENS research to human gastrointestinal studies.</p>
+<p>doi: <a href="https://doi.org/10.1053/j.gastro.2020.09.032" class="uri">https://doi.org/10.1053/j.gastro.2020.09.032</a></p>
+</details>
+<hr />
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -1,6 +1,5 @@
 ---
 title: "Gallbladder"
-output: html_document
 ---
 
 ```{r global_options}

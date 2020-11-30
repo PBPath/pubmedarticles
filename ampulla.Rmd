@@ -1,6 +1,5 @@
 ---
 title: "Ampulla"
-output: html_document
 ---
 
 ```{r global_options}

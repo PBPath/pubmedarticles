@@ -1,6 +1,5 @@
 ---
 title: "Bileduct"
-output: html_document
 ---
 
 ```{r global_options}

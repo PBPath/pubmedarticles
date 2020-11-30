@@ -1,6 +1,6 @@
-### Article {{i}}
+<!-- ### Article {{i}} -->
 
-#### Article `r '{{value.ampulla_PMID}}'`.
+<!-- #### Article `r '{{value.ampulla_PMID}}'`. -->
 
 ```{r {{value.ampulla_PMID}}, include=FALSE}
 

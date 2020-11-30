@@ -1,6 +1,6 @@
-### Article {{i}}
+<!-- ### Article {{i}} -->
 
-#### Article `r '{{value.gallbladder_PMID}}'`.
+<!-- #### Article `r '{{value.gallbladder_PMID}}'`. -->
 
 ```{r {{value.gallbladder_PMID}}, include=FALSE}
 
