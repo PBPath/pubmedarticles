@@ -1,5 +1,5 @@
 ---
-title: "Combined"
+title: "PBPath Journal Watch"
 output: html_document
 ---
 
