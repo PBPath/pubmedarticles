@@ -105,8 +105,9 @@ jobs:
 
 
 # added by Serdar
+
       - name: "Add Libraries"
-      - run: |
+        run: |
           Rscript -e "if (!requireNamespace('dplyr')) install.packages('dplyr', type = 'source')"
           Rscript -e "if (!requireNamespace('magrittr')) install.packages('magrittr', type = 'source')"
           Rscript -e "if (!requireNamespace('rentrez')) install.packages('rentrez', type = 'source')"
@@ -116,10 +117,8 @@ jobs:
           Rscript -e "if (!requireNamespace('rmarkdown')) install.packages('rmarkdown', type = 'source')"
           Rscript -e "if (!requireNamespace('distill')) install.packages('distill', type = 'source')"
 
-      - name: search PubMed
+      - name: "search PubMed"
         run: Rscript -e "source(file = 'searchPubMed.R')"
-
-
 
 
       - name: "[Stage] Script"
