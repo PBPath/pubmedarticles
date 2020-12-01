@@ -17,7 +17,6 @@ output: html_document
 
 ---
 
-`r paste(knitr::knit(text = out_pancreas), collapse = '\n\n\n')`
 
 
 <a href="#top" target="_self">Back to top</a>
@@ -32,7 +31,6 @@ output: html_document
 
 ---
 
-`r paste(knitr::knit(text = out_gallbladder), collapse = '\n\n\n')`
 
 
 <a href="#top" target="_self">Back to top</a>
@@ -46,7 +44,6 @@ output: html_document
 
 ---
 
-`r paste(knitr::knit(text = out_bileduct), collapse = '\n\n\n')`
 
 
 <a href="#top" target="_self">Back to top</a>
@@ -60,7 +57,6 @@ output: html_document
 
 ---
 
-`r paste(knitr::knit(text = out_ampulla), collapse = '\n\n\n')`
 
 
 
