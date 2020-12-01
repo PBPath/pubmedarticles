@@ -104,7 +104,7 @@ jobs:
           echo -e 'options(Ncpus = 4, pkgType = "source", repos = structure(c(CRAN = "https://cloud.r-project.org/")))' > $HOME/.Rprofile
           Rscript -e "remotes::install_github('ropensci/tic')" -e "print(tic::dsl_load())" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
 
-# added by Serdar
+      # added by Serdar
       - name: "Add Libraries"
       - run: |
           Rscript -e "if (!requireNamespace('dplyr')) install.packages('dplyr', type = 'source')"
@@ -132,13 +132,6 @@ jobs:
           # branch: B77 #ignore if your branch is master
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
-
-
-
-
-
-
-
 
 
       - name: "[Stage] Script"
