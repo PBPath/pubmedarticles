@@ -126,7 +126,6 @@ jobs:
           git config --local user.name "sbalci"
           git add .
           git commit -m "CI added changes `date +'%Y-%m-%d %H:%M:%S'`"
-
       - name: Push changes # push the output folder to your repo
         uses: ad-m/github-push-action@master
         with:
