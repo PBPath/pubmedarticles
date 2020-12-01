@@ -48,4 +48,9 @@ print(paste0("Save PMIDs Started at: ", Sys.time()))
 source("R/savePMID.R")
 print(paste0("Save PMIDs Ended at: ", Sys.time()))
 
+# Save dataframes ----
+print(paste0("Save DFs Started at: ", Sys.time()))
+source("R/saveDF.R")
+print(paste0("Save DFs Ended at: ", Sys.time()))
+
 sink()

@@ -6,7 +6,8 @@
 
 PMID <- '{{value.gallbladder_PMID}}'
 
-PMID
+gb_article <- gallbladder[gallbladder[["PMID"]] == PMID, ]
+
 
 ```
 
@@ -18,40 +19,38 @@ doiString <- "doi: https://doi.org/"
 
 
 ```{r include=FALSE}
-PMID <- RefManageR::ReadPubMed(query = PMID,
-                               database = 'PubMed'
-                               )
 
-citation <- paste0(PMID$journal,
+article_citation <- paste0(gb_article$Title,
                    ' ',
-                   PMID$year,
+                   gb_article$YearArticleDate,
                    ' ',
-                   PMID$month,
+                   gb_article$MonthArticleDate,
                    ';',
-                   PMID$volume,
+                   gb_article$Volume,
                    '(',
-                   PMID$number,
-                   '):',
-                   PMID$pages
+                   gb_article$Issue,
+                   ')'
                    )
 
-PubMed_link <- paste0(PubMedString, PMID$eprint)
+article_citation <- gsub(pattern = 'NA', replacement = '', x = article_citation)
 
-doi_link <- paste0(doiString, PMID$doi)
+PubMed_link <- paste0(PubMedString, gb_article$PMID)
 
-Sys.sleep(2)
+doi_link <- paste0(doiString, gb_article$DOI)
 
 ```
 
+
+
 <details open> <summary>
-- **`r PMID$title`**
+- **`r gb_article$Title`**
 </summary>
 
-*`r citation`*
+*`r article_citation`*
 
 `r PubMed_link`
 
-`r PMID$abstract`
+`r gb_article$AbstractText`
 
 `r doi_link`
 

@@ -16,11 +16,11 @@ knitr::opts_chunk$set(echo = TRUE,
 
 ```{r read gallbladder_PMIDs, include=FALSE}
 
-gallbladder_PMIDs <- read.csv(file = "data/gallbladder_PMIDs.txt",
-                              header = FALSE
-)
+gallbladder <- readr::read_csv(file = "data/gallbladderarticles.txt", col_names = TRUE)
 
-gallbladder_PMIDs <- gallbladder_PMIDs$V1
+tidyr::replace_na(gallbladder, list(c("")))
+
+gallbladder_PMIDs <- gallbladder$PMID
 
 ```
 

@@ -31,6 +31,21 @@ output: html_document
 
 ---
 
+`r paste(knitr::knit(text = out_gallbladder), collapse = '\n\n\n')`
+
+
+```{r}
+df_gb <- readr::read_csv(file = "data/gallbladderarticles.txt", col_names = TRUE)
+df_gb[["PMID"]] <- as.character(df_gb[["PMID"]])
+
+```
+
+```{r, layout="l-body-outset"}
+rmarkdown::paged_table(df_gb)
+```
+
+
+
 
 
 <a href="#top" target="_self">Back to top</a>
@@ -43,7 +58,6 @@ output: html_document
 ## Bile Duct {#bileduct}
 
 ---
-
 
 
 <a href="#top" target="_self">Back to top</a>
