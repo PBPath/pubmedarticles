@@ -23,7 +23,7 @@ jobs:
         config:
           # use a different tic template type if you do not want to build on all listed platforms
           - { os: macOS-latest, r: "release", pkgdown: "true", latex: "true" }
-          - { os: ubuntu-latest, r: "devel" }
+          # - { os: ubuntu-latest, r: "devel" }
 
     env:
       # otherwise remotes::fun() errors cause the build to fail. Example: Unavailability of binaries
@@ -102,6 +102,25 @@ jobs:
         run: |
           echo -e 'options(Ncpus = 4, pkgType = "source", repos = structure(c(CRAN = "https://cloud.r-project.org/")))' > $HOME/.Rprofile
           Rscript -e "remotes::install_github('ropensci/tic')" -e "print(tic::dsl_load())" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
+
+
+# added by Serdar
+      - name: "Add Libraries"
+      - run: |
+          Rscript -e "if (!requireNamespace('dplyr')) install.packages('dplyr', type = 'source')"
+          Rscript -e "if (!requireNamespace('magrittr')) install.packages('magrittr', type = 'source')"
+          Rscript -e "if (!requireNamespace('rentrez')) install.packages('rentrez', type = 'source')"
+          Rscript -e "if (!requireNamespace('RISmed')) install.packages('RISmed', type = 'source')"
+          Rscript -e "if (!requireNamespace('readr')) install.packages('readr', type = 'source')"
+          Rscript -e "if (!requireNamespace('RefManageR')) install.packages('RefManageR', type = 'source')"
+          Rscript -e "if (!requireNamespace('rmarkdown')) install.packages('rmarkdown', type = 'source')"
+          Rscript -e "if (!requireNamespace('distill')) install.packages('distill', type = 'source')"
+
+      - name: search PubMed
+        run: Rscript -e "source(file = 'searchPubMed.R')"
+
+
+
 
       - name: "[Stage] Script"
         run: Rscript -e 'tic::script()'
