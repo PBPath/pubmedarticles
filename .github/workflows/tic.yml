@@ -110,6 +110,7 @@ jobs:
         run: |
           Rscript -e "if (!requireNamespace('dplyr')) install.packages('dplyr', type = 'source')"
           Rscript -e "if (!requireNamespace('magrittr')) install.packages('magrittr', type = 'source')"
+          Rscript -e "if (!requireNamespace('tidyr')) install.packages('tidyr', type = 'source')"
           Rscript -e "if (!requireNamespace('rentrez')) install.packages('rentrez', type = 'source')"
           Rscript -e "if (!requireNamespace('RISmed')) install.packages('RISmed', type = 'source')"
           Rscript -e "if (!requireNamespace('readr')) install.packages('readr', type = 'source')"
