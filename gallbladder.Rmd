@@ -1,5 +1,5 @@
 ---
-title: "Gallbladder"
+title: "Gallbladder Articles"
 ---
 
 ```{r global_options}
@@ -25,7 +25,7 @@ gallbladder_PMIDs <- gallbladder$PMID
 ```
 
 
-```{r include=FALSE}
+```{r gallbladder rmd, include=FALSE}
 out_gallbladder = NULL
 for (i in 1:length(gallbladder_PMIDs)) {
   value.gallbladder_PMID <- gallbladder_PMIDs[i]

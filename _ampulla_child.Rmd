@@ -1,0 +1,61 @@
+<!-- ### Article {{i}} -->
+
+<!-- #### Article `r '{{value.ampulla_PMID}}'`. -->
+
+```{r {{value.ampulla_PMID}}, include=FALSE}
+
+PMID <- '{{value.ampulla_PMID}}'
+
+gb_article <- ampulla[ampulla[["PMID"]] == PMID, ]
+
+
+```
+
+
+```{r include=FALSE}
+PubMedString <- "PubMed: https://www.ncbi.nlm.nih.gov/pubmed/?term="
+doiString <- "doi: https://doi.org/"
+```
+
+
+```{r include=FALSE}
+
+article_citation <- paste0(gb_article$Title,
+                   ' ',
+                   gb_article$YearArticleDate,
+                   ' ',
+                   gb_article$MonthArticleDate,
+                   ';',
+                   gb_article$Volume,
+                   '(',
+                   gb_article$Issue,
+                   ')'
+                   )
+
+article_citation <- gsub(pattern = 'NA', replacement = '', x = article_citation)
+
+PubMed_link <- paste0(PubMedString, gb_article$PMID)
+
+doi_link <- paste0(doiString, gb_article$DOI)
+
+```
+
+
+
+<details open> <summary>
+- **`r gb_article$Title`**
+</summary>
+
+*`r article_citation`*
+
+`r PubMed_link`
+
+`r gb_article$AbstractText`
+
+`r doi_link`
+
+</details>
+
+---
+
+

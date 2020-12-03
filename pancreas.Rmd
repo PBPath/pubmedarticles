@@ -1,0 +1,44 @@
+---
+title: "Pancreas Articles"
+---
+
+```{r global_options}
+knitr::opts_chunk$set(echo = TRUE,
+                      eval = TRUE,
+                      include = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      cache = FALSE
+                      )
+```
+
+
+
+```{r read pancreas_PMIDs, include=FALSE}
+
+pancreas <- readr::read_csv(file = "data/pancreasarticles.txt", col_names = TRUE)
+
+tidyr::replace_na(pancreas, list(c("")))
+
+pancreas_PMIDs <- pancreas$PMID
+
+```
+
+
+```{r pancreas rmd, include=FALSE}
+out_pancreas = NULL
+for (i in 1:length(pancreas_PMIDs)) {
+  value.pancreas_PMID <- pancreas_PMIDs[i]
+  out_pancreas = c(out_pancreas,
+          knitr::knit_expand('_pancreas_child.Rmd')
+  )
+  }
+
+```
+
+
+
+`r paste(knitr::knit(text = out_pancreas), collapse = '\n\n\n')`
+
+
+

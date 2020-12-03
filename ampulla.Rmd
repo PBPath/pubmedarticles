@@ -1,0 +1,44 @@
+---
+title: "Ampulla Articles"
+---
+
+```{r global_options}
+knitr::opts_chunk$set(echo = TRUE,
+                      eval = TRUE,
+                      include = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      cache = FALSE
+                      )
+```
+
+
+
+```{r read ampulla_PMIDs, include=FALSE}
+
+ampulla <- readr::read_csv(file = "data/ampullaarticles.txt", col_names = TRUE)
+
+tidyr::replace_na(ampulla, list(c("")))
+
+ampulla_PMIDs <- ampulla$PMID
+
+```
+
+
+```{r ampulla rmd, include=FALSE}
+out_ampulla = NULL
+for (i in 1:length(ampulla_PMIDs)) {
+  value.ampulla_PMID <- ampulla_PMIDs[i]
+  out_ampulla = c(out_ampulla,
+          knitr::knit_expand('_ampulla_child.Rmd')
+  )
+  }
+
+```
+
+
+
+`r paste(knitr::knit(text = out_ampulla), collapse = '\n\n\n')`
+
+
+

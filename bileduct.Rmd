@@ -1,0 +1,44 @@
+---
+title: "Bileduct Articles"
+---
+
+```{r global_options}
+knitr::opts_chunk$set(echo = TRUE,
+                      eval = TRUE,
+                      include = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      cache = FALSE
+                      )
+```
+
+
+
+```{r read bileduct_PMIDs, include=FALSE}
+
+bileduct <- readr::read_csv(file = "data/bileductarticles.txt", col_names = TRUE)
+
+tidyr::replace_na(bileduct, list(c("")))
+
+bileduct_PMIDs <- bileduct$PMID
+
+```
+
+
+```{r bileduct rmd, include=FALSE}
+out_bileduct = NULL
+for (i in 1:length(bileduct_PMIDs)) {
+  value.bileduct_PMID <- bileduct_PMIDs[i]
+  out_bileduct = c(out_bileduct,
+          knitr::knit_expand('_bileduct_child.Rmd')
+  )
+  }
+
+```
+
+
+
+`r paste(knitr::knit(text = out_bileduct), collapse = '\n\n\n')`
+
+
+
