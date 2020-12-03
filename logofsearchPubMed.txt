@@ -1,45 +1,21 @@
-[1] "Daily PBPath Journal Watch from PubMed Started at: 2020-12-03 20:39:38"
-[1] "Load Library Started at: 2020-12-03 20:39:38"
-[1] "Load Library Ended at: 2020-12-03 20:39:44"
-[1] "define topics Started at: 2020-12-03 20:39:44"
-[1] "define topics Ended at: 2020-12-03 20:39:44"
-[1] "Read Journal List Started at: 2020-12-03 20:39:44"
-[1] "Read Journal List Ended at: 2020-12-03 20:39:44"
-[1] "Read searchQuery Started at: 2020-12-03 20:39:44"
-[1] "Read searchQuery Ended at: 2020-12-03 20:39:44"
-[1] "Read searchFormula Started at: 2020-12-03 20:39:44"
-[1] "Read searchFormula Ended at: 2020-12-03 20:39:44"
-[1] "Search Started at: 2020-12-03 20:39:44"
-[1] "Search Ended at: 2020-12-03 20:40:29"
-[1] "Fetch Started at: 2020-12-03 20:40:29"
-[1] "Fetch Ended at: 2020-12-03 20:41:47"
-[1] "Get PMIDs Started at: 2020-12-03 20:41:47"
-[1] "Get PMIDs Ended at: 2020-12-03 20:41:47"
-[1] "Save PMIDs Started at: 2020-12-03 20:41:47"
-[1] "Save PMIDs Ended at: 2020-12-03 20:41:47"
-[1] "Save DFs Started at: 2020-12-03 20:41:47"
-
-── Column specification ──────────────────────────────────────────────────
-cols(
-  PMID = col_character(),
-  YearArticleDate = col_character(),
-  MonthArticleDate = col_character(),
-  ISSN = col_character(),
-  Title = col_character(),
-  ArticleTitle = col_character(),
-  ELocationID = col_character(),
-  AbstractText = col_character(),
-  Language = col_character(),
-  MedlineTA = col_character(),
-  NlmUniqueID = col_character(),
-  ISSNLinking = col_character(),
-  PublicationStatus = col_character(),
-  ArticleId = col_character(),
-  DOI = col_character(),
-  Volume = col_character(),
-  Issue = col_character(),
-  ISOAbbreviation = col_character()
-)
-
-Joining, by = "PMID"
-[1] "Save DFs Ended at: 2020-12-03 20:41:47"
+[1] "Daily PBPath Journal Watch from PubMed Started at: 2020-12-03 18:48:24"
+[1] "Load Library Started at: 2020-12-03 18:48:24"
+[1] "Load Library Ended at: 2020-12-03 18:48:25"
+[1] "define topics Started at: 2020-12-03 18:48:25"
+[1] "define topics Ended at: 2020-12-03 18:48:25"
+[1] "Read Journal List Started at: 2020-12-03 18:48:25"
+[1] "Read Journal List Ended at: 2020-12-03 18:48:25"
+[1] "Read searchQuery Started at: 2020-12-03 18:48:25"
+[1] "Read searchQuery Ended at: 2020-12-03 18:48:25"
+[1] "Read searchFormula Started at: 2020-12-03 18:48:25"
+[1] "Read searchFormula Ended at: 2020-12-03 18:48:25"
+[1] "Search Started at: 2020-12-03 18:48:25"
+[1] "Search Ended at: 2020-12-03 18:49:07"
+[1] "Fetch Started at: 2020-12-03 18:49:07"
+[1] "Fetch Ended at: 2020-12-03 18:49:54"
+[1] "Get PMIDs Started at: 2020-12-03 18:49:54"
+[1] "Get PMIDs Ended at: 2020-12-03 18:49:54"
+[1] "Save PMIDs Started at: 2020-12-03 18:49:54"
+[1] "Save PMIDs Ended at: 2020-12-03 18:49:54"
+[1] "Save DFs Started at: 2020-12-03 18:49:54"
+[1] "Save DFs Ended at: 2020-12-03 18:49:55"
