@@ -14,7 +14,8 @@ knitr::opts_chunk$set(echo = TRUE,
 
 
 
-```{r read pancreas_PMIDs, include=FALSE}
+```{r, include=FALSE}
+# read pancreas_PMIDs
 
 pancreas <- readr::read_csv(file = "data/pancreasarticles.txt", col_names = TRUE)
 
@@ -25,7 +26,8 @@ pancreas_PMIDs <- pancreas$PMID
 ```
 
 
-```{r pancreas rmd, include=FALSE}
+```{r, include=FALSE}
+# pancreas rmd
 out_pancreas = NULL
 for (i in 1:length(pancreas_PMIDs)) {
   value.pancreas_PMID <- pancreas_PMIDs[i]

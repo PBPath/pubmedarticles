@@ -2,8 +2,8 @@
 
 <!-- #### Article `r '{{value.ampulla_PMID}}'`. -->
 
-```{r {{value.ampulla_PMID}}, include=FALSE}
-
+```{r, include=FALSE}
+# {{value.ampulla_PMID}}
 PMID <- '{{value.ampulla_PMID}}'
 
 gb_article <- ampulla[ampulla[["PMID"]] == PMID, ]

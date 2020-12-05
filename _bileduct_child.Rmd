@@ -2,8 +2,8 @@
 
 <!-- #### Article `r '{{value.bileduct_PMID}}'`. -->
 
-```{r {{value.bileduct_PMID}}, include=FALSE}
-
+```{r, include=FALSE}
+# {{value.bileduct_PMID}}
 PMID <- '{{value.bileduct_PMID}}'
 
 gb_article <- bileduct[bileduct[["PMID"]] == PMID, ]

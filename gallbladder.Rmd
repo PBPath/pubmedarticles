@@ -14,8 +14,8 @@ knitr::opts_chunk$set(echo = TRUE,
 
 
 
-```{r read gallbladder_PMIDs, include=FALSE}
-
+```{r, include=FALSE}
+# read gallbladder_PMIDs
 gallbladder <- readr::read_csv(file = "data/gallbladderarticles.txt", col_names = TRUE)
 
 tidyr::replace_na(gallbladder, list(c("")))
@@ -25,7 +25,8 @@ gallbladder_PMIDs <- gallbladder$PMID
 ```
 
 
-```{r gallbladder rmd, include=FALSE}
+```{r, include=FALSE}
+# gallbladder rmd
 out_gallbladder = NULL
 for (i in 1:length(gallbladder_PMIDs)) {
   value.gallbladder_PMID <- gallbladder_PMIDs[i]

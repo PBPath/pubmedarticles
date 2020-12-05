@@ -14,8 +14,8 @@ knitr::opts_chunk$set(echo = TRUE,
 
 
 
-```{r read ampulla_PMIDs, include=FALSE}
-
+```{r, include=FALSE}
+# read ampulla_PMIDs
 ampulla <- readr::read_csv(file = "data/ampullaarticles.txt", col_names = TRUE)
 
 tidyr::replace_na(ampulla, list(c("")))
@@ -25,7 +25,8 @@ ampulla_PMIDs <- ampulla$PMID
 ```
 
 
-```{r ampulla rmd, include=FALSE}
+```{r, include=FALSE}
+# ampulla rmd
 out_ampulla = NULL
 for (i in 1:length(ampulla_PMIDs)) {
   value.ampulla_PMID <- ampulla_PMIDs[i]

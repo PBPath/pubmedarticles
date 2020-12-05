@@ -2,8 +2,8 @@
 
 <!-- #### Article `r '{{value.pancreas_PMID}}'`. -->
 
-```{r {{value.pancreas_PMID}}, include=FALSE}
-
+```{r, include=FALSE}
+# {{value.pancreas_PMID}}
 PMID <- '{{value.pancreas_PMID}}'
 
 gb_article <- pancreas[pancreas[["PMID"]] == PMID, ]

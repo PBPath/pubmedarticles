@@ -14,8 +14,8 @@ knitr::opts_chunk$set(echo = TRUE,
 
 
 
-```{r read bileduct_PMIDs, include=FALSE}
-
+```{r, include=FALSE}
+#  read bileduct_PMIDs
 bileduct <- readr::read_csv(file = "data/bileductarticles.txt", col_names = TRUE)
 
 tidyr::replace_na(bileduct, list(c("")))
@@ -25,7 +25,8 @@ bileduct_PMIDs <- bileduct$PMID
 ```
 
 
-```{r bileduct rmd, include=FALSE}
+```{r, include=FALSE}
+# bileduct rmd
 out_bileduct = NULL
 for (i in 1:length(bileduct_PMIDs)) {
   value.bileduct_PMID <- bileduct_PMIDs[i]
