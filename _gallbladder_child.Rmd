@@ -20,7 +20,10 @@ doiString <- "doi: https://doi.org/"
 
 ```{r include=FALSE}
 
-article_citation <- paste0(gb_article$Title,
+article_citation <- paste0(
+  gb_article$ArticleTitle,
+                   ' ',
+  gb_article$Title,
                    ' ',
                    gb_article$YearArticleDate,
                    ' ',
@@ -43,7 +46,7 @@ doi_link <- paste0(doiString, gb_article$DOI)
 
 
 <details open> <summary>
-- **`r gb_article$Title`**
+- **`r gb_article$ArticleTitle`**
 </summary>
 
 *`r article_citation`*

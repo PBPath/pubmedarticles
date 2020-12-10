@@ -6,7 +6,7 @@
 # {{value.pancreas_PMID}}
 PMID <- '{{value.pancreas_PMID}}'
 
-gb_article <- pancreas[pancreas[["PMID"]] == PMID, ]
+pancreas_article <- pancreas[pancreas[["PMID"]] == PMID, ]
 
 
 ```
@@ -20,37 +20,40 @@ doiString <- "doi: https://doi.org/"
 
 ```{r include=FALSE}
 
-article_citation <- paste0(gb_article$Title,
+article_citation <- paste0(
+  pancreas_article$ArticleTitle,
                    ' ',
-                   gb_article$YearArticleDate,
+  pancreas_article$Title,
                    ' ',
-                   gb_article$MonthArticleDate,
+                   pancreas_article$YearArticleDate,
+                   ' ',
+                   pancreas_article$MonthArticleDate,
                    ';',
-                   gb_article$Volume,
+                   pancreas_article$Volume,
                    '(',
-                   gb_article$Issue,
+                   pancreas_article$Issue,
                    ')'
                    )
 
 article_citation <- gsub(pattern = 'NA', replacement = '', x = article_citation)
 
-PubMed_link <- paste0(PubMedString, gb_article$PMID)
+PubMed_link <- paste0(PubMedString, pancreas_article$PMID)
 
-doi_link <- paste0(doiString, gb_article$DOI)
+doi_link <- paste0(doiString, pancreas_article$DOI)
 
 ```
 
 
 
 <details open> <summary>
-- **`r gb_article$Title`**
+- **`r pancreas_article$ArticleTitle`**
 </summary>
 
 *`r article_citation`*
 
 `r PubMed_link`
 
-`r gb_article$AbstractText`
+`r pancreas_article$AbstractText`
 
 `r doi_link`
 

@@ -55,3 +55,46 @@ print(paste0("Save DFs Ended at: ", Sys.time()))
 
 sink()
 
+
+# Search: (pancreas) AND (American Journal of Surgical Pathology[Jour] OR Human Pathology[Jour] OR American journal of clinical pathology[Jour] OR Journal of Pathology[Jour] OR International Journal of Surgical Pathology[Jour] OR Histopathology[Jour] OR Archives of Pathology[Jour] OR Modern Pathology[Jour])
+#
+#
+# Pancrea* AND tumor* OR cancer* OR adenocarcinoma* OR carcinoma*
+#   Gallbladder AND tumor* OR polyp* OR cancer* OR adenocarcinoma* OR carcinoma*
+#   Ampulla* AND tumor* OR polyp* OR cancer* OR adenocarcinoma* OR carcinoma*
+#   Biliary* tumor* OR OR cancer* OR adenocarcinoma* OR carcinoma* OR polyp*
+#   Bile duct* AND tumor* OR polyp* OR cancer* OR adenocarcinoma* OR carcinoma*
+#   Neuroendocrine AND pancrea*
+#   Acinar cell carcinoma
+# Pancreatoblastoma*
+#   Cholangiocarcinoma*
+#   Solid pseudopapillary neoplasm*
+#   Intraductal papillary mucinous neoplasm*
+#   Mucinous cystic neoplasm*
+#   Intraductal papillary neoplasm* of bile duct
+#
+# List of journals to be reviewed:
+#   1.            AJSP
+# 2.            Pancreatology
+# 3.            Gastroenterology
+# 4.            Hepatology
+# 5.            Modern Path
+# 6.            Histopathology
+# 7.            Journal of molecular diagnostics
+# 8.           Virchows Archives
+# 9.           Human Pathology
+# 10.         Am J Gastroenterol
+# 11.         Pancreas
+# 12.         Clin Gastroenterol and Hepatol
+# 13.         Gut
+# 14.         American J Clin Pathol
+# 15.          Archives of Pathol and Lab Med
+# 16.          Seminars in Diagnostic Patthology
+# 17.          Cancer Cytopathology
+# 18.          Journal of American Society of Cytopathology
+# 19.          Diagnostic Cytopathology
+# 20.          Annals of Surgical Oncology
+# 21.          Annals of Surgery
+# 22.          Endocrine Pathology
+# 23.          Cancer
+# 24.          International Journal of Surgical Pathology

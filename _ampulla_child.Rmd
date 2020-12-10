@@ -6,7 +6,7 @@
 # {{value.ampulla_PMID}}
 PMID <- '{{value.ampulla_PMID}}'
 
-gb_article <- ampulla[ampulla[["PMID"]] == PMID, ]
+ampulla_article <- ampulla[ampulla[["PMID"]] == PMID, ]
 
 
 ```
@@ -20,37 +20,40 @@ doiString <- "doi: https://doi.org/"
 
 ```{r include=FALSE}
 
-article_citation <- paste0(gb_article$Title,
+article_citation <- paste0(
+  ampulla_article$ArticleTitle,
                    ' ',
-                   gb_article$YearArticleDate,
+  ampulla_article$Title,
                    ' ',
-                   gb_article$MonthArticleDate,
+                   ampulla_article$YearArticleDate,
+                   ' ',
+                   ampulla_article$MonthArticleDate,
                    ';',
-                   gb_article$Volume,
+                   ampulla_article$Volume,
                    '(',
-                   gb_article$Issue,
+                   ampulla_article$Issue,
                    ')'
                    )
 
 article_citation <- gsub(pattern = 'NA', replacement = '', x = article_citation)
 
-PubMed_link <- paste0(PubMedString, gb_article$PMID)
+PubMed_link <- paste0(PubMedString, ampulla_article$PMID)
 
-doi_link <- paste0(doiString, gb_article$DOI)
+doi_link <- paste0(doiString, ampulla_article$DOI)
 
 ```
 
 
 
 <details open> <summary>
-- **`r gb_article$Title`**
+- **`r ampulla_article$ArticleTitle`**
 </summary>
 
 *`r article_citation`*
 
 `r PubMed_link`
 
-`r gb_article$AbstractText`
+`r ampulla_article$AbstractText`
 
 `r doi_link`
 

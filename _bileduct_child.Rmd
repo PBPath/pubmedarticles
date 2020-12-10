@@ -6,7 +6,7 @@
 # {{value.bileduct_PMID}}
 PMID <- '{{value.bileduct_PMID}}'
 
-gb_article <- bileduct[bileduct[["PMID"]] == PMID, ]
+bileduct_article <- bileduct[bileduct[["PMID"]] == PMID, ]
 
 
 ```
@@ -20,37 +20,40 @@ doiString <- "doi: https://doi.org/"
 
 ```{r include=FALSE}
 
-article_citation <- paste0(gb_article$Title,
+article_citation <- paste0(
+  bileduct_article$ArticleTitle,
                    ' ',
-                   gb_article$YearArticleDate,
+  bileduct_article$Title,
                    ' ',
-                   gb_article$MonthArticleDate,
+                   bileduct_article$YearArticleDate,
+                   ' ',
+                   bileduct_article$MonthArticleDate,
                    ';',
-                   gb_article$Volume,
+                   bileduct_article$Volume,
                    '(',
-                   gb_article$Issue,
+                   bileduct_article$Issue,
                    ')'
                    )
 
 article_citation <- gsub(pattern = 'NA', replacement = '', x = article_citation)
 
-PubMed_link <- paste0(PubMedString, gb_article$PMID)
+PubMed_link <- paste0(PubMedString, bileduct_article$PMID)
 
-doi_link <- paste0(doiString, gb_article$DOI)
+doi_link <- paste0(doiString, bileduct_article$DOI)
 
 ```
 
 
 
 <details open> <summary>
-- **`r gb_article$Title`**
+- **`r bileduct_article$ArticleTitle`**
 </summary>
 
 *`r article_citation`*
 
 `r PubMed_link`
 
-`r gb_article$AbstractText`
+`r bileduct_article$AbstractText`
 
 `r doi_link`
 
