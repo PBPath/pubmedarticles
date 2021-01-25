@@ -1,0 +1,18 @@
+# Load Library
+if (!requireNamespace('dplyr')) install.packages('dplyr', type = 'source')
+if (!requireNamespace('magrittr')) install.packages('magrittr', type = 'source')
+if (!requireNamespace('rentrez')) install.packages('rentrez', type = 'source')
+if (!requireNamespace('RISmed')) install.packages('RISmed', type = 'source')
+if (!requireNamespace('readr')) install.packages('readr', type = 'source')
+if (!requireNamespace('RefManageR')) install.packages('RefManageR', type = 'source')
+if (!requireNamespace('rmarkdown')) install.packages('rmarkdown', type = 'source')
+if (!requireNamespace('distill')) install.packages('distill', type = 'source')
+
+suppressPackageStartupMessages(library("dplyr"))
+suppressPackageStartupMessages(library("magrittr"))
+suppressPackageStartupMessages(library("rentrez"))
+suppressPackageStartupMessages(library("RISmed"))
+suppressPackageStartupMessages(library("readr"))
+suppressPackageStartupMessages(library("RefManageR"))
+suppressPackageStartupMessages(library("rmarkdown"))
+suppressPackageStartupMessages(library("distill"))

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Latest Search Workflow</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">PBPath Journal Watch</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="pancreas.html">Pancreas</a>
+</li>
+<li>
+  <a href="ampulla.html">Ampulla</a>
+</li>
+<li>
+  <a href="bileduct.html">Bile Ducts</a>
+</li>
+<li>
+  <a href="gallbladder.html">Gallbladder</a>
+</li>
+<li>
+  <a href="today.html">Today</a>
+</li>
+<li>
+  <a href="PBPathJournalWatch.html">Combined</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:info@pbpath.org">
+    <span class="fas fa-envelope"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://pbpath.org/contact-us/">
+    <span class="fas fa-commenting-o"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/PBPath/">
+    <span class="fas fa-twitter"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/PBPath/">
+    <span class="fas fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Latest Search Workflow</h1>
+
+</div>
+
+
+<pre class="r"><code>Sys.time()</code></pre>
+<pre><code>## [1] &quot;2021-01-25 11:53:23 UTC&quot;</code></pre>
+<pre class="r"><code>x &lt;- paste0(&quot;Time: &quot;, as.character(Sys.time()))
+
+write(x = x,
+      file = &quot;data/time.txt&quot;,
+      append = TRUE)</code></pre>
+<pre class="r"><code>timelist &lt;- read.csv(file = &quot;data/time.txt&quot;,
+                     header = FALSE)
+
+timelist</code></pre>
+<pre><code>##                           V1
+## 1  Time: 2020-11-29 19:38:45
+## 2  Time: 2020-11-29 19:39:21
+## 3  Time: 2020-11-29 19:40:23
+## 4  Time: 2020-11-29 19:41:17
+## 5  Time: 2020-11-29 19:44:04
+## 6  Time: 2020-11-29 19:44:06
+## 7  Time: 2020-11-29 17:10:48
+## 8  Time: 2020-11-29 17:10:49
+## 9  Time: 2020-11-29 20:42:24
+## 10 Time: 2020-11-29 20:42:24
+## 11 Time: 2020-11-30 12:49:12
+## 12 Time: 2020-11-30 12:49:12
+## 13 Time: 2020-11-30 19:09:55
+## 14 Time: 2020-11-30 19:09:56
+## 15 Time: 2020-11-30 17:53:23
+## 16 Time: 2020-11-30 17:53:23
+## 17 Time: 2020-12-01 23:21:58
+## 18 Time: 2020-12-01 23:22:00
+## 19 Time: 2020-12-03 21:36:37
+## 20 Time: 2020-12-03 21:36:42
+## 21 Time: 2020-12-05 13:31:00
+## 22 Time: 2020-12-05 13:31:02
+## 23 Time: 2020-12-05 13:50:15
+## 24 Time: 2020-12-05 13:50:16
+## 25 Time: 2020-12-05 13:54:15
+## 26 Time: 2020-12-05 13:54:16
+## 27 Time: 2021-01-25 11:53:22
+## 28 Time: 2021-01-25 11:53:23</code></pre>
+<hr />
+<p><strong>pancreas_PMIDs</strong></p>
+<pre class="r"><code>pancreas_PMIDs &lt;- read.csv(file = &quot;data/pancreas_PMIDs.txt&quot;,
+                           header = FALSE)
+print(pancreas_PMIDs)</code></pre>
+<pre><code>##           V1
+## 1   33246429
+## 2   33246424
+## 3   33245985
+## 4   33244738
+## 5   33238156
+## 6   33234781
+## 7   33231769
+## 8   33229456
+## 9   33228589
+## 10  33225890
+## 11  33221151
+## 12  33220130
+## 13  33218300
+## 14  33216264
+## 15  33214485
+## 16  33214420
+## 17  33214083
+## 18  33214082
+## 19  33212097
+## 20  33210965
+## 21  33207093
+## 22  33201123
+## 23  33201121
+## 24  33201120
+## 25  33201115
+## 26  33199632
+## 27  33199137
+## 28  33198661
+## 29  33191144
+## 30  33189965
+## 31  33189181
+## 32  33189127
+## 33  33188144
+## 34  33184007
+## 35  33177357
+## 36  33177340
+## 37  33176750
+## 38  33174146
+## 39  33168600
+## 40  33168404
+## 41  33165376
+## 42  33159698
+## 43  33158979
+## 44  33156465
+## 45  33156103
+## 46  33156066
+## 47  33151547
+## 48  33149003
+## 49  33148667
+## 50  33148628
+## 51  33148205
+## 52  33145705
+## 53  33142117
+## 54  33141373
+## 55  33139537
+## 56  33139271
+## 57  33139201
+## 58  33138648
+## 59  33136337
+## 60  33135144
+## 61  33132046
+## 62  33129375
+## 63  33128511
+## 64  33128119
+## 65  33127761
+## 66  33123857
+## 67  33122531
+## 68  33122530
+## 69  33122528
+## 70  33122527
+## 71  33122526
+## 72  33122525
+## 73  33122524
+## 74  33122523
+## 75  33122522
+## 76  33122521
+## 77  33122518
+## 78  33122516
+## 79  33122513
+## 80  33122440
+## 81  33121946
+## 82  33121847
+## 83  33109735
+## 84  33109470
+## 85  33108683
+## 86  33105193
+## 87  33104890
+## 88  33099544
+## 89  33098625
+## 90  33097661
+## 91  33097588
+## 92  33097431
+## 93  33097430
+## 94  33097020
+## 95  33093857
+## 96  33093149
+## 97  33089395
+## 98  33087490
+## 99  33087489
+## 100 33087331
+## 101 33087057
+## 102 33086324
+## 103 33086318
+## 104 33086310
+## 105 33084990
+## 106 33082211
+## 107 33082106
+## 108 33079429
+## 109 33079303
+## 110 33077384
+## 111 33077383
+## 112 33077382
+## 113 33077381
+## 114 33074907
+## 115 33074899
+## 116 33074853
+## 117 33073341
+## 118 33069583
+## 119 33069582
+## 120 33069084
+## 121 33065644
+## 122 33065029
+## 123 33060404
+## 124 33060017
+## 125 33058868
+## 126 33058558
+## 127 33057860
+## 128 33055587
+## 129 33051739
+## 130 33051307
+## 131 33051146
+## 132 33049206
+## 133 33046515
+## 134 33046391
+## 135 33044629
+## 136 33042353
+## 137 33042329
+## 138 33041332
+## 139 33039466
+## 140 33039293
+## 141 33039292
+## 142 33037322
+## 143 33036921
+## 144 33032924
+## 145 33032923
+## 146 33031736
+## 147 33028669
+## 148 33028668
+## 149 33028596
+## 150 33023478
+## 151 33011748
+## 152 33009500
+## 153 33009055
+## 154 33008749
+## 155 33005981
+## 156 33003085
+## 157 32998722
+## 158 32993498
+## 159 33250091
+## 160 33250089
+## 161 33257226
+## 162 33257224
+## 163 33256637
+## 164 33262135
+## 165 33262134
+## 166 33273352
+## 167 33273349
+## 168 33270905
+## 169 33267820
+## 170 33267818
+## 171 33277430
+## 172 33277370
+## 173 33277183
+## 174 33279516
+## 175 33284889
+## 176 33281059
+## 177 33281058
+## 178 33289418
+## 179 33288347
+## 180 33287738
+## 181 33295746
+## 182 33293373
+## 183 33307036
+## 184 33307028
+## 185 33306139
+## 186 33305819
+## 187 33303972
+## 188 33303373
+## 189 33303371
+## 190 33302876
+## 191 33301777
+## 192 33298701
+## 193 33298094
+## 194 33297976
+## 195 33297971
+## 196 33309625
+## 197 33309624
+## 198 33309623
+## 199 33309622
+## 200 33309225
+## 201 33309223
+## 202 33309222
+## 203 33309014
+## 204 33308169
+## 205 33321090
+## 206 33318584
+## 207 33318193
+## 208 33317954
+## 209 33317953
+## 210 33317455
+## 211 33323311
+## 212 33333055
+## 213 33330964
+## 214 33328127
+## 215 33334692
+## 216 33341087
+## 217 33339724
+## 218 33339723
+## 219 33341916
+## 220 33341546
+## 221 33341545
+## 222 33341342
+## 223 33341341
+## 224 33346874
+## 225 33351479
+## 226 33349510
+## 227 33370031
+## 228 33370029
+## 229 33370028
+## 230 33370027
+## 231 33370026
+## 232 33370024
+## 233 33370023
+## 234 33370021
+## 235 33370020
+## 236 33370019
+## 237 33370018
+## 238 33370017
+## 239 33358592
+## 240 33358086
+## 241 33355250
+## 242 33355247
+## 243 33388318
+## 244 33386547
+## 245 33386542
+## 246 33386541
+## 247 33383041
+## 248 33378303
+## 249 33376062
+## 250 33376061
+## 251 33372731
+## 252 33393073
+## 253 33393047
+## 254 33393045
+## 255 33393038
+## 256 33393035
+## 257 33393031
+## 258 33390343
+## 259 33390342
+## 260 33398644
+## 261 33407200
+## 262 33407181
+## 263 33407178
+## 264 33402120
+## 265 33415845
+## 266 33415562
+## 267 33415556
+## 268 33413231
+## 269 33413133
+## 270 33421513
+## 271 33421511
+## 272 33422020
+## 273 33425122
+## 274 33433886
+## 275 33433437
+## 276 33433415
+## 277 33432559
+## 278 33430810
+## 279 33443865
+## 280 33448017
+## 281 33453178
+## 282 33452602
+## 283 33451980
+## 284 33451936
+## 285 33462718
+## 286 33461933
+## 287 33461932
+## 288 33461931
+## 289 33461517
+## 290 33454209
+## 291 33454208
+## 292 33459926
+## 293 33471374
+## 294 33468680
+## 295 33468394
+## 296 33472910
+## 297 33229539
+## 298 33479866
+## 299 33479048
+## 300 33483239</code></pre>
+<hr />
+<p><strong>ampulla_PMIDs</strong></p>
+<pre class="r"><code>ampulla_PMIDs &lt;- read.csv(file = &quot;data/ampulla_PMIDs.txt&quot;,
+                           header = FALSE)
+print(ampulla_PMIDs)</code></pre>
+<pre><code>##          V1
+## 1  33189127
+## 2  33124049
+## 3  33069083
+## 4  33060017
+## 5  33257564
+## 6  33298703
+## 7  33314802
+## 8  33333628
+## 9  33382496
+## 10 33382495
+## 11 33382487
+## 12 33407153
+## 13 33433432
+## 14 33481390
+## 15 33481382</code></pre>
+<hr />
+<p><strong>bileduct_PMIDs</strong></p>
+<pre class="r"><code>bileduct_PMIDs &lt;- read.csv(file = &quot;data/bileduct_PMIDs.txt&quot;,
+                           header = FALSE)
+print(bileduct_PMIDs)</code></pre>
+<pre><code>##          V1
+## 1  33238879
+## 2  33208670
+## 3  33201123
+## 4  33129823
+## 5  33060017
+## 6  33040247
+## 7  33008300
+## 8  33309622
+## 9  33308474
+## 10 33308169
+## 11 33351491
+## 12 33351482
+## 13 33359238
+## 14 33383041
+## 15 33407159
+## 16 33405289
+## 17 33425116
+## 18 33441096
+## 19 33465373
+## 20 33470920
+## 21 33481384</code></pre>
+<hr />
+<p><strong>gallbladder_PMIDs</strong></p>
+<pre class="r"><code>gallbladder_PMIDs &lt;- read.csv(file = &quot;data/gallbladder_PMIDs.txt&quot;,
+                           header = FALSE)
+print(gallbladder_PMIDs)</code></pre>
+<pre><code>##          V1
+## 1  33225924
+## 2  33201123
+## 3  33129276
+## 4  33060404
+## 5  33042329
+## 6  33016162
+## 7  32991930
+## 8  33256632
+## 9  33261560
+## 10 33317478
+## 11 33341546
+## 12 33346874
+## 13 33398430
+## 14 33411027
+## 15 33423570
+## 16 33433411</code></pre>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
