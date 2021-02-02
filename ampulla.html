@@ -1,0 +1,2642 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+  <title>PBPath Journal Watch: Ampulla Articles</title>
+
+
+  <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
+  <link rel="icon" type="image/png" href="images/PBPath-Logo.png"/>
+
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="PBPath Journal Watch: Ampulla Articles"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content="PBPath Journal Watch"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="PBPath Journal Watch: Ampulla Articles"/>
+  <meta property="twitter:site" content="@PBPath"/>
+  <meta property="twitter:creator" content="@PBPath"/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Ampulla Articles"]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  <!--radix_placeholder_navigation_in_header-->
+  <meta name="distill:offset" content=""/>
+
+  <script type="application/javascript">
+
+    window.headroom_prevent_pin = false;
+
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+
+      // initialize headroom for banner
+      var header = $('header').get(0);
+      var headerHeight = header.offsetHeight;
+      var headroom = new Headroom(header, {
+        tolerance: 5,
+        onPin : function() {
+          if (window.headroom_prevent_pin) {
+            window.headroom_prevent_pin = false;
+            headroom.unpin();
+          }
+        }
+      });
+      headroom.init();
+      if(window.location.hash)
+        headroom.unpin();
+      $(header).addClass('headroom--transition');
+
+      // offset scroll location for banner on hash change
+      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+      window.addEventListener("hashchange", function(event) {
+        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+      });
+
+      // responsive menu
+      $('.distill-site-header').each(function(i, val) {
+        var topnav = $(this);
+        var toggle = topnav.find('.nav-toggle');
+        toggle.on('click', function() {
+          topnav.toggleClass('responsive');
+        });
+      });
+
+      // nav dropdowns
+      $('.nav-dropbtn').click(function(e) {
+        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+        $(this).parent().siblings('.nav-dropdown')
+           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $("body").click(function(e){
+        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+      });
+      $(".nav-dropdown").click(function(e){
+        e.stopPropagation();
+      });
+    });
+  </script>
+
+  <style type="text/css">
+
+  /* Theme (user-documented overrideables for nav appearance) */
+
+  .distill-site-nav {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #0F2E3D;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .distill-site-nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .distill-site-nav a:hover {
+    color: white;
+  }
+
+  @media print {
+    .distill-site-nav {
+      display: none;
+    }
+  }
+
+  .distill-site-header {
+
+  }
+
+  .distill-site-footer {
+
+  }
+
+
+  /* Site Header */
+
+  .distill-site-header {
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+
+  .distill-site-header .nav-left {
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header .nav-left {
+      margin-left: 0;
+    }
+  }
+
+
+  .distill-site-header .nav-right {
+    float: right;
+    margin-right: 8px;
+  }
+
+  .distill-site-header a,
+  .distill-site-header .title {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 10px 14px 10px;
+  }
+
+  .distill-site-header .title {
+    font-size: 18px;
+    min-width: 150px;
+  }
+
+  .distill-site-header .logo {
+    padding: 0;
+  }
+
+  .distill-site-header .logo img {
+    display: none;
+    max-height: 20px;
+    width: auto;
+    margin-bottom: -4px;
+  }
+
+  .distill-site-header .nav-image img {
+    max-height: 18px;
+    width: auto;
+    display: inline-block;
+    margin-bottom: -3px;
+  }
+
+
+
+  @media screen and (min-width: 1000px) {
+    .distill-site-header .logo img {
+      display: inline-block;
+    }
+    .distill-site-header .nav-left {
+      margin-left: 20px;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 20px;
+    }
+    .distill-site-header .title {
+      padding-left: 12px;
+    }
+  }
+
+
+  .distill-site-header .nav-toggle {
+    display: none;
+  }
+
+  .nav-dropdown {
+    display: inline-block;
+    position: relative;
+  }
+
+  .nav-dropdown .nav-dropbtn {
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 16px 10px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    margin-top: 1px;
+    z-index: 2;
+  }
+
+  .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    margin-top: 2px;
+    white-space: nowrap;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .nav-dropdown-content hr {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-dropdown-active {
+    display: block;
+  }
+
+  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+    color: black;
+    padding: 6px 24px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .nav-dropdown-content .nav-dropdown-header {
+    display: block;
+    padding: 5px 24px;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #999999;
+    white-space: nowrap;
+  }
+
+  .nav-dropdown:hover .nav-dropbtn {
+    color: white;
+  }
+
+  .nav-dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .nav-right .nav-dropdown-content {
+    margin-left: -45%;
+    right: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+    .distill-site-header a.nav-toggle {
+      float: right;
+      display: block;
+    }
+    .distill-site-header .title {
+      margin-left: 0;
+    }
+    .distill-site-header .nav-right {
+      margin-right: 0;
+    }
+    .distill-site-header {
+      overflow: hidden;
+    }
+    .nav-right .nav-dropdown-content {
+      margin-left: 0;
+    }
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-header.responsive {position: relative; min-height: 500px; }
+    .distill-site-header.responsive a.nav-toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .distill-site-header.responsive a,
+    .distill-site-header.responsive .nav-dropdown {
+      display: block;
+      text-align: left;
+    }
+    .distill-site-header.responsive .nav-left,
+    .distill-site-header.responsive .nav-right {
+      width: 100%;
+    }
+    .distill-site-header.responsive .nav-dropdown {float: none;}
+    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  /* Site Footer */
+
+  .distill-site-footer {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 3;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+  /* Headroom */
+
+  d-title {
+    padding-top: 6rem;
+  }
+
+  @media print {
+    d-title {
+      padding-top: 4rem;
+    }
+  }
+
+  .headroom {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .headroom--transition {
+    transition: all .4s ease-in-out;
+  }
+
+  .headroom--unpinned {
+    top: -100px;
+  }
+
+  .headroom--pinned {
+    top: 0;
+  }
+
+  </style>
+
+  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+  <script type="application/javascript">
+
+  function getMeta(metaName) {
+    var metas = document.getElementsByTagName('meta');
+    for (let i = 0; i < metas.length; i++) {
+      if (metas[i].getAttribute('name') === metaName) {
+        return metas[i].getAttribute('content');
+      }
+    }
+    return '';
+  }
+
+  function offsetURL(url) {
+    var offset = getMeta('distill:offset');
+    return offset ? offset + '/' + url : url;
+  }
+
+  function createFuseIndex() {
+
+    // create fuse index
+    var options = {
+      keys: [
+        { name: 'title', weight: 20 },
+        { name: 'categories', weight: 15 },
+        { name: 'description', weight: 10 },
+        { name: 'contents', weight: 5 },
+      ],
+      ignoreLocation: true,
+      threshold: 0
+    };
+    var fuse = new window.Fuse([], options);
+
+    // fetch the main search.json
+    return fetch(offsetURL('search.json'))
+      .then(function(response) {
+        if (response.status == 200) {
+          return response.json().then(function(json) {
+            // index main articles
+            json.articles.forEach(function(article) {
+              fuse.add(article);
+            });
+            // download collections and index their articles
+            return Promise.all(json.collections.map(function(collection) {
+              return fetch(offsetURL(collection)).then(function(response) {
+                if (response.status === 200) {
+                  return response.json().then(function(articles) {
+                    articles.forEach(function(article) {
+                      fuse.add(article);
+                    });
+                  })
+                } else {
+                  return Promise.reject(
+                    new Error('Unexpected status from search index request: ' +
+                              response.status)
+                  );
+                }
+              });
+            })).then(function() {
+              return fuse;
+            });
+          });
+
+        } else {
+          return Promise.reject(
+            new Error('Unexpected status from search index request: ' +
+                        response.status)
+          );
+        }
+      });
+  }
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // get search element (bail if we don't have one)
+    var searchEl = window.document.getElementById('distill-search');
+    if (!searchEl)
+      return;
+
+    createFuseIndex()
+      .then(function(fuse) {
+
+        // make search box visible
+        searchEl.classList.remove('hidden');
+
+        // initialize autocomplete
+        var options = {
+          autoselect: true,
+          hint: false,
+          minLength: 2,
+        };
+        window.autocomplete(searchEl, options, [{
+          source: function(query, callback) {
+            const searchOptions = {
+              isCaseSensitive: false,
+              shouldSort: true,
+              minMatchCharLength: 2,
+              limit: 10,
+            };
+            var results = fuse.search(query, searchOptions);
+            callback(results
+              .map(function(result) { return result.item; })
+              .filter(function(item) { return !!item.description; })
+            );
+          },
+          templates: {
+            suggestion: function(suggestion) {
+              var html = `
+                <div class="search-item">
+                  <h3>${suggestion.title}</h3>
+                  <div class="search-item-description">
+                    ${suggestion.description}
+                  </div>
+                  <div class="search-item-preview">
+                    <img src="${suggestion.preview ? offsetURL(suggestion.preview) : ''}"</img>
+                  </div>
+                </div>
+              `;
+              return html;
+            }
+          }
+        }]).on('autocomplete:selected', function(event, suggestion) {
+          window.location.href = offsetURL(suggestion.path);
+        });
+        // remove inline display style on autocompleter (we want to
+        // manage responsive display via css)
+        $('.algolia-autocomplete').css("display", "");
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+  });
+
+  </script>
+
+  <style type="text/css">
+
+  /* Algolioa Autocomplete */
+
+  .algolia-autocomplete {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: sub;
+    background-color: white;
+    color: black;
+    padding: 6px;
+    padding-top: 8px;
+    padding-bottom: 0;
+    border-radius: 6px;
+    border: 1px #0F2E3D solid;
+    width: 180px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .distill-site-nav .algolia-autocomplete {
+      display: none;
+      visibility: hidden;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete {
+      display: inline-block;
+      visibility: visible;
+    }
+    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+      margin-left: 0;
+      width: 400px;
+      max-height: 400px;
+    }
+  }
+
+  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+    width: 90%;
+    outline: none;
+    border: none;
+  }
+
+  .algolia-autocomplete .aa-hint {
+    color: #999;
+  }
+  .algolia-autocomplete .aa-dropdown-menu {
+    width: 550px;
+    max-height: 70vh;
+    overflow-x: visible;
+    overflow-y: scroll;
+    padding: 5px;
+    margin-top: 3px;
+    margin-left: -150px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #999;
+    border-top: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+    cursor: pointer;
+    padding: 5px 4px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+    border-bottom: none;
+    margin-bottom: 2px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+    overflow: hidden;
+    font-size: 0.8em;
+    line-height: 1.4em;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+    margin-block-start: 0;
+    margin-block-end: 5px;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+    display: inline-block;
+    overflow: hidden;
+    height: 2.8em;
+    width: 80%;
+    margin-right: 4%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+    display: inline-block;
+    width: 15%;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+    height: 3em;
+    width: auto;
+    display: none;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+    display: initial;
+  }
+
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+    background-color: #eee;
+  }
+  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  </style>
+
+
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <style type="text/css">
+  /* base variables */
+
+  /* Edit the CSS properties in this file to create a custom
+     Distill theme. Only edit values in the right column
+     for each row; values shown are the CSS defaults.
+     To return any property to the default,
+     you may set its value to: unset
+     All rows must end with a semi-colon.                      */
+
+  /* Optional: embed custom fonts here with `@import`          */
+  /* This must remain at the top of this file.                 */
+
+
+
+  html {
+    /*-- Main font sizes --*/
+    --title-size:      50px;
+    --body-size:       1.06rem;
+    --code-size:       14px;
+    --aside-size:      12px;
+    --fig-cap-size:    13px;
+    /*-- Main font colors --*/
+    --title-color:     #000000;
+    --header-color:    rgba(0, 0, 0, 0.8);
+    --body-color:      rgba(0, 0, 0, 0.8);
+    --aside-color:     rgba(0, 0, 0, 0.6);
+    --fig-cap-color:   rgba(0, 0, 0, 0.6);
+    /*-- Specify custom fonts ~~~ must be imported above   --*/
+    --heading-font:    sans-serif;
+    --mono-font:       monospace;
+    --body-font:       sans-serif;
+    --navbar-font:     sans-serif;  /* websites + blogs only */
+  }
+
+  /*-- ARTICLE METADATA --*/
+  d-byline {
+    --heading-size:    0.6rem;
+    --heading-color:   rgba(0, 0, 0, 0.5);
+    --body-size:       0.8rem;
+    --body-color:      rgba(0, 0, 0, 0.8);
+  }
+
+  /*-- ARTICLE TABLE OF CONTENTS --*/
+  .d-contents {
+    --heading-size:    18px;
+    --contents-size:   13px;
+  }
+
+  /*-- ARTICLE APPENDIX --*/
+  d-appendix {
+    --heading-size:    15px;
+    --heading-color:   rgba(0, 0, 0, 0.65);
+    --text-size:       0.8em;
+    --text-color:      rgba(0, 0, 0, 0.5);
+  }
+
+  /*-- WEBSITE HEADER + FOOTER --*/
+  /* These properties only apply to Distill sites and blogs  */
+
+  .distill-site-header {
+    --title-size:       18px;
+    --text-color:       rgba(255, 255, 255, 0.8);
+    --text-size:        15px;
+    --hover-color:      white;
+    --bkgd-color:       #0F2E3D;
+  }
+
+  .distill-site-footer {
+    --text-color:       rgba(255, 255, 255, 0.8);
+    --text-size:        15px;
+    --hover-color:      white;
+    --bkgd-color:       #0F2E3D;
+  }
+
+  /*-- Additional custom styles --*/
+  /* Add any additional CSS rules below                      */
+  </style>
+  <style type="text/css">/* base variables */
+
+  /* Edit the CSS properties in this file to create a custom
+     Distill theme. Only edit values in the right column
+     for each row; values shown are the CSS defaults.
+     To return any property to the default,
+     you may set its value to: unset
+     All rows must end with a semi-colon.                      */
+
+  /* Optional: embed custom fonts here with `@import`          */
+  /* This must remain at the top of this file.                 */
+  @import url('https://fonts.googleapis.com/css2?family=Amiri');
+  @import url('https://fonts.googleapis.com/css2?family=Bitter');
+  @import url('https://fonts.googleapis.com/css2?family=DM+Mono');
+
+  html {
+    /*-- Main font sizes --*/
+    --title-size:      50px;
+    --body-size:       1.06rem;
+    --code-size:       14px;
+    --aside-size:      12px;
+    --fig-cap-size:    13px;
+    /*-- Main font colors --*/
+    --title-color:     #000000;
+    --header-color:    rgba(0, 0, 0, 0.8);
+    --body-color:      rgba(0, 0, 0, 0.8);
+    --aside-color:     rgba(0, 0, 0, 0.6);
+    --fig-cap-color:   rgba(0, 0, 0, 0.6);
+    /*-- Specify custom fonts ~~~ must be imported above   --*/
+    --heading-font:    "Amiri", serif;
+    --mono-font:       "DM Mono", monospace;
+    --body-font:       "Bitter", sans-serif;
+    --navbar-font:     "Amiri", serif;
+  }
+
+  /* More properties ... */
+
+
+  h1{
+    text-align: center;
+  }
+  h2{
+    text-align: center;
+  }
+  h3{
+    text-align: center;
+  }
+  h4{
+    text-align: center;
+  }
+  h4.date{
+    text-align: center;
+  }</style>
+  <style type="text/css">
+  /* base style */
+
+  /* FONT FAMILIES */
+
+  :root {
+    --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  body,
+  .posts-list .post-preview p,
+  .posts-list .description p {
+    font-family: var(--body-font), var(--body-default);
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  .posts-list .post-preview h2,
+  .posts-list .description h2 {
+    font-family: var(--heading-font), var(--heading-default);
+  }
+
+  d-article div.sourceCode code,
+  d-article pre code {
+  	font-family: var(--mono-font), var(--mono-default);
+  }
+
+
+  /*-- TITLE --*/
+  d-title h1,
+  .posts-list > h1 {
+    color: var(--title-color, black);
+  }
+
+  d-title h1 {
+    font-size: var(--title-size, 50px);
+  }
+
+  /*-- HEADERS --*/
+  d-article h1,
+  d-article h2,
+  d-article h3,
+  d-article h4,
+  d-article h5,
+  d-article h6 {
+    color: var(--header-color, rgba(0, 0, 0, 0.8));
+  }
+
+  /*-- BODY --*/
+  /* only text inside of <p> tags */
+  d-article > p {
+    color: var(--body-color, rgba(0, 0, 0, 0.8));
+    font-size: var(--body-size, 1.06rem);
+  }
+
+  /*-- CODE --*/
+  d-article div.sourceCode code,
+  d-article pre code {
+  	font-size: var(--code-size, 14px);
+  }
+
+  /*-- ASIDE --*/
+  d-article aside {
+  	font-size: var(--aside-size, 12px);
+  	color: var(--aside-color, rgba(0, 0, 0, 0.6));
+  }
+
+  /*-- FIGURE CAPTIONS --*/
+  figure .caption,
+  figure figcaption,
+  .figure .caption {
+  	font-size: var(--fig-cap-size, 13px);
+  	color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
+  }
+
+  /*-- METADATA --*/
+  d-byline h3 {
+  	font-size: var(--heading-size, 0.6rem);
+  	color: var(--heading-color, rgba(0, 0, 0, 0.5));
+  }
+
+  d-byline {
+  	font-size: var(--body-size, 0.8rem);
+  	color: var(--body-color, rgba(0, 0, 0, 0.8));
+  }
+
+  d-byline a,
+  d-article d-byline a {
+  	color: var(--body-color, rgba(0, 0, 0, 0.8));
+  }
+
+  /*-- TABLE OF CONTENTS --*/
+  .d-contents nav h3 {
+  	font-size: var(--heading-size, 18px);
+  }
+
+  .d-contents nav a {
+  	font-size: var(--contents-size, 13px);
+  }
+
+  /*-- APPENDIX --*/
+  d-appendix h3 {
+    font-size: var(--heading-size, 15px);
+  	color: var(--heading-color, rgba(0, 0, 0, 0.65));
+  }
+
+  d-appendix {
+    font-size: var(--text-size, 0.8em);
+  	color: var(--text-color, rgba(0, 0, 0, 0.5));
+  }
+
+  d-appendix d-footnote-list a.footnote-backlink {
+  	color: var(--text-color, rgba(0, 0, 0, 0.5));
+  }
+
+  /*-- WEBSITE HEADER + FOOTER --*/
+  .distill-site-header .title {
+  	font-size: var(--title-size, 18px);
+  	font-family: var(--navbar-font), var(--heading-default);
+  }
+
+  .distill-site-header a,
+  .nav-dropdown .nav-dropbtn {
+    font-family: var(--navbar-font), var(--heading-default);
+  }
+
+  .distill-site-header a:hover {
+  	color: var(--hover-color, white);
+  }
+
+  .distill-site-header {
+  	font-size: var(--text-size, 15px);
+  	color: var(--text-color, rgba(255, 255, 255, 0.8));
+  	background-color: var(--bkgd-color, #0F2E3D);
+  }
+
+  .distill-site-footer {
+  	font-size: var(--text-size, 15px);
+  	color: var(--text-color, rgba(255, 255, 255, 0.8));
+  	background-color: var(--bkgd-color, #0F2E3D);
+  }
+
+  .distill-site-footer a:hover {
+  	color: var(--hover-color, white);
+  }</style>
+  <!--/radix_placeholder_distill-->
+  <script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Ampulla Articles","authors":[]}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a class="logo" href="https://pbpath.org/">
+<img src="images/PBPath-Logo.png" alt="Logo"/>
+</a>
+<a href="index.html" class="title">PBPath Journal Watch</a>
+<a href="pancreas.html">Pancreas</a>
+<a href="ampulla.html">Ampulla</a>
+<a href="bileduct.html">Bile Ducts</a>
+<a href="gallbladder.html">Gallbladder</a>
+<a href="today.html">Today</a>
+<a href="PBPathJournalWatch.html">Combined</a>
+</div>
+<div class="nav-right">
+<a href="mailto:info@pbpath.org">
+<i class="fa fa-envelope" aria-hidden="true"></i>
+</a>
+<a href="https://pbpath.org/contact-us/">
+<i class="fa fa-commenting-o" aria-hidden="true"></i>
+</a>
+<a href="https://twitter.com/PBPath/">
+<i class="fa fa-twitter" aria-hidden="true"></i>
+</a>
+<a href="https://github.com/PBPath/">
+<i class="fa fa-github" aria-hidden="true"></i>
+</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Ampulla Articles</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+
+</div>
+
+
+<div class="d-article">
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<!-- ### Article 1 -->
+<!-- #### Article 33257564. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Human sapovirus propagation in human cell lines supplemented with bile acids., Human sapovirus propagation in human cell lines supplemented with bile acids.</strong></li>
+</ul>
+</summary>
+<p><em>Human sapovirus propagation in human cell lines supplemented with bile acids. Proceedings of the National Academy of Sciences of the United States of America 2020 11;(), Human sapovirus propagation in human cell lines supplemented with bile acids. Proceedings of the National Academy of Sciences of the United States of America 2020 11;117(50)</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33257564" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33257564</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33257564" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33257564</a></p>
+<p>Human sapoviruses (HuSaVs) cause acute gastroenteritis similar to human noroviruses. Although HuSaVs were discovered four decades ago, no HuSaV has been grown in vitro, which has significantly impeded the understanding of viral biology and the development of antiviral strategies. In this study, we identified two susceptible human cell lines, that originated from testis and duodenum, that support HuSaV replication and found that replication requires bile acids. HuSaVs replicated more efficiently in the duodenum cell line, and viral RNA levels increased up to ∼6 log10-fold. We also detected double-stranded RNA, viral nonstructural and structural proteins in the cell cultures, and intact HuSaV particles. We confirmed the infectivity of progeny viruses released into the cell culture supernatants by passaging. These results indicate the successful growth of HuSaVs in vitro. Additionally, we determined the minimum infectious dose and tested the sensitivities of HuSaV GI.1 and GII.3 to heat and ultraviolet treatments. This system is inexpensive, scalable, and reproducible in different laboratories, and can be used to investigate mechanisms of HuSaV replication and to evaluate antivirals and/or disinfection methods for HuSaVs., Human sapoviruses (HuSaVs) cause acute gastroenteritis similar to human noroviruses. Although HuSaVs were discovered four decades ago, no HuSaV has been grown in vitro, which has significantly impeded the understanding of viral biology and the development of antiviral strategies. In this study, we identified two susceptible human cell lines, that originated from testis and duodenum, that support HuSaV replication and found that replication requires bile acids. HuSaVs replicated more efficiently in the duodenum cell line, and viral RNA levels increased up to ∼6 log10-fold. We also detected double-stranded RNA, viral nonstructural and structural proteins in the cell cultures, and intact HuSaV particles. We confirmed the infectivity of progeny viruses released into the cell culture supernatants by passaging. These results indicate the successful growth of HuSaVs in vitro. Additionally, we determined the minimum infectious dose and tested the sensitivities of HuSaV GI.1 and GII.3 to heat and ultraviolet treatments. This system is inexpensive, scalable, and reproducible in different laboratories, and can be used to investigate mechanisms of HuSaV replication and to evaluate antivirals and/or disinfection methods for HuSaVs.</p>
+<p>doi: <a href="https://doi.org/10.1073/pnas.2007310117" class="uri">https://doi.org/10.1073/pnas.2007310117</a>, doi: <a href="https://doi.org/10.1073/pnas.2007310117" class="uri">https://doi.org/10.1073/pnas.2007310117</a></p>
+</details>
+<hr />
+<!-- ### Article 2 -->
+<!-- #### Article 33189127. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Recent epidemiology of patients with gastro-entero-pancreatic neuroendocrine neoplasms (GEP-NEN) in Japan: a population-based study.</strong></li>
+</ul>
+</summary>
+<p><em>Recent epidemiology of patients with gastro-entero-pancreatic neuroendocrine neoplasms (GEP-NEN) in Japan: a population-based study. BMC cancer 2020 11;20(1)</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33189127" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33189127</a></p>
+<p>Label=“BACKGROUND” NlmCategory=“BACKGROUND”:The worldwide prevalence and incidence of neuroendocrine neoplasms (NEN) have been increasing recently, although few studies have analyzed data on the current situation of NENs in Japan. Here, the Japan Neuroendocrine Tumor Society (JNETS) planned to investigate the recent incidence and distribution of these tumors using data from the national cancer registry started in 2016. This study examined the incidence and distribution of primary sites as well as rate of advanced disease from this population-based registry. Label=“METHODS” NlmCategory=“METHODS”:A retrospective, population-based study using data from the national cancer registry in Japan (NCR) was conducted to evaluate patients with gastro-entero-pancreatic NEN (GEP-NEN) in 2016. Associated population data were used to determine annual age-adjusted incidences. Label=“RESULTS” NlmCategory=“RESULTS”:A total of 6735 individuals were diagnosed with GEP-NEN in Japan in 2016. Annual onset incidence was 0.70/100,000 for pancreatic NEN and 2.84/100,000 for gastrointestinal NEN. NEN in the ileum accounted for only 1% of total GEP-NENs in Japan. Most NENs in the esophagus or lungs were neuroendocrine carcinomas (NECs), while the majority of those in the duodenum, ileum, appendix and rectum were grade 1 neuroendocrine tumors (NETs). Median age at initial diagnosis was in between 60 to 65. Tumors in the duodenum, appendix and rectum were mostly limited to local, while those in the esophagus, stomach and colon tended to show distant metastasis. In Japan, initial treatment for GEP-NENs was resection even if the tumor was NEC. Label=“CONCLUSIONS” NlmCategory=“CONCLUSIONS”:This is the first report of a national registry-based incidence and distribution of GEP-NEN in Japan. These data will serve as an important first step to determining the exact etiology and trends for this pathology in Japan.</p>
+<p>doi: <a href="https://doi.org/10.1186/s12885-020-07581-y" class="uri">https://doi.org/10.1186/s12885-020-07581-y</a></p>
+</details>
+<hr />
+<!-- ### Article 3 -->
+<!-- #### Article 33124049. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Non-Conventional Dysplasia of The Tubular Gut: A Review and Illustration of Their Histomorphologic Spectrum.</strong></li>
+</ul>
+</summary>
+<p><em>Non-Conventional Dysplasia of The Tubular Gut: A Review and Illustration of Their Histomorphologic Spectrum. Histopathology 2020 10;()</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33124049" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33124049</a></p>
+<p>The increasing use of gastrointestinal endoscopic procedures has led to the recognition by histopathologists of non-conventional (or special-type) dysplasias of the gastrointestinal tract. These lesions can be recognized in association with prevalent gastrointestinal underlying conditions, such as Barrett oesophagus, chronic atrophic gastritis, and inflammatory bowel disease. The diagnosis of these special types can be challenging, and their biologic behaviours are not fully characterized. The aim of this review is to provide a global view of non-conventional dysplastic lesions observed in the various segments of the tubular gastrointestinal tract and describe their salient features. Furthermore, as the clinical implications of these various subtypes have not been broadly tested in practice and are not represented in most management guidelines, we offer guidance on the best management practices for these lesions.</p>
+<p>doi: <a href="https://doi.org/10.1111/his.14294" class="uri">https://doi.org/10.1111/his.14294</a></p>
+</details>
+<hr />
+<!-- ### Article 4 -->
+<!-- #### Article 33069083. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Patterns of Mycobacterium avium-intracellulare complex infection in duodenal endoscopic biopsies in HIV/AIDS patients., Patterns of Mycobacterium avium-intracellulare complex infection in duodenal endoscopic biopsies in HIV/AIDS patients.</strong></li>
+</ul>
+</summary>
+<p><em>Patterns of Mycobacterium avium-intracellulare complex infection in duodenal endoscopic biopsies in HIV/AIDS patients. Annals of diagnostic pathology 2020 10;49(), Patterns of Mycobacterium avium-intracellulare complex infection in duodenal endoscopic biopsies in HIV/AIDS patients. Annals of diagnostic pathology 2020 10;49()</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33069083" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33069083</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33069083" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33069083</a></p>
+<p>Mycobacterium avium-intracellulare complex (MAIC) is a nontuberculous opportunistic infection in immunocompromised patients. Involvement of the gastrointestinal tract (GIT) is usually part of a disseminated disease in AIDS patients with a low CD4 count, however with standard antiretroviral therapy (ART), a localized presentation is more likely. It can affect any part of the GIT, mostly the duodenum and typically as patches. Incomplete or refractory ART for HIV-strains, therapy-related side effects, noncompliant or incomplete treatment to previous MAIC infections, superimposed complications and comorbid opportunistic infections may result in atypical clinical, endoscopic and histopathologic manifestations. We performed a retrospective review study retrieving cases of MAIC in duodenal endoscopic biopsy. We found five cases of MAIC in HIV/AIDS patients. They were males with an average age of 40-years. They showed different histopathologic features, variable patterns of MAIC-histiocytic infiltrates, and varying intensity of intracellular acid-fast positive bacilli. Enterocytes vacuolization and transepithelial elimination were also observed. Three cases were associated with cytomegalovirus and cryptococcal infections. A case was complicated by lymphangiectasia-associated protein-losing enteropathy. Initially, three cases were morphologically missed. Ziehl-Neelsen stain helped reach the correct diagnosis. Pathologists have an important role in patients’ management by guiding clinicians to the correct diagnosis. Pathologists should be aware of these different histopathologic manifestations, their potential pitfalls, look for certain helpful clues complemented with multiple levels and special stains. In particular, AFB stains are mandatory in all mucosal biopsy specimens from HIV/AIDS patients regardless of their appearances., Mycobacterium avium-intracellulare complex (MAIC) is a nontuberculous opportunistic infection in immunocompromised patients. Involvement of the gastrointestinal tract (GIT) is usually part of a disseminated disease in AIDS patients with a low CD4 count, however with standard antiretroviral therapy (ART), a localized presentation is more likely. It can affect any part of the GIT, mostly the duodenum and typically as patches. Incomplete or refractory ART for HIV-strains, therapy-related side effects, noncompliant or incomplete treatment to previous MAIC infections, superimposed complications and comorbid opportunistic infections may result in atypical clinical, endoscopic and histopathologic manifestations. We performed a retrospective review study retrieving cases of MAIC in duodenal endoscopic biopsy. We found five cases of MAIC in HIV/AIDS patients. They were males with an average age of 40-years. They showed different histopathologic features, variable patterns of MAIC-histiocytic infiltrates, and varying intensity of intracellular acid-fast positive bacilli. Enterocytes vacuolization and transepithelial elimination were also observed. Three cases were associated with cytomegalovirus and cryptococcal infections. A case was complicated by lymphangiectasia-associated protein-losing enteropathy. Initially, three cases were morphologically missed. Ziehl-Neelsen stain helped reach the correct diagnosis. Pathologists have an important role in patients’ management by guiding clinicians to the correct diagnosis. Pathologists should be aware of these different histopathologic manifestations, their potential pitfalls, look for certain helpful clues complemented with multiple levels and special stains. In particular, AFB stains are mandatory in all mucosal biopsy specimens from HIV/AIDS patients regardless of their appearances.</p>
+<p>doi: <a href="https://doi.org/10.1016/j.anndiagpath.2020.151638" class="uri">https://doi.org/10.1016/j.anndiagpath.2020.151638</a>, doi: <a href="https://doi.org/10.1016/j.anndiagpath.2020.151638" class="uri">https://doi.org/10.1016/j.anndiagpath.2020.151638</a></p>
+</details>
+<hr />
+<!-- ### Article 5 -->
+<!-- #### Article 33060017. -->
+<details open>
+<summary>
+<ul>
+<li><strong>The use of immunohistochemistry for IgG4 in the diagnosis of autoimmune pancreatitis: A systematic review and meta-analysis.</strong></li>
+</ul>
+</summary>
+<p><em>The use of immunohistochemistry for IgG4 in the diagnosis of autoimmune pancreatitis: A systematic review and meta-analysis. Pancreatology : official journal of the International Association of Pancreatology (IAP) … [et al.] 2020 10;20(8)</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33060017" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33060017</a></p>
+<p>Label=“BACKGROUND” NlmCategory=“BACKGROUND”:The diagnosis of autoimmune pancreatitis (AIP) remains challenging, especially when serum IgG4 is normal or imaging features are indeterminate. We performed a systematic review and meta-analysis to evaluate the performance of IgG4 immunostaining of pancreatic, biliary, and ampullary tissues as a diagnostic aid for AIP. Label=“METHODS” NlmCategory=“METHODS”:A comprehensive literature search of the PubMed, EMBASE, and Ovid MEDLINE databases was conducted until February 2020. The methodological quality of each study was assessed according to the Quality Assessment of Diagnostic Accuracy Studies checklist. A random-effects model was used to summarize the diagnostic odds ratio and other measures of accuracy. Label=“RESULTS” NlmCategory=“RESULTS”:The meta-analysis included 20 studies comprising 346 patients with AIP and 590 patients with other pancreatobiliary diseases, including 371 pancreatobiliary malignancies. The summary estimates for tissue IgG4 in discriminating AIP and controls were as follows: diagnostic odds ratio 38.86 (95% confidence interval (CI), 18.70-80.75); sensitivity 0.64 (95% CI, 0.59-0.69); specificity 0.93 (95% CI, 0.91-0.95). The area under the curve was 0.939 for tissue IgG4 in discriminating AIP and controls. Subgroup analysis revealed no significant difference in diagnostic accuracy according to control groups (pancreatobiliary cancer versus other chronic pancreatitis) and sampling site (pancreas versus bile duct/ampulla). Label=“CONCLUSIONS” NlmCategory=“CONCLUSIONS”:Current data demonstrate that IgG4 immunostaining of pancreatic, biliary, and ampullary tissue has a high specificity but moderate sensitivity for diagnosing AIP. IgG4 immunostaining may be useful in supporting a diagnosis of AIP when AIP is clinically suspected, but a combination of imaging and serology does not provide a conclusive diagnosis.</p>
+<p>doi: <a href="https://doi.org/10.1016/j.pan.2020.10.028" class="uri">https://doi.org/10.1016/j.pan.2020.10.028</a></p>
+</details>
+<hr />
+<!-- ### Article 6 -->
+<!-- #### Article PMID. -->
+<details open>
+<summary>
+<ul>
+<li><strong>ArticleTitle</strong></li>
+</ul>
+</summary>
+<p><em>ArticleTitle Title YearArticleDate MonthArticleDate;Volume(Issue)</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=PMID" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=PMID</a></p>
+<p>AbstractText</p>
+<p>doi: <a href="https://doi.org/DOI" class="uri">https://doi.org/DOI</a></p>
+</details>
+<hr />
+<!-- ### Article 7 -->
+<!-- #### Article 33298703. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Paradigm Shift: Functional Dyspepsia-A “Leaky Gut” Disorder?</strong></li>
+</ul>
+</summary>
+<p><em>Paradigm Shift: Functional Dyspepsia-A “Leaky Gut” Disorder? The American journal of gastroenterology 2020 12;()</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33298703" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33298703</a></p>
+<p>For up to 2 decades, pathophysiological research in functional dyspepsia focused on gastric sensorimotor dysfunction underlying symptom generation. Recent pathophysiological research has focused on low-grade inflammation in the duodenal mucosa. Emerging evidence confirms a loss of mucosal integrity in the duodenum in functional dyspepsia, and this is confirmed in a confocal laser endomicroscopy study demonstrating altered mucosal barrier function and pyroptosis. This technique may help to establish underlying mechanisms and evaluate novel therapeutic approaches to functional dyspepsia.</p>
+<p>doi: <a href="https://doi.org/10.14309/ajg.0000000000001077" class="uri">https://doi.org/10.14309/ajg.0000000000001077</a></p>
+</details>
+<hr />
+<!-- ### Article 8 -->
+<!-- #### Article 33314802. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Cytological diagnosis of Brunner’s gland adenoma (hyperplasia): A diagnostic challenge.</strong></li>
+</ul>
+</summary>
+<p><em>Cytological diagnosis of Brunner’s gland adenoma (hyperplasia): A diagnostic challenge. Diagnostic cytopathology 2020 12;()</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33314802" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33314802</a></p>
+<p>Brunner’s gland adenoma (hyperplasia) (BGA/H) is a benign gastrointestinal lesion, usually asymptomatic and frequently detected incidentally by endoscopy as a submucosal nodule. Most BGA/Hs are diagnosed by their typical cytological morphology and immunohistochemical features, characterized by monomorphic cells arranged as loosely clusters of epithelial cells with abundant, clear, and granular cytoplasm, eccentrically located nuclei, and immunoreactivity for MUC-6. The combination of the clinical and pathological features is essential for rendering a correct diagnosis. Herein, we report two cases of BGA/H, including their cytologic and histologic features, and a literature review of the clinicopathologic findings along with its differential diagnoses.</p>
+<p>doi: <a href="https://doi.org/10.1002/dc.24680" class="uri">https://doi.org/10.1002/dc.24680</a></p>
+</details>
+<hr />
+<!-- ### Article 9 -->
+<!-- #### Article 33069083. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Patterns of Mycobacterium avium-intracellulare complex infection in duodenal endoscopic biopsies in HIV/AIDS patients., Patterns of Mycobacterium avium-intracellulare complex infection in duodenal endoscopic biopsies in HIV/AIDS patients.</strong></li>
+</ul>
+</summary>
+<p><em>Patterns of Mycobacterium avium-intracellulare complex infection in duodenal endoscopic biopsies in HIV/AIDS patients. Annals of diagnostic pathology 2020 10;49(), Patterns of Mycobacterium avium-intracellulare complex infection in duodenal endoscopic biopsies in HIV/AIDS patients. Annals of diagnostic pathology 2020 10;49()</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33069083" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33069083</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33069083" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33069083</a></p>
+<p>Mycobacterium avium-intracellulare complex (MAIC) is a nontuberculous opportunistic infection in immunocompromised patients. Involvement of the gastrointestinal tract (GIT) is usually part of a disseminated disease in AIDS patients with a low CD4 count, however with standard antiretroviral therapy (ART), a localized presentation is more likely. It can affect any part of the GIT, mostly the duodenum and typically as patches. Incomplete or refractory ART for HIV-strains, therapy-related side effects, noncompliant or incomplete treatment to previous MAIC infections, superimposed complications and comorbid opportunistic infections may result in atypical clinical, endoscopic and histopathologic manifestations. We performed a retrospective review study retrieving cases of MAIC in duodenal endoscopic biopsy. We found five cases of MAIC in HIV/AIDS patients. They were males with an average age of 40-years. They showed different histopathologic features, variable patterns of MAIC-histiocytic infiltrates, and varying intensity of intracellular acid-fast positive bacilli. Enterocytes vacuolization and transepithelial elimination were also observed. Three cases were associated with cytomegalovirus and cryptococcal infections. A case was complicated by lymphangiectasia-associated protein-losing enteropathy. Initially, three cases were morphologically missed. Ziehl-Neelsen stain helped reach the correct diagnosis. Pathologists have an important role in patients’ management by guiding clinicians to the correct diagnosis. Pathologists should be aware of these different histopathologic manifestations, their potential pitfalls, look for certain helpful clues complemented with multiple levels and special stains. In particular, AFB stains are mandatory in all mucosal biopsy specimens from HIV/AIDS patients regardless of their appearances., Mycobacterium avium-intracellulare complex (MAIC) is a nontuberculous opportunistic infection in immunocompromised patients. Involvement of the gastrointestinal tract (GIT) is usually part of a disseminated disease in AIDS patients with a low CD4 count, however with standard antiretroviral therapy (ART), a localized presentation is more likely. It can affect any part of the GIT, mostly the duodenum and typically as patches. Incomplete or refractory ART for HIV-strains, therapy-related side effects, noncompliant or incomplete treatment to previous MAIC infections, superimposed complications and comorbid opportunistic infections may result in atypical clinical, endoscopic and histopathologic manifestations. We performed a retrospective review study retrieving cases of MAIC in duodenal endoscopic biopsy. We found five cases of MAIC in HIV/AIDS patients. They were males with an average age of 40-years. They showed different histopathologic features, variable patterns of MAIC-histiocytic infiltrates, and varying intensity of intracellular acid-fast positive bacilli. Enterocytes vacuolization and transepithelial elimination were also observed. Three cases were associated with cytomegalovirus and cryptococcal infections. A case was complicated by lymphangiectasia-associated protein-losing enteropathy. Initially, three cases were morphologically missed. Ziehl-Neelsen stain helped reach the correct diagnosis. Pathologists have an important role in patients’ management by guiding clinicians to the correct diagnosis. Pathologists should be aware of these different histopathologic manifestations, their potential pitfalls, look for certain helpful clues complemented with multiple levels and special stains. In particular, AFB stains are mandatory in all mucosal biopsy specimens from HIV/AIDS patients regardless of their appearances.</p>
+<p>doi: <a href="https://doi.org/10.1016/j.anndiagpath.2020.151638" class="uri">https://doi.org/10.1016/j.anndiagpath.2020.151638</a>, doi: <a href="https://doi.org/10.1016/j.anndiagpath.2020.151638" class="uri">https://doi.org/10.1016/j.anndiagpath.2020.151638</a></p>
+</details>
+<hr />
+<!-- ### Article 10 -->
+<!-- #### Article 33257564. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Human sapovirus propagation in human cell lines supplemented with bile acids., Human sapovirus propagation in human cell lines supplemented with bile acids.</strong></li>
+</ul>
+</summary>
+<p><em>Human sapovirus propagation in human cell lines supplemented with bile acids. Proceedings of the National Academy of Sciences of the United States of America 2020 11;(), Human sapovirus propagation in human cell lines supplemented with bile acids. Proceedings of the National Academy of Sciences of the United States of America 2020 11;117(50)</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33257564" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33257564</a>, PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33257564" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33257564</a></p>
+<p>Human sapoviruses (HuSaVs) cause acute gastroenteritis similar to human noroviruses. Although HuSaVs were discovered four decades ago, no HuSaV has been grown in vitro, which has significantly impeded the understanding of viral biology and the development of antiviral strategies. In this study, we identified two susceptible human cell lines, that originated from testis and duodenum, that support HuSaV replication and found that replication requires bile acids. HuSaVs replicated more efficiently in the duodenum cell line, and viral RNA levels increased up to ∼6 log10-fold. We also detected double-stranded RNA, viral nonstructural and structural proteins in the cell cultures, and intact HuSaV particles. We confirmed the infectivity of progeny viruses released into the cell culture supernatants by passaging. These results indicate the successful growth of HuSaVs in vitro. Additionally, we determined the minimum infectious dose and tested the sensitivities of HuSaV GI.1 and GII.3 to heat and ultraviolet treatments. This system is inexpensive, scalable, and reproducible in different laboratories, and can be used to investigate mechanisms of HuSaV replication and to evaluate antivirals and/or disinfection methods for HuSaVs., Human sapoviruses (HuSaVs) cause acute gastroenteritis similar to human noroviruses. Although HuSaVs were discovered four decades ago, no HuSaV has been grown in vitro, which has significantly impeded the understanding of viral biology and the development of antiviral strategies. In this study, we identified two susceptible human cell lines, that originated from testis and duodenum, that support HuSaV replication and found that replication requires bile acids. HuSaVs replicated more efficiently in the duodenum cell line, and viral RNA levels increased up to ∼6 log10-fold. We also detected double-stranded RNA, viral nonstructural and structural proteins in the cell cultures, and intact HuSaV particles. We confirmed the infectivity of progeny viruses released into the cell culture supernatants by passaging. These results indicate the successful growth of HuSaVs in vitro. Additionally, we determined the minimum infectious dose and tested the sensitivities of HuSaV GI.1 and GII.3 to heat and ultraviolet treatments. This system is inexpensive, scalable, and reproducible in different laboratories, and can be used to investigate mechanisms of HuSaV replication and to evaluate antivirals and/or disinfection methods for HuSaVs.</p>
+<p>doi: <a href="https://doi.org/10.1073/pnas.2007310117" class="uri">https://doi.org/10.1073/pnas.2007310117</a>, doi: <a href="https://doi.org/10.1073/pnas.2007310117" class="uri">https://doi.org/10.1073/pnas.2007310117</a></p>
+</details>
+<hr />
+<!-- ### Article 11 -->
+<!-- #### Article 33333628. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Adenocarcinoma arising in the multiple heterotopic submucosal glands of the intestine in a Satoyoshi syndrome patient: A case report.</strong></li>
+</ul>
+</summary>
+<p><em>Adenocarcinoma arising in the multiple heterotopic submucosal glands of the intestine in a Satoyoshi syndrome patient: A case report. Pathology international 2020 12;()</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33333628" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33333628</a></p>
+<p>Satoyoshi syndrome is a rare multisystemic disorder of unknown etiology characterized by progressive muscle spasms, alopecia and diarrhea. Multiple protruding lesions with cystic glands, namely gastroenterocolitis cystica polyposa, manifest in the gastrointestinal tract. Since the first report of these lesions in 1977, which was unique to Satoyoshi syndrome, few studies have focused on their role, and the associated clinicopathological features are not well understood. Here, we report a 64-year-old Japanese woman with Satoyoshi syndrome who presented with multiple polypoid lesions in the stomach, duodenum, jejunum, ileum and colon. Histologically, the polypoid lesions in the intestine comprised multiple heterotopic submucosal glands containing cystically dilated glands and smooth muscle fibers in the lamina propria mucosa and/or submucosa. Additionally, we observed stromal changes, such as fibrosis, discontinuous and thinning muscularis mucosae, and diffuse neural fiber proliferation in the entire intestinal tract. Furthermore, multiple foci of adenocarcinomas were identified within several heterotopic submucosal glands. We hypothesized that multiple heterotopic submucosal glands in the present case corresponded to previously reported gastroenterocolitis cystica polyposa, suggesting that these lesions are essential in the histopathology and are a unique manifestation of Satoyoshi syndrome.</p>
+<p>doi: <a href="https://doi.org/10.1111/pin.13053" class="uri">https://doi.org/10.1111/pin.13053</a></p>
+</details>
+<hr />
+<!-- ### Article 12 -->
+<!-- #### Article 33382496. -->
+<details open>
+<summary>
+<ul>
+<li><strong>The role of histopathology in the diagnosis and management of coeliac disease and other malabsorptive conditions.</strong></li>
+</ul>
+</summary>
+<p><em>The role of histopathology in the diagnosis and management of coeliac disease and other malabsorptive conditions. Histopathology ;78(1)</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33382496" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33382496</a></p>
+<p>Most absorption of nutrients takes place in the proximal small intestine, and the most common disorders leading to malabsorption are associated with a morphological abnormality in the duodenal mucosa that is appreciable in histological sections of biopsy specimens. Coeliac disease is the most well-known example, causing intraepithelial lymphocytosis, inflammation and villous atrophy in the duodenum. Remarkably similar inflammatory changes can be induced by other processes, including medications, e.g. angiotensin II receptor blockers and immune checkpoint inhibitors, immune dysregulation disorders, e.g. common variable immunodeficiency and autoimmune enteropathy, infections, collagenous sprue, and tropical sprue. However, there are often subtle histological differences from coeliac disease in the type of inflammatory infiltrate, the presence of crypt apoptosis, and the extent and type of inflammation beyond the duodenum. The clinical setting and serological investigation usually allow diagnostic separation, but some cases remain challenging. Histopathology is also important in assessing the response to treatment, such as the change in villous architecture caused by a gluten-free diet, or the response to cessation of a potentially causative medication. This review examines the practical role that histopathology of duodenal biopsy specimens plays in the assessment and management of inflammatory malabsorptive processes of the proximal small intestine, with a particular emphasis on coeliac disease.</p>
+<p>doi: <a href="https://doi.org/10.1111/his.14262" class="uri">https://doi.org/10.1111/his.14262</a></p>
+</details>
+<hr />
+<!-- ### Article 13 -->
+<!-- #### Article 33382495. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Recent advances upper gastrointestinal lymphomas: molecular updates and diagnostic implications.</strong></li>
+</ul>
+</summary>
+<p><em>Recent advances upper gastrointestinal lymphomas: molecular updates and diagnostic implications. Histopathology ;78(1)</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33382495" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33382495</a></p>
+<p>Approximately one-third of extranodal non-Hodgkin lymphomas involve the gastrointestinal (GI) tract, with the vast majority being diagnosed in the stomach, duodenum, or proximal small intestine. A few entities, especially diffuse large B-cell lymphoma and extranodal marginal zone lymphoma of mucosa-associated lymphoid tissue, represent the majority of cases. In addition, there are diseases specific to or characteristic of the GI tract, and any type of systemic lymphoma can present in or disseminate to these organs. The recent advances in the genetic and molecular characterisation of lymphoid neoplasms have translated into notable changes in the classification of primary GI T-cell neoplasms and the recommended diagnostic approach to aggressive B-cell tumours. In many instances, diagnoses rely on morphology and immunophenotype, but there is an increasing need to incorporate molecular genetic markers. Moreover, it is also important to take into consideration the endoscopic and clinical presentations. This review gives an update on the most recent developments in the pathology and molecular pathology of upper GI lymphoproliferative diseases.</p>
+<p>doi: <a href="https://doi.org/10.1111/his.14289" class="uri">https://doi.org/10.1111/his.14289</a></p>
+</details>
+<hr />
+<!-- ### Article 14 -->
+<!-- #### Article 33382487. -->
+<details open>
+<summary>
+<ul>
+<li><strong>The indications for biopsy in routine upper gastrointestinal endoscopy.</strong></li>
+</ul>
+</summary>
+<p><em>The indications for biopsy in routine upper gastrointestinal endoscopy. Histopathology ;78(1)</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33382487" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33382487</a></p>
+<p>This review describes the indications and contraindications for endoscopic biopsy, in routine practice, of the upper gastrointestinal (GI) tract. We accept that this review provides grounds for controversy, as our stance in certain situations is counter to some national guidelines. Nevertheless, we provide evidence to support our viewpoints, especially on efficiency and economic grounds. We describe the particular controversies concerning the biopsy assessment of Barrett’s oesophagus, chronic gastritis and the duodenum in the investigation of coeliac disease. We accept that there are indications for more extensive upper GI biopsy protocols in children than in adults; the latter constitute our main focus in this article. We would encourage detailed discussion between pathologists and their endoscopy colleagues about the indications, or lack of them, for routine upper GI endoscopic biopsy, as studies have shown that adherence to agreed guidelines has resulted in a very considerable diminution in the biopsy workload without compromising patient management. Furthermore, where biopsy is indicated, we emphasise the importance of accompanying clinical information provided to the pathologist, in particular regarding biopsy site(s), and regular feedback to endoscopists to improve and maintain the quality of such information. Finally, local dialogue is also advised, when necessary, to indicate to endoscopists the need to appropriately segregate biopsies into separate, individually labelled specimens, to maximise the information that can be derived by pathological evaluation and thereby improve the quality of the final pathology report.</p>
+<p>doi: <a href="https://doi.org/10.1111/his.14213" class="uri">https://doi.org/10.1111/his.14213</a></p>
+</details>
+<hr />
+<!-- ### Article 15 -->
+<!-- #### Article 33407153. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Non-celiac wheat sensitivity: rationality and irrationality of a gluten-free diet in individuals affected with non-celiac disease: a review.</strong></li>
+</ul>
+</summary>
+<p><em>Non-celiac wheat sensitivity: rationality and irrationality of a gluten-free diet in individuals affected with non-celiac disease: a review. BMC gastroenterology 2021 1;21(1)</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33407153" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33407153</a></p>
+<p>Non-celiac gluten or wheat sensitivity (NCWS) is a “clinical entity induced by the ingestion of wheat leading to intestinal and/or extraintestinal symptoms that improve once the wheat-containing foodstuff is removed from the diet, and celiac disease and wheat allergy have been excluded”. This mostly accepted definition raises several points that remain controversial on this condition. In the present review, the authors summarize the most recent advances in the clinic and research on NCWS through an accurate analysis of different studies. We screened PubMed, Medline, Embase, and Scopus using the keywords “non-celiac gluten sensitivity”, “non-celiac wheat sensitivity”, and “diagnosis”. We would like to emphasize two main points, including (A) the controversial clinical and etiological aspects in different trials and experiences with particular attention to the Salerno criteria for the diagnosis of NCWS and (B) the histological aspects. The etiology of NCWS remains controversial, and the relationship with irritable bowel syndrome is obscure. Histologically, the duodenal mucosa may show a variable pattern from unremarkable to a slight increase in the number of T lymphocytes in the superficial epithelium of villi. The endorsement of this disease is based on a positive response to a gluten-free diet for a limited period, followed by the reappearance of symptoms after gluten challenge. The Salerno expert criteria may help to diagnose NCWS accurately. Social media and inaccurate interpretation of websites may jeopardize the diagnostic process if individuals self-label as gluten intolerant.</p>
+<p>doi: <a href="https://doi.org/10.1186/s12876-020-01568-6" class="uri">https://doi.org/10.1186/s12876-020-01568-6</a></p>
+</details>
+<hr />
+<!-- ### Article 16 -->
+<!-- #### Article 33433432. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Strongyloidiasis duodenum: A histopathological study.</strong></li>
+</ul>
+</summary>
+<p><em>Strongyloidiasis duodenum: A histopathological study. Indian journal of pathology &amp; microbiology ;64(1)</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33433432" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33433432</a></p>
+<p>Strongyloides stercoralis is an intestinal nematode that infects humans, percutaneously and has a complex life cycle. We report a case of a thirty year old male presenting with chief complaints of profuse watery diarrhoea, abdominal fullness, loss of appetite, creepy abdominal pain and low-grade fever for the last one month. He was on corticosteroids for systemic sclerosis. Endoscopy showed thickened and oedematous duodenal folds with pinpoint areas of bleeding and multiple ulcerations on the duodenal mucosa. Histopathologial examination of duodenal biopsy revealed infestation by Strongyloides stercoralis in the duodenum, the duodenal mucosal glands were occupied by various parts of parasite. The patient was successfully treated and had uneventful recovery.</p>
+<p>doi: <a href="https://doi.org/10.4103/IJPM.IJPM_359_19" class="uri">https://doi.org/10.4103/IJPM.IJPM_359_19</a></p>
+</details>
+<hr />
+<!-- ### Article 17 -->
+<!-- #### Article 33481390. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Prevalence and Clinicopathologic Features of Intestinal Perforation Caused by Segmental Absence of the Intestinal Musculature in Adults.</strong></li>
+</ul>
+</summary>
+<p><em>Prevalence and Clinicopathologic Features of Intestinal Perforation Caused by Segmental Absence of the Intestinal Musculature in Adults. The American journal of surgical pathology 2021 1;()</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33481390" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33481390</a></p>
+<p>Segmental absence of the intestinal musculature (SAIM) can cause intestinal perforation in adults. However, its prevalence and clinicopathologic features have not been well-described. This study aimed to determine the prevalence of SAIM-associated perforation and characterize its clinicopathologic features. We retrospectively examined 109 cases of intestinal perforation that underwent surgical resection from January 2009 to December 2019. SAIM was defined as the complete absence of the muscularis propria without extensive inflammation and fibrinous exudation around the perforation. SAIM was the second most frequent cause of perforation (26 cases: 24%), the most frequent cause being related to diverticulitis (39 cases: 36%). The most common site was the sigmoid colon (12 cases: 46.2%). The younger group (aged below 65 y) exhibited more frequent perforation of the upper segments of the gastrointestinal tract (from the duodenum to the descending colon) than the older group (65 y and above) (P=0.0018). No patients developed recurrence. The most common gross features were well-defined circular or small punched-out lesions, and the histologic features were complete absence of the muscularis propria and absence of hemorrhage and necrosis around the area of perforation. The characteristic features of SAIM were unique and their prevalence was higher than previously reported. The precise recognition of SAIM can aid in understanding the cause of perforation and avoiding further unnecessary examinations.</p>
+<p>doi: <a href="https://doi.org/10.1097/PAS.0000000000001671" class="uri">https://doi.org/10.1097/PAS.0000000000001671</a></p>
+</details>
+<hr />
+<!-- ### Article 18 -->
+<!-- #### Article 33481382. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Distinct Small Intestine Mast Cell Histologic Changes in Patients With Hereditary Alpha-tryptasemia and Mast Cell Activation Syndrome.</strong></li>
+</ul>
+</summary>
+<p><em>Distinct Small Intestine Mast Cell Histologic Changes in Patients With Hereditary Alpha-tryptasemia and Mast Cell Activation Syndrome. The American journal of surgical pathology 2021 1;()</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33481382" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33481382</a></p>
+<p>Mast cells (MCs) are important in intestinal homeostasis and pathogen defense but are also implicated in many of the clinical manifestations in disorders such as irritable bowel syndrome. The utility of specific staining for MCs to quantify and phenotype them in intestinal biopsies in patients with gastrointestinal (GI) symptoms is controversial and is not a widely adopted practice. Whether or not intestinal MCs are increased or have a unique phenotype in individuals with hereditary alpha-tryptasemia (HαT), who have extra copies of the MC tryptase gene TPSAB1 and typically elevated baseline serum tryptase levels &gt;8 ng/mL is not known. We examined the duodenal biopsies of 17 patients with HαT and compared them to 15 patients with mast cell activation syndrome who had baseline serum tryptases &lt;8 ng/mL (MCAS-NT) and 12 GI-controls. We determined that the HαT subjects had increased MCs in the duodenum compared with MCAS-NT and GI-controls (median=30.0; interquartile range [IQR]: 20.0 to 40.0 vs. median=15.0; IQR: 5.00 to 20.0; P=0.013 and median=15.0; IQR: 13.8 to 20.0; P=0.004, respectively). These MCs were significantly found in clusters (&lt;15 MCs) and were located throughout the mucosa and submucosa including the superficial villi compared with MCAS-NT and GI-control patients. Spindle-shaped MCs were observed in all groups including controls. These data demonstrate that HαT is associated with increased small intestinal MCs that may contribute to the prevalent GI manifestations observed among individuals with this genetic trait.</p>
+<p>doi: <a href="https://doi.org/10.1097/PAS.0000000000001676" class="uri">https://doi.org/10.1097/PAS.0000000000001676</a></p>
+</details>
+<hr />
+<!-- ### Article 19 -->
+<!-- #### Article 33511891. -->
+<details open>
+<summary>
+<ul>
+<li><strong>Delayed development of vacuoles and recanalization in the duodenum: a study in human fetuses to understand susceptibility to duodenal atresia/stenosis.</strong></li>
+</ul>
+</summary>
+<p><em>Delayed development of vacuoles and recanalization in the duodenum: a study in human fetuses to understand susceptibility to duodenal atresia/stenosis. Fetal and pediatric pathology 2021 1;()</em></p>
+<p>PubMed: <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term=33511891" class="uri">https://www.ncbi.nlm.nih.gov/pubmed/?term=33511891</a></p>
+<p>Label=“OBJECTIVE” NlmCategory=“OBJECTIVE”:We compared the cross-sectional areas of the duodenum to the distal small intestine during early gestation to determine if there is a difference in age for recanalization. Label=“METHODS” NlmCategory=“METHODS”:Serial sagittal sections of six fetuses of gestational age (GA) 8-10 weeks were examined morphologically to compare the degree of recanalization of the duodenum with to the more distal small intestine. Label=“RESULTS” NlmCategory=“RESULTS”:At GA 8-9 weeks, the duodenum had more epithelial plugs and vacuoles with no or narrower spaces compared to the distal small bowel. Quantitative assessment at GA 10 weeks showed that the cross-sectional area of the duodenal cavity was significantly less than the distal small bowel. Label=“CONCLUSION” NlmCategory=“CONCLUSIONS”:The development and recanalization of vacuoles in the duodenum occurs later than the jejunum and ileum may be involved in the more frequent development of atresia/stenosis of the duodenum compared to more distal gastrointestinal tract.</p>
+<p>doi: <a href="https://doi.org/10.1080/15513815.2021.1876191" class="uri">https://doi.org/10.1080/15513815.2021.1876191</a></p>
+</details>
+<hr />
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom">
+<h3 id="updates-and-corrections">Corrections</h3>
+<p>If you see mistakes or want to suggest changes, please <a href="https://github.com/PBPath/issues/new">create an issue</a> on the source repository.</p>
+<h3 id="reuse">Reuse</h3>
+<p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Source code is available at <a href="https://github.com/PBPath/">https://github.com/PBPath/</a>, unless otherwise noted. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
+</div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<div class="distill-site-nav distill-site-footer">
+<center>
+  These articles are automatically collected from PubMed <a href="https://github.com/PBPath/"> via these codes</a>.
+  <br>
+  Among these articles the education committee will select the relevant ones to be included in the journal watch.
+  <br>
+  Please provide feedback <a href="https://pbpath.org/contact-us/"><b>here</b></a>
+  <br>
+  <a href="https://twitter.com/PBPath" class="twitter-follow-button" data-show-count="false">Follow @PBPath</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+</div>
+<!--/radix_placeholder_navigation_after_body-->
+
+
+</body>
+
+</html>
